@@ -1,0 +1,4 @@
+Add room types in the Room.cs
+Set furniture types based of room types
+Add Door Functionality to actually generate the rooms, "THEY CAN NOT INTERSECT"
+Door Generation Able to have 1-3 doors 
