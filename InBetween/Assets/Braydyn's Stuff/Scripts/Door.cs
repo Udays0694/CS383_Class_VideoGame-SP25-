@@ -1,10 +1,14 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Door : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private RoomGenerator roomGenerator;
     private bool playerNearby = false;
+
+    // Static list to track all opened door positions
+    private static HashSet<Vector3> openedDoors = new HashSet<Vector3>();
 
     private void Start()
     {
@@ -13,6 +17,13 @@ public class Door : MonoBehaviour
         {
             roomGenerator = GameObject.FindAnyObjectByType<RoomGenerator>();
         }
+
+        // Check if this door has already been opened
+        if (openedDoors.Contains(transform.position))
+        {
+            Debug.Log($"This door at {transform.position} was opened before. Disabling.");
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void Update()
@@ -20,6 +31,14 @@ public class Door : MonoBehaviour
         // Check if the player presses the interaction key (E) while nearby
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
         {
+            // Check if this door has already been opened
+            if (openedDoors.Contains(transform.position))
+            {
+                Debug.Log($"This door at {transform.position} was already opened. Ignoring.");
+                return;
+            }
+
+            // Otherwise, open the room
             InstantiateRoom();
         }
     }
@@ -30,7 +49,10 @@ public class Door : MonoBehaviour
         {
             // Capture the global position of the current door
             Vector3 doorPosition = transform.position;
-            Debug.Log($"Current Door Position: {doorPosition}");
+            Debug.Log($"Opening Door at Position: {doorPosition}");
+
+            // Add this door to the openedDoors list
+            openedDoors.Add(doorPosition);
 
             // Generate the new room at the position and rotation of the spawnPoint
             Room newRoom = roomGenerator.GenerateRoom();
@@ -46,6 +68,9 @@ public class Door : MonoBehaviour
 
                 // Find and disable the closest door in the new room
                 DisableClosestDoor(newRoom, doorPosition);
+
+                // Disable all previously opened doors in the new room
+                DisablePreviouslyOpenedDoors(newRoom);
             }
         }
     }
@@ -88,6 +113,25 @@ public class Door : MonoBehaviour
         else
         {
             Debug.Log("No doors found in the new room to disable.");
+        }
+    }
+
+    private void DisablePreviouslyOpenedDoors(Room newRoom)
+    {
+        // Find all doors in the new room
+        Door[] doors = newRoom.GetComponentsInChildren<Door>();
+
+        if (doors.Length > 0)
+        {
+            foreach (Door door in doors)
+            {
+                // Check if this door's position is in the openedDoors list
+                if (openedDoors.Contains(door.transform.position))
+                {
+                    door.gameObject.SetActive(false);
+                    Debug.Log($"Disabled previously opened door at: {door.transform.position}");
+                }
+            }
         }
     }
 

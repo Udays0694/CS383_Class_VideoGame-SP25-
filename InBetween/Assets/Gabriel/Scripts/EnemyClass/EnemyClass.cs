@@ -15,6 +15,7 @@ public class EnemyClass : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         _rb.freezeRotation = true;
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }

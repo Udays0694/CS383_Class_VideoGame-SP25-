@@ -8,6 +8,8 @@ public class SkeletonScript : EnemyClass
     public float attackDamage = 30f;
     public float xpAward = 10f;
 
+
+
     public override void Navigation()
     {
         if (transform.position.x < base.playerScript.rb.position.x)

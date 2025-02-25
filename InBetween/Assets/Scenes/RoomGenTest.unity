@@ -437,6 +437,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 558461133311607358, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10.546295
+      objectReference: {fileID: 0}
+    - target: {fileID: 558461133311607358, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7121
+      objectReference: {fileID: 0}
     - target: {fileID: 1991754673805318930, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.09
@@ -480,6 +488,18 @@ PrefabInstance:
     - target: {fileID: 4166498242295552669, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
       propertyPath: m_Name
       value: SpawnRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254096410862483503, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254096410862483503, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.380404
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717563726861327956, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
+      propertyPath: m_SortingOrder
+      value: -9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -538,6 +558,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: GeneratableRooms.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[6]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[7]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[8]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[9]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[10]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: 'GeneratableRooms.Array.data[11]'
+      value: 
+      objectReference: {fileID: 2840558116880768895, guid: 43d8b856cbd3c11479899a9bed1c2236, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
