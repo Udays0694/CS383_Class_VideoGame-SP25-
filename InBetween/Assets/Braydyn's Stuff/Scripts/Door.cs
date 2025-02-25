@@ -5,18 +5,14 @@ public class Door : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private RoomGenerator roomGenerator;
     private bool playerNearby = false;
-    private string direction;
 
     private void Start()
     {
+        // Automatically find the RoomGenerator if not assigned
         if (roomGenerator == null)
         {
             roomGenerator = GameObject.FindAnyObjectByType<RoomGenerator>();
         }
-
-        // Automatically calculate the door's direction based on its position within the parent room
-        CalculateDirection();
-        Debug.Log($"Door {gameObject.name} set to direction: {direction}");
     }
 
     private void Update()
@@ -32,6 +28,10 @@ public class Door : MonoBehaviour
     {
         if (roomGenerator != null)
         {
+            // Capture the global position of the current door
+            Vector3 doorPosition = transform.position;
+            Debug.Log($"Current Door Position: {doorPosition}");
+
             // Generate the new room at the position and rotation of the spawnPoint
             Room newRoom = roomGenerator.GenerateRoom();
             if (newRoom != null && spawnPoint != null)
@@ -42,35 +42,47 @@ public class Door : MonoBehaviour
 
                 // Disable this door
                 this.gameObject.SetActive(false);
+                Debug.Log($"Disabled the current door at: {transform.position}");
 
-                // Disable the corresponding door in the new room
-                DisableCorrespondingDoor(newRoom);
+                // Find and disable the closest door in the new room
+                DisableClosestDoor(newRoom, doorPosition);
             }
         }
     }
 
-    private void DisableCorrespondingDoor(Room newRoom)
+    private void DisableClosestDoor(Room newRoom, Vector3 referencePosition)
     {
-        // Determine the opposite direction
-        string oppositeDirection = GetOppositeDirection(direction);
-
         // Find all doors in the new room
         Door[] doors = newRoom.GetComponentsInChildren<Door>();
 
         if (doors.Length > 0)
         {
+            Door closestDoor = null;
+            float closestDistance = Mathf.Infinity;
+
             foreach (Door door in doors)
             {
-                // Recalculate the direction for each door in the new room
-                door.CalculateDirection();
-                Debug.Log($"Checking door: {door.gameObject.name}, Direction: {door.direction}");
+                // Calculate the distance from the reference position
+                float distance = Vector3.Distance(referencePosition, door.transform.position);
+                Debug.Log($"Checking door: {door.gameObject.name}, Distance: {distance}");
 
-                // Disable the door that has the opposite direction
-                if (door.direction == oppositeDirection)
+                // Find the closest door
+                if (distance < closestDistance)
                 {
-                    door.gameObject.SetActive(false);
-                    Debug.Log($"Disabled the {oppositeDirection} door in the new room.");
+                    closestDistance = distance;
+                    closestDoor = door;
                 }
+            }
+
+            // Disable the closest door
+            if (closestDoor != null)
+            {
+                closestDoor.gameObject.SetActive(false);
+                Debug.Log($"Disabled the closest door in the new room at {closestDoor.transform.position}");
+            }
+            else
+            {
+                Debug.LogWarning("No closest door found to disable.");
             }
         }
         else
@@ -79,42 +91,9 @@ public class Door : MonoBehaviour
         }
     }
 
-    private string GetOppositeDirection(string dir)
-    {
-        switch (dir)
-        {
-            case "North": return "South";
-            case "South": return "North";
-            case "East": return "West";
-            case "West": return "East";
-            default: return "";
-        }
-    }
-
-    private void CalculateDirection()
-    {
-        // Calculate the door's local position relative to its parent room
-        Vector3 localPosition = transform.localPosition;
-
-        // Determine direction based on position
-        if (Mathf.Abs(localPosition.y) > Mathf.Abs(localPosition.x))
-        {
-            if (localPosition.y > 0)
-                direction = "North";
-            else
-                direction = "South";
-        }
-        else
-        {
-            if (localPosition.x > 0)
-                direction = "East";
-            else
-                direction = "West";
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Check if the player is nearby
         if (collision.CompareTag("Player"))
         {
             playerNearby = true;
@@ -123,6 +102,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        // Check if the player leaves the area
         if (collision.CompareTag("Player"))
         {
             playerNearby = false;
