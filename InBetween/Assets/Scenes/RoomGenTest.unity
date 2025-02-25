@@ -664,6 +664,9 @@ GameObject:
   - component: {fileID: 820851923}
   - component: {fileID: 820851922}
   - component: {fileID: 820851921}
+  - component: {fileID: 820851926}
+  - component: {fileID: 820851925}
+  - component: {fileID: 820851927}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -784,6 +787,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820851925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820851920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b206af24a42d2cb49b3006fcd0d05d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  strength: 10
+  agility: 10
+--- !u!114 &820851926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820851920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5adcbf1eb311f45afb1f1cef1b9165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpSystem: {fileID: 820851927}
+  levelThreshold: 100
+  level: 1
+--- !u!114 &820851927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820851920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0473854930c5cf4a8294d9e66398e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1192468582
 GameObject:
   m_ObjectHideFlags: 0
