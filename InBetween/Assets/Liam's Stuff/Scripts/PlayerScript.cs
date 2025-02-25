@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    private Rigidbody2D rb;
-    private Vector2 movement;
+    public Rigidbody2D rb;
+    public Vector2 movement;
+    public float health = 100;
 
     void Start()
     {
@@ -48,5 +49,19 @@ public class PlayerMovement : MonoBehaviour
     {
         // Move the player
         rb.linearVelocity = movement * moveSpeed;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health < 0)
+        {
+            Death();
+        }
+    }
+
+    void Death()
+    {
+        Destroy(gameObject);
     }
 }
