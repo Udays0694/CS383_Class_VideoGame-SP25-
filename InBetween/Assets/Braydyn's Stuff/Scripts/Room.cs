@@ -15,7 +15,7 @@ public class Room : MonoBehaviour
 
     FurnitureSpawnPoint[] FindSpawnPoints() {
         FurnitureSpawnPoint[] spwn;
-        spwn = spwn = GetComponentsInChildren<FurnitureSpawnPoint>();
+        spwn = GetComponentsInChildren<FurnitureSpawnPoint>();
         if (spwn.Length > 0) { Debug.Log("Found " + spwn.Length + " Spawn Points Attempting to spawn furniture"); } 
         else {  Debug.Log("Can Not Generate Furniture Loading Default Layout"); } // my bad for if else statement lmao 
         return spwn;
