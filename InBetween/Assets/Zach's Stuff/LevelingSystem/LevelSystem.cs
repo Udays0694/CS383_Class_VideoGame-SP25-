@@ -19,14 +19,14 @@ namespace Zach.Leveling
 
         void Update()
         {
-            // Check for 'X' key press
+            
             if (Input.GetKeyDown(KeyCode.X))
             {
-                GainXP(10); // Award 10 XP for each press
+                GainXP(10); // On 'x' input give xp for testing
             }
         }
 
-        public void GainXP(int amount)
+        public void GainXP(int amount) //will give xp upon enemy death checks for lvl up
         {
             xpSystem.AddXP(amount);
             if (xpSystem.GetXP() >= levelThreshold)
@@ -35,25 +35,24 @@ namespace Zach.Leveling
             }
         }
 
-        private void LevelUp()
+        private void LevelUp() //increases player stats
         {
             level++;
             xpSystem.AddXP(-levelThreshold);
-            levelThreshold += 50; // Increase next level requirement
+            levelThreshold += 50; // increasese lvl up threshold
 
-            // Increase player stats upon leveling up
+            
             IncreasePlayerStats();
             Debug.LogWarning("Player Leveled Up!");
         }
 
         private void IncreasePlayerStats()
         {
-            // Implement stat increases here
-            // For example, if you have a PlayerStats component:
-            PlayerBuffs playerStats = GetComponent<PlayerBuffs>();
+            
+            PlayerBuffs playerStats = GetComponent<PlayerBuffs>(); 
             if (playerStats != null)
             {
-                playerStats.IncreaseStats(10f, 2, 2); // Example increments
+                playerStats.IncreaseStats(10f, 2, 2); // increment player stats
             }
             else
             {

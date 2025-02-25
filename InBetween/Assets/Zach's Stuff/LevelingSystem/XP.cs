@@ -1,3 +1,5 @@
+//Initializes xp variables 
+
 using UnityEngine;
 
 namespace Zach.Leveling

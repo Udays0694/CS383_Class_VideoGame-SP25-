@@ -1,8 +1,10 @@
+//manages player buffs/upgrades
+
 using UnityEngine;
 
 public class PlayerBuffs : MonoBehaviour
 {
-    public float health = 100f;
+    public float health = 100f; 
     public int strength = 10;
     public int agility = 10;
 
@@ -12,8 +14,6 @@ public class PlayerBuffs : MonoBehaviour
         strength += strengthIncrease;
         agility += agilityIncrease;
 
-        // Optionally, add constraints to prevent stats from exceeding desired limits
-        // For example:
-        // health = Mathf.Min(health, maxHealth);
+
     }
 }
