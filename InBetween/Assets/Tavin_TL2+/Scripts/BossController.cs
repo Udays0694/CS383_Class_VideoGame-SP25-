@@ -1,14 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyController : MonoBehaviour
+public class BossController : MonoBehaviour
 {
-	// Enemy options
-	public float speed = 5f;
+	// Options
+	public float speed = 0.5f;
 	public float damage = 5f;
 	public float health = 10f;
+	private float attack1Cooldown = 1f;
 
+	// Characteristics
 	private Slider healthBar; 
+	private float attack1Timer = 0;
+	[SerializeField] private GameObject Bullet1;
+
+	// Player
+	private GameObject Player;
+	private Vector2 playerDir;
 
     // Start is called once before the first execution of Update after the
 	// MonoBehaviour is created
@@ -18,49 +26,60 @@ public class EnemyController : MonoBehaviour
 		healthBar = GetComponentInChildren<Slider>();
     	healthBar.maxValue = health;
 		healthBar.value = health;
+		
+		// Get reference to player
+		Player = GameObject.FindGameObjectWithTag("Player");
 	}
 
     // Update is called once per frame
     void Update()
     {
-        chasePlayer();
+		// Calculate direction to player
+		playerDir.x = Player.transform.position.x - transform.position.x;
+		playerDir.y = Player.transform.position.y - transform.position.y;
+
+		// Attack player
+		chasePlayer();
+        if(attack1Timer >= attack1Cooldown)
+		{
+			attack1();
+			attack1Timer = 0;
+		}
+
+		attack1Timer += Time.deltaTime;
+	}
+
+	// Base attack
+	private void attack1()
+	{
+		// Generate quaternion
+		Vector3 playerDir3d = new Vector3(playerDir.x, playerDir.y, 0);
+		Quaternion shootDir = Quaternion.LookRotation(Vector3.forward, playerDir3d);
+		Instantiate(Bullet1, transform.position, shootDir);
 	}
 
 	// Move towards player
 	private void chasePlayer()
 	{
-		// Calculate direction of player
-/*		Vector2 direction;
-		direction.x = PlayerController.playerPos.x - transform.position.x;
-		direction.y = PlayerController.playerPos.y - transform.position.y;
-		
 		// Calculate move distance
-		direction.x = transform.position.x
-					  + direction.normalized.x * Time.deltaTime * speed;
-		direction.y = transform.position.y
-				   	  + direction.normalized.y * Time.deltaTime * speed;
+		Vector2 move;
+		move.x = transform.position.x
+				 + playerDir.normalized.x * Time.deltaTime * speed;
+		move.y = transform.position.y
+				   	  + playerDir.normalized.y * Time.deltaTime * speed;
 
 		// Apply movement
-		transform.position = direction;
-*/	}
+		transform.position = move;
+	}
 
 	// Take damage
-	private void takeDamage(float amount)
+	public void takeDamage(float amount)
 	{
 		health -= amount;
 		healthBar.value = health;
 		if(health <= 0)
 		{
 			Destroy(gameObject);
-		}
-	}
-
-	// Handle collisions with player attacks
-	void OnTriggerEnter2D(Collider2D collideObj)
-	{
-		if(collideObj.tag == "")
-		{
-			takeDamage(5f);
 		}
 	}
 }
