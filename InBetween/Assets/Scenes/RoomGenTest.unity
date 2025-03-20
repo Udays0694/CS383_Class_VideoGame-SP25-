@@ -392,6 +392,7 @@ MonoBehaviour:
   xpSystem: {fileID: 1095246817}
   levelThreshold: 100
   level: 1
+  levelCap: 50
 --- !u!114 &1095246816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,6 +736,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: DefaultRoom
+      value: 
+      objectReference: {fileID: 1845323031125185049, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: GeneratableRooms.Array.size
       value: 12
