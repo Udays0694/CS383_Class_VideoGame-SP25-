@@ -35,7 +35,7 @@ public class BulletController : MonoBehaviour
     {
         if(collideObj.tag == "Player")
         {
-            collideObj.GetComponent<PlayerScript>().TakeDamage(5f);
+//            collideObj.GetComponent<PlayerScript>().TakeDamage(5f);
 			Destroy(gameObject);
         }
     }

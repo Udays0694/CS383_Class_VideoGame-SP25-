@@ -50,11 +50,12 @@ public class BossController : MonoBehaviour
 	}
 
 	// Base attack
-	private void attack1()
+	public void attack1()
 	{
 		// Generate quaternion
 		Vector3 playerDir3d = new Vector3(playerDir.x, playerDir.y, 0);
 		Quaternion shootDir = Quaternion.LookRotation(Vector3.forward, playerDir3d);
+		Debug.Log("Shooting bullet");
 		Instantiate(Bullet1, transform.position, shootDir);
 	}
 
