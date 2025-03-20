@@ -6,7 +6,7 @@ public class ItemShop : MonoBehaviour
 
     private void Start()
     {
-        shopPanel.SetActive(false);
+        shopPanel.SetActive(true);
     }
 
     public void onShopButtonClick()

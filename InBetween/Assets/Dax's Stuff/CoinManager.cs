@@ -12,15 +12,15 @@ public class CoinManager : MonoBehaviour
 
     [SerializeField] private GameObject floatingTextPrefab;
 
-    private int coinsCount = 0; // Player start with 0 coins 
+    public int coinsCount = 0; // Player start with 0 coins 
 
     private void Start()
     {
         UpdateCoinText();
 
         //Assign Button Listeners
-        addCoinButton.onClick.AddListener(() => AddCoins(10));
-        subtractCoinButton.onClick.AddListener(() => subtractCoins(10));
+        //addCoinButton.onClick.AddListener(() => AddCoins(10));
+        //subtractCoinButton.onClick.AddListener(() => SubtractCoins(10));
     }
 
     private void Update()
@@ -30,14 +30,14 @@ public class CoinManager : MonoBehaviour
             AddCoins(1); // Adds 1 coin when C is pressed 
         }
     }
-    void AddCoins(int amount)
+    public void AddCoins(int amount)
     {
         coinsCount += amount;
         StartCoroutine(showCoins(amount.ToString())); //Show floating text for added coins
         UpdateCoinText();
     }
 
-    void subtractCoins(int amount)
+    public void SubtractCoins(int amount)
     {
         if (coinsCount > 0)
         {
