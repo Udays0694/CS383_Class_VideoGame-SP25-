@@ -286,7 +286,6 @@ GameObject:
   - component: {fileID: 307377380382775107}
   - component: {fileID: 8979063873654124294}
   - component: {fileID: 4063045415574519943}
-  - component: {fileID: 5855152386615816547}
   - component: {fileID: 3395841593366759454}
   m_Layer: 0
   m_Name: Boss
@@ -382,42 +381,6 @@ MonoBehaviour:
   damage: 5
   health: 10
   Bullet1: {fileID: 319877769471581982, guid: b127c6af3ba99a84181e33c4e2ef6315, type: 3}
---- !u!58 &5855152386615816547
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6763856213880315173}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
 --- !u!50 &3395841593366759454
 Rigidbody2D:
   serializedVersion: 5

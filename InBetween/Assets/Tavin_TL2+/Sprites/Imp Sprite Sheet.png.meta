@@ -1,220 +1,193 @@
 fileFormatVersion: 2
-guid: eda9e42147dff596e92abb7efc12c52a
+guid: 616f89b1af101edba8c20fd60fe0d05a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1745646317731160461
-    second: DEATH_0
+      213: -7021294630956641602
+    second: Imp Sprite Sheet_0
   - first:
-      213: -1962882971833571424
-    second: DEATH_1
+      213: 5971677691513566005
+    second: Imp Sprite Sheet_1
   - first:
-      213: 7163519229324203079
-    second: DEATH_2
+      213: 9152423973795712107
+    second: Imp Sprite Sheet_2
   - first:
-      213: -2824850348822682002
-    second: DEATH_3
+      213: -4303437075756346585
+    second: Imp Sprite Sheet_3
   - first:
-      213: -4395442915117589123
-    second: DEATH_4
+      213: -6834534244677126249
+    second: Imp Sprite Sheet_4
   - first:
-      213: 7527047216810660112
-    second: DEATH_5
+      213: -4631332355939174100
+    second: Imp Sprite Sheet_5
   - first:
-      213: -6116082883535636463
-    second: DEATH_6
+      213: 2559073871556193069
+    second: Imp Sprite Sheet_6
   - first:
-      213: -5775218795824829258
-    second: DEATH_7
+      213: 3327920378395661321
+    second: Imp Sprite Sheet_7
   - first:
-      213: -5608201998214337042
-    second: DEATH_8
+      213: 6591182423979453482
+    second: Imp Sprite Sheet_8
   - first:
-      213: 6576388434661106147
-    second: DEATH_9
+      213: 6117253617616554438
+    second: Imp Sprite Sheet_9
   - first:
-      213: -1154471196408308341
-    second: DEATH_10
+      213: 3695083227574673442
+    second: Imp Sprite Sheet_10
   - first:
-      213: 2149593603886717485
-    second: DEATH_11
+      213: 9095370414285492293
+    second: Imp Sprite Sheet_11
   - first:
-      213: 908584393007459520
-    second: DEATH_12
+      213: -2549088637370218189
+    second: Imp Sprite Sheet_12
   - first:
-      213: 740597910810140825
-    second: DEATH_13
+      213: -4981869168354988654
+    second: Imp Sprite Sheet_13
   - first:
-      213: 4599535859148058893
-    second: DEATH_14
+      213: -1114102729240293016
+    second: Imp Sprite Sheet_14
   - first:
-      213: 5733224033033023741
-    second: DEATH_15
+      213: -4566726218091123327
+    second: Imp Sprite Sheet_15
   - first:
-      213: -4626742975923083756
-    second: DEATH_16
+      213: -6461749295843137663
+    second: Imp Sprite Sheet_16
   - first:
-      213: -22728116269279974
-    second: DEATH_17
+      213: 4605925824525252523
+    second: Imp Sprite Sheet_17
   - first:
-      213: -8574646061081483984
-    second: DEATH_18
+      213: 822080299581969200
+    second: Imp Sprite Sheet_18
   - first:
-      213: 3354254753243013499
-    second: DEATH_19
+      213: -7687979924162972223
+    second: Imp Sprite Sheet_19
   - first:
-      213: 3603651926767336185
-    second: DEATH_20
+      213: 5815465024552843527
+    second: Imp Sprite Sheet_20
   - first:
-      213: 8392728427981504658
-    second: DEATH_21
+      213: -3093500364217615976
+    second: Imp Sprite Sheet_21
   - first:
-      213: 8484927564709351694
-    second: DEATH_22
+      213: 7146271980508046259
+    second: Imp Sprite Sheet_22
   - first:
-      213: 6499388409754968467
-    second: DEATH_23
+      213: 3084167260208388475
+    second: Imp Sprite Sheet_23
   - first:
-      213: 1300136920628527571
-    second: DEATH_24
+      213: -678282037672765964
+    second: Imp Sprite Sheet_24
   - first:
-      213: -4068846982135085252
-    second: DEATH_25
+      213: 6917543249801233796
+    second: Imp Sprite Sheet_25
   - first:
-      213: -3250762713044352934
-    second: DEATH_26
+      213: 7785506631664847917
+    second: Imp Sprite Sheet_26
   - first:
-      213: -5346464119348968536
-    second: DEATH_27
+      213: -1074009178923171056
+    second: Imp Sprite Sheet_27
   - first:
-      213: -7410524592387431091
-    second: DEATH_28
+      213: -3871228409934178121
+    second: Imp Sprite Sheet_28
   - first:
-      213: -1955636503513311880
-    second: DEATH_29
+      213: -3342262907629554450
+    second: Imp Sprite Sheet_29
   - first:
-      213: 4931257810929999505
-    second: DEATH_30
+      213: 6399323660450090918
+    second: Imp Sprite Sheet_30
   - first:
-      213: -4594944892682639505
-    second: DEATH_31
+      213: 3483542119605871135
+    second: Imp Sprite Sheet_31
   - first:
-      213: 3225826363041429108
-    second: DEATH_32
+      213: 5256776862375074738
+    second: Imp Sprite Sheet_32
   - first:
-      213: 246490130870450972
-    second: DEATH_33
+      213: 3829870408328581606
+    second: Imp Sprite Sheet_33
   - first:
-      213: -8454557477883939878
-    second: DEATH_34
+      213: -4567651919298045073
+    second: Imp Sprite Sheet_34
   - first:
-      213: 1180373698438818435
-    second: DEATH_35
+      213: 4858444893887966754
+    second: Imp Sprite Sheet_35
   - first:
-      213: -6866204553461828123
-    second: DEATH_36
+      213: 349423989964397893
+    second: Imp Sprite Sheet_36
   - first:
-      213: -4741612678246416579
-    second: DEATH_37
+      213: -650850377368004069
+    second: Imp Sprite Sheet_37
   - first:
-      213: 2216317568632723087
-    second: DEATH_38
+      213: -1041050545479752391
+    second: Imp Sprite Sheet_38
   - first:
-      213: -6845195783228235572
-    second: DEATH_39
+      213: -3803979400497922343
+    second: Imp Sprite Sheet_39
   - first:
-      213: -1603671229383203689
-    second: DEATH_40
+      213: 3371627859376957050
+    second: Imp Sprite Sheet_40
   - first:
-      213: -7802621327999925489
-    second: DEATH_41
+      213: -3700183294463154650
+    second: Imp Sprite Sheet_41
   - first:
-      213: 9010272950120702465
-    second: DEATH_42
+      213: -7776175830413122528
+    second: Imp Sprite Sheet_42
   - first:
-      213: 7412637732643904822
-    second: DEATH_43
+      213: -849575147430391290
+    second: Imp Sprite Sheet_43
   - first:
-      213: 8910131175706952841
-    second: DEATH_44
+      213: -4662546823774023677
+    second: Imp Sprite Sheet_44
   - first:
-      213: 6145262691751066898
-    second: DEATH_45
+      213: -2143358964275748111
+    second: Imp Sprite Sheet_45
   - first:
-      213: -3214228937440027016
-    second: DEATH_46
+      213: -52948197992090251
+    second: Imp Sprite Sheet_46
   - first:
-      213: 3175484890220646431
-    second: DEATH_47
+      213: -3955934358525847082
+    second: Imp Sprite Sheet_47
   - first:
-      213: 6492539381504099935
-    second: DEATH_48
+      213: -3267268341729050927
+    second: Imp Sprite Sheet_48
   - first:
-      213: 1154853454512346808
-    second: DEATH_49
+      213: 6015250911928504873
+    second: Imp Sprite Sheet_49
   - first:
-      213: 5206907915569508884
-    second: DEATH_50
+      213: -7733473722192663148
+    second: Imp Sprite Sheet_50
   - first:
-      213: -7068711230976173203
-    second: DEATH_51
+      213: 7159575296342961036
+    second: Imp Sprite Sheet_51
   - first:
-      213: -6273757572876797851
-    second: DEATH_52
+      213: 1750769831183858808
+    second: Imp Sprite Sheet_52
   - first:
-      213: 4777408265485640586
-    second: DEATH_53
+      213: 7014634417467823104
+    second: Imp Sprite Sheet_53
   - first:
-      213: 4768966074558531138
-    second: DEATH_54
+      213: -3520037285322877892
+    second: Imp Sprite Sheet_54
   - first:
-      213: 6292612816720084467
-    second: DEATH_55
+      213: -3315827861055641536
+    second: Imp Sprite Sheet_55
   - first:
-      213: -2273879036996135350
-    second: DEATH_56
+      213: 3574230294595610358
+    second: Imp Sprite Sheet_56
   - first:
-      213: -4971622888143364615
-    second: DEATH_57
+      213: -2977134422441006127
+    second: Imp Sprite Sheet_57
   - first:
-      213: 8450007998064704998
-    second: DEATH_58
+      213: -1669697114704650523
+    second: Imp Sprite Sheet_58
   - first:
-      213: -8861358190610450754
-    second: DEATH_59
+      213: -2101279757016366961
+    second: Imp Sprite Sheet_59
   - first:
-      213: -2905255736259820078
-    second: DEATH_60
+      213: 4778254834851712368
+    second: Imp Sprite Sheet_60
   - first:
-      213: 5142102429138729462
-    second: DEATH_61
-  - first:
-      213: -8046295075015001949
-    second: DEATH_62
-  - first:
-      213: 3532333845496891569
-    second: DEATH_63
-  - first:
-      213: -1713936859769627483
-    second: DEATH_64
-  - first:
-      213: -4307823343194281170
-    second: DEATH_65
-  - first:
-      213: -5005384868152020087
-    second: DEATH_66
-  - first:
-      213: -7058683197761909229
-    second: DEATH_67
-  - first:
-      213: -3348206910753767881
-    second: DEATH_68
-  - first:
-      213: -2442049442031589815
-    second: DEATH_69
-  - first:
-      213: 760269798067806864
-    second: DEATH_70
+      213: -6321666208280337480
+    second: Imp Sprite Sheet_61
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -247,7 +220,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -319,30 +292,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DEATH_0
+      name: Imp Sprite Sheet_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 1
-        width: 68
-        height: 66
+        x: 6
+        y: 351
+        width: 17
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,393 +311,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37e5a204ce736c7e0800000000000000
-      internalID: -1745646317731160461
+      spriteID: eb2d87acbb95f8e90800000000000000
+      internalID: -7021294630956641602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_1
+      name: Imp Sprite Sheet_1
       rect:
         serializedVersion: 2
-        x: 89
-        y: 43
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0a76230465072c4e0800000000000000
-      internalID: -1962882971833571424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_2
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 1
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7449c8df8cee96360800000000000000
-      internalID: 7163519229324203079
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_3
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 44
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e6629ce039d1cc8d0800000000000000
-      internalID: -2824850348822682002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_4
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 46
-        width: 15
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d7d98ede4ff3003c0800000000000000
-      internalID: -4395442915117589123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_5
-      rect:
-        serializedVersion: 2
-        x: 246
-        y: 45
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 011979d4091757860800000000000000
-      internalID: 7527047216810660112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_6
-      rect:
-        serializedVersion: 2
-        x: 266
-        y: 48
-        width: 15
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 118f206950f4f1ba0800000000000000
-      internalID: -6116082883535636463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_7
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 38
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6bca3b68a1d4adfa0800000000000000
-      internalID: -5775218795824829258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_8
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 45
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eed6cc30ff9ab22b0800000000000000
-      internalID: -5608201998214337042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_9
-      rect:
-        serializedVersion: 2
-        x: 345
-        y: 48
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e166f82076044b50800000000000000
-      internalID: 6576388434661106147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_10
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 38
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b8d99a2409e7affe0800000000000000
-      internalID: -1154471196408308341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_11
-      rect:
-        serializedVersion: 2
-        x: 402
-        y: 46
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d2a9e136ef3e4dd10800000000000000
-      internalID: 2149593603886717485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_12
-      rect:
-        serializedVersion: 2
-        x: 421
-        y: 37
-        width: 23
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0cc6ca901b0fb9c00800000000000000
-      internalID: 908584393007459520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_13
-      rect:
-        serializedVersion: 2
-        x: 423
-        y: 50
-        width: 13
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9902c3340e1274a00800000000000000
-      internalID: 740597910810140825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_14
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 13
-        width: 16
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d01f0389e75d4df30800000000000000
-      internalID: 4599535859148058893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_15
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 14
-        width: 16
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: df07aa2d1e0809f40800000000000000
-      internalID: 5733224033033023741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_16
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 14
-        width: 15
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4162215e6c18acfb0800000000000000
-      internalID: -4626742975923083756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_17
-      rect:
-        serializedVersion: 2
-        x: 182
-        y: 32
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a151b5f06e04faff0800000000000000
-      internalID: -22728116269279974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_18
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 35
-        width: 22
+        x: 38
+        y: 351
+        width: 17
         height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -747,20 +333,328 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 035298e76dcb00980800000000000000
-      internalID: -8574646061081483984
+      spriteID: 5337acb9839afd250800000000000000
+      internalID: 5971677691513566005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_19
+      name: Imp Sprite Sheet_2
       rect:
         serializedVersion: 2
-        x: 204
-        y: 14
+        x: 70
+        y: 351
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6cccdfcc11f30f70800000000000000
+      internalID: 9152423973795712107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 351
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7231c4ab7ce1744c0800000000000000
+      internalID: -4303437075756346585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 351
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 797f6ccb05bd621a0800000000000000
+      internalID: -6834534244677126249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 351
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29f87792c33abfb0800000000000000
+      internalID: -4631332355939174100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 351
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b271ca028a38320800000000000000
+      internalID: 2559073871556193069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 320
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9049e0bb3f52f2e20800000000000000
+      internalID: 3327920378395661321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 321
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2ce7173e75987b50800000000000000
+      internalID: 6591182423979453482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 320
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9020f21c9d4e450800000000000000
+      internalID: 6117253617616554438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 319
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220a71b3e92974330800000000000000
+      internalID: 3695083227574673442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 320
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5409514d33f393e70800000000000000
+      internalID: 9095370414285492293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 321
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3394094d361df9cd0800000000000000
+      internalID: -2549088637370218189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 320
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29deabee268dcdab0800000000000000
+      internalID: -4981869168354988654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 319
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 861d6547879e980f0800000000000000
+      internalID: -1114102729240293016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 287
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18d273043babf90c0800000000000000
+      internalID: -4566726218091123327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 287
         width: 15
-        height: 28
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -769,20 +663,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b71273d2de4bc8e20800000000000000
-      internalID: 3354254753243013499
+      spriteID: 187a3a150414356a0800000000000000
+      internalID: -6461749295843137663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_20
+      name: Imp Sprite Sheet_17
       rect:
         serializedVersion: 2
-        x: 238
-        y: 13
-        width: 15
-        height: 29
+        x: 70
+        y: 287
+        width: 18
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -791,348 +685,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9fa7e1d955eb20230800000000000000
-      internalID: 3603651926767336185
+      spriteID: ba730a852298bef30800000000000000
+      internalID: 4605925824525252523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_21
+      name: Imp Sprite Sheet_18
       rect:
         serializedVersion: 2
-        x: 261
-        y: 33
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2900926e906f87470800000000000000
-      internalID: 8392728427981504658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_22
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 38
-        width: 14
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e01db6f3aa480c570800000000000000
-      internalID: 8484927564709351694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_23
-      rect:
-        serializedVersion: 2
-        x: 283
-        y: 14
-        width: 15
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3916cbcc257723a50800000000000000
-      internalID: 6499388409754968467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_24
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 30
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d10f6114a30b0210800000000000000
-      internalID: 1300136920628527571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_25
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 37
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c370b683a3d8887c0800000000000000
-      internalID: -4068846982135085252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_26
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 38
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a5008e72988f2e2d0800000000000000
-      internalID: -3250762713044352934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_27
-      rect:
-        serializedVersion: 2
-        x: 367
-        y: 31
-        width: 8
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a345d1d53b8dc5b0800000000000000
-      internalID: -5346464119348968536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_28
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 33
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4563775527882990800000000000000
-      internalID: -7410524592387431091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_29
-      rect:
-        serializedVersion: 2
-        x: 419
-        y: 36
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8755d4226fe2cd4e0800000000000000
-      internalID: -1955636503513311880
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_30
-      rect:
-        serializedVersion: 2
-        x: 447
-        y: 35
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 19e5a542ad85f6440800000000000000
-      internalID: 4931257810929999505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_31
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 20
-        width: 26
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f67e72517f97b30c0800000000000000
-      internalID: -4594944892682639505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_32
-      rect:
-        serializedVersion: 2
-        x: 193
-        y: 29
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 476bc2c6cff64cc20800000000000000
-      internalID: 3225826363041429108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_33
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 20
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1b3c23d775bb6300800000000000000
-      internalID: 246490130870450972
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_34
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 28
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad3fa9d94c06baa80800000000000000
-      internalID: -8454557477883939878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_35
-      rect:
-        serializedVersion: 2
-        x: 317
-        y: 23
-        width: 9
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 38ae8a5ff97816010800000000000000
-      internalID: 1180373698438818435
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_36
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 21
+        x: 102
+        y: 287
         width: 18
         height: 14
       alignment: 0
@@ -1143,20 +707,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e5fcbb565756b0a0800000000000000
-      internalID: -6866204553461828123
+      spriteID: 0331e694dad986b00800000000000000
+      internalID: 822080299581969200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_37
+      name: Imp Sprite Sheet_19
       rect:
         serializedVersion: 2
-        x: 354
-        y: 28
-        width: 8
-        height: 9
+        x: 134
+        y: 287
+        width: 18
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1165,20 +729,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3f32aa2468623eb0800000000000000
-      internalID: -4741612678246416579
+      spriteID: 1c57eebddfece4590800000000000000
+      internalID: -7687979924162972223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_38
+      name: Imp Sprite Sheet_20
       rect:
         serializedVersion: 2
-        x: 368
-        y: 20
-        width: 9
-        height: 13
+        x: 166
+        y: 287
+        width: 17
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1187,20 +751,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f869fcb0611f1ce10800000000000000
-      internalID: 2216317568632723087
+      spriteID: 7093e20d0aea4b050800000000000000
+      internalID: 5815465024552843527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_39
+      name: Imp Sprite Sheet_21
       rect:
         serializedVersion: 2
-        x: 396
-        y: 23
-        width: 7
-        height: 13
+        x: 7
+        y: 255
+        width: 17
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1209,107 +773,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc0edaad3baf001a0800000000000000
-      internalID: -6845195783228235572
+      spriteID: 899744e0fcda115d0800000000000000
+      internalID: -3093500364217615976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_40
+      name: Imp Sprite Sheet_22
       rect:
         serializedVersion: 2
-        x: 419
-        y: 23
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 794a914738d9eb9e0800000000000000
-      internalID: -1603671229383203689
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_41
-      rect:
-        serializedVersion: 2
-        x: 423
-        y: 23
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f038da30e3587b390800000000000000
-      internalID: -7802621327999925489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_42
-      rect:
-        serializedVersion: 2
-        x: 433
-        y: 29
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1026149728bea0d70800000000000000
-      internalID: 9010272950120702465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_43
-      rect:
-        serializedVersion: 2
-        x: 449
-        y: 20
-        width: 7
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 63d95e67ebafed660800000000000000
-      internalID: 7412637732643904822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_44
-      rect:
-        serializedVersion: 2
-        x: 173
-        y: 7
-        width: 22
+        x: 39
+        y: 255
+        width: 17
         height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1319,415 +795,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 984852ea81527ab70800000000000000
-      internalID: 8910131175706952841
+      spriteID: 3b36282f088ac2360800000000000000
+      internalID: 7146271980508046259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_45
+      name: Imp Sprite Sheet_23
       rect:
         serializedVersion: 2
-        x: 175
-        y: 19
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 21d7841fbdb584550800000000000000
-      internalID: 6145262691751066898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_46
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 16
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 87e1b15afc3c463d0800000000000000
-      internalID: -3214228937440027016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_47
-      rect:
-        serializedVersion: 2
-        x: 253
-        y: 19
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f10d837eea6911c20800000000000000
-      internalID: 3175484890220646431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_48
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 13
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5649c42b222a1a50800000000000000
-      internalID: 6492539381504099935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_49
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 13
-        width: 8
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b657d3291dd60010800000000000000
-      internalID: 1154853454512346808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_50
-      rect:
-        serializedVersion: 2
-        x: 332
-        y: 19
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 412b0bd6927a24840800000000000000
-      internalID: 5206907915569508884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_51
-      rect:
-        serializedVersion: 2
-        x: 363
-        y: 15
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6bd9d94694e6ed90800000000000000
-      internalID: -7068711230976173203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_52
-      rect:
-        serializedVersion: 2
-        x: 398
-        y: 13
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 568f2cd2ab22fe8a0800000000000000
-      internalID: -6273757572876797851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_53
-      rect:
-        serializedVersion: 2
-        x: 413
-        y: 20
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a8369437183cc4240800000000000000
-      internalID: 4777408265485640586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_54
-      rect:
-        serializedVersion: 2
-        x: 424
-        y: 11
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 24643f3b065ce2240800000000000000
-      internalID: 4768966074558531138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_55
-      rect:
-        serializedVersion: 2
-        x: 445
-        y: 15
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3fdbba1640ad35750800000000000000
-      internalID: 6292612816720084467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_56
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 2
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4653a9301f8170e0800000000000000
-      internalID: -2273879036996135350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_57
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 2
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9fd5303f25f310bb0800000000000000
-      internalID: -4971622888143364615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_58
-      rect:
-        serializedVersion: 2
-        x: 251
-        y: 6
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ed3bd11185744570800000000000000
-      internalID: 8450007998064704998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_59
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 8
-        width: 14
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb67a25dca1260580800000000000000
-      internalID: -8861358190610450754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_60
-      rect:
-        serializedVersion: 2
-        x: 330
-        y: 6
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d54192fc457ea7d0800000000000000
-      internalID: -2905255736259820078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_61
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 7
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6f9bc7f4aea6c5740800000000000000
-      internalID: 5142102429138729462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_62
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 12
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a871c7a241d55090800000000000000
-      internalID: -8046295075015001949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_63
-      rect:
-        serializedVersion: 2
-        x: 408
-        y: 6
-        width: 23
+        x: 71
+        y: 255
+        width: 17
         height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1737,20 +817,526 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b88ee8daee550130800000000000000
-      internalID: 3532333845496891569
+      spriteID: b795c9458c92dca20800000000000000
+      internalID: 3084167260208388475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_64
+      name: Imp Sprite Sheet_24
       rect:
         serializedVersion: 2
-        x: 176
-        y: 1
+        x: 103
+        y: 255
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f59cf694124696f0800000000000000
+      internalID: -678282037672765964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 195
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 485cdca5fec000060800000000000000
+      internalID: 6917543249801233796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 223
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2cc4d8380dab0c60800000000000000
+      internalID: 7785506631664847917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 196
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01386c4975a5811f0800000000000000
+      internalID: -1074009178923171056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 196
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b819759542a64ac0800000000000000
+      internalID: -3871228409934178121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 223
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee4b6c4f795ed91d0800000000000000
+      internalID: -3342262907629554450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 194
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af41efc6f6fec850800000000000000
+      internalID: 6399323660450090918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 159
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f122837e917085030800000000000000
+      internalID: 3483542119605871135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 159
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbdb5964b2d3f840800000000000000
+      internalID: 5256776862375074738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 159
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1943848de662530800000000000000
+      internalID: 3829870408328581606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 159
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6bdb94a7c07c90c0800000000000000
+      internalID: -4567651919298045073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 159
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ea00dc3e9ac6340800000000000000
+      internalID: 4858444893887966754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 159
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54dd3dd744769d400800000000000000
+      internalID: 349423989964397893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 159
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a1d07b707b7f6f0800000000000000
+      internalID: -650850377368004069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 128
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935e37b6b027d81f0800000000000000
+      internalID: -1041050545479752391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 129
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9defa6cb3ec853bc0800000000000000
+      internalID: -3803979400497922343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 128
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7669f8acad6ace20800000000000000
+      internalID: 3371627859376957050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 127
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62660b9e5ee46acc0800000000000000
+      internalID: -3700183294463154650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 128
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0246f3d3849751490800000000000000
+      internalID: -7776175830413122528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 129
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 602596797e3b534f0800000000000000
+      internalID: -849575147430391290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 128
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300d254fd5e4b4fb0800000000000000
+      internalID: -4662546823774023677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 127
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2e134c0624142e0800000000000000
+      internalID: -2143358964275748111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 95
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5753f2bf4e3e34ff0800000000000000
+      internalID: -52948197992090251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 95
         width: 15
-        height: 9
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1759,20 +1345,306 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ac9bf1c18fd638e0800000000000000
-      internalID: -1713936859769627483
+      spriteID: 6d9dd4d09a2b919c0800000000000000
+      internalID: -3955934358525847082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DEATH_65
+      name: Imp Sprite Sheet_48
       rect:
         serializedVersion: 2
-        x: 255
+        x: 72
+        y: 95
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de3c5101c458a2d0800000000000000
+      internalID: -3267268341729050927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 95
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 922d75095d67a7350800000000000000
+      internalID: 6015250911928504873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 95
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d63e49f9e2da490800000000000000
+      internalID: -7733473722192663148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 95
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8b2f298ccbeb5360800000000000000
+      internalID: 7159575296342961036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 63
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c3f2fa2ebfb4810800000000000000
+      internalID: 1750769831183858808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 63
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004166a66dcf85160800000000000000
+      internalID: 7014634417467823104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 63
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34133c2db0562fc0800000000000000
+      internalID: -3520037285322877892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 63
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0486f6dd020dbf1d0800000000000000
+      internalID: -3315827861055641536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 5
+        width: 17
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6afce04873a9130800000000000000
+      internalID: 3574230294595610358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 31
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbe0dd24081fa6d0800000000000000
+      internalID: -2977134422441006127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 3
+        width: 83
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eed883125b04d8e0800000000000000
+      internalID: -1669697114704650523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 31
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80025da131c6d2e0800000000000000
+      internalID: -2101279757016366961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 31
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d01adb475cf4240800000000000000
+      internalID: 4778254834851712368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Imp Sprite Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 161
         y: 0
-        width: 15
-        height: 8
+        width: 38
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1781,118 +1653,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2be4c14e798734c0800000000000000
-      internalID: -4307823343194281170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_66
-      rect:
-        serializedVersion: 2
-        x: 281
-        y: 2
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 983fea96bfc498ab0800000000000000
-      internalID: -5005384868152020087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_67
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31e0267b7058a0e90800000000000000
-      internalID: -7058683197761909229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_68
-      rect:
-        serializedVersion: 2
-        x: 364
-        y: 2
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73e7302ed87c881d0800000000000000
-      internalID: -3348206910753767881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_69
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 0
-        width: 13
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94624c398f81c1ed0800000000000000
-      internalID: -2442049442031589815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DEATH_70
-      rect:
-        serializedVersion: 2
-        x: 443
-        y: 2
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0922a4f6a550d8a00800000000000000
-      internalID: 760269798067806864
+      spriteID: 8b32cd2c31ee448a0800000000000000
+      internalID: -6321666208280337480
       vertices: []
       indices: 
       edges: []
@@ -1911,77 +1673,68 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DEATH_0: -1745646317731160461
-      DEATH_1: -1962882971833571424
-      DEATH_10: -1154471196408308341
-      DEATH_11: 2149593603886717485
-      DEATH_12: 908584393007459520
-      DEATH_13: 740597910810140825
-      DEATH_14: 4599535859148058893
-      DEATH_15: 5733224033033023741
-      DEATH_16: -4626742975923083756
-      DEATH_17: -22728116269279974
-      DEATH_18: -8574646061081483984
-      DEATH_19: 3354254753243013499
-      DEATH_2: 7163519229324203079
-      DEATH_20: 3603651926767336185
-      DEATH_21: 8392728427981504658
-      DEATH_22: 8484927564709351694
-      DEATH_23: 6499388409754968467
-      DEATH_24: 1300136920628527571
-      DEATH_25: -4068846982135085252
-      DEATH_26: -3250762713044352934
-      DEATH_27: -5346464119348968536
-      DEATH_28: -7410524592387431091
-      DEATH_29: -1955636503513311880
-      DEATH_3: -2824850348822682002
-      DEATH_30: 4931257810929999505
-      DEATH_31: -4594944892682639505
-      DEATH_32: 3225826363041429108
-      DEATH_33: 246490130870450972
-      DEATH_34: -8454557477883939878
-      DEATH_35: 1180373698438818435
-      DEATH_36: -6866204553461828123
-      DEATH_37: -4741612678246416579
-      DEATH_38: 2216317568632723087
-      DEATH_39: -6845195783228235572
-      DEATH_4: -4395442915117589123
-      DEATH_40: -1603671229383203689
-      DEATH_41: -7802621327999925489
-      DEATH_42: 9010272950120702465
-      DEATH_43: 7412637732643904822
-      DEATH_44: 8910131175706952841
-      DEATH_45: 6145262691751066898
-      DEATH_46: -3214228937440027016
-      DEATH_47: 3175484890220646431
-      DEATH_48: 6492539381504099935
-      DEATH_49: 1154853454512346808
-      DEATH_5: 7527047216810660112
-      DEATH_50: 5206907915569508884
-      DEATH_51: -7068711230976173203
-      DEATH_52: -6273757572876797851
-      DEATH_53: 4777408265485640586
-      DEATH_54: 4768966074558531138
-      DEATH_55: 6292612816720084467
-      DEATH_56: -2273879036996135350
-      DEATH_57: -4971622888143364615
-      DEATH_58: 8450007998064704998
-      DEATH_59: -8861358190610450754
-      DEATH_6: -6116082883535636463
-      DEATH_60: -2905255736259820078
-      DEATH_61: 5142102429138729462
-      DEATH_62: -8046295075015001949
-      DEATH_63: 3532333845496891569
-      DEATH_64: -1713936859769627483
-      DEATH_65: -4307823343194281170
-      DEATH_66: -5005384868152020087
-      DEATH_67: -7058683197761909229
-      DEATH_68: -3348206910753767881
-      DEATH_69: -2442049442031589815
-      DEATH_7: -5775218795824829258
-      DEATH_70: 760269798067806864
-      DEATH_8: -5608201998214337042
-      DEATH_9: 6576388434661106147
+      Imp Sprite Sheet_0: -7021294630956641602
+      Imp Sprite Sheet_1: 5971677691513566005
+      Imp Sprite Sheet_10: 3695083227574673442
+      Imp Sprite Sheet_11: 9095370414285492293
+      Imp Sprite Sheet_12: -2549088637370218189
+      Imp Sprite Sheet_13: -4981869168354988654
+      Imp Sprite Sheet_14: -1114102729240293016
+      Imp Sprite Sheet_15: -4566726218091123327
+      Imp Sprite Sheet_16: -6461749295843137663
+      Imp Sprite Sheet_17: 4605925824525252523
+      Imp Sprite Sheet_18: 822080299581969200
+      Imp Sprite Sheet_19: -7687979924162972223
+      Imp Sprite Sheet_2: 9152423973795712107
+      Imp Sprite Sheet_20: 5815465024552843527
+      Imp Sprite Sheet_21: -3093500364217615976
+      Imp Sprite Sheet_22: 7146271980508046259
+      Imp Sprite Sheet_23: 3084167260208388475
+      Imp Sprite Sheet_24: -678282037672765964
+      Imp Sprite Sheet_25: 6917543249801233796
+      Imp Sprite Sheet_26: 7785506631664847917
+      Imp Sprite Sheet_27: -1074009178923171056
+      Imp Sprite Sheet_28: -3871228409934178121
+      Imp Sprite Sheet_29: -3342262907629554450
+      Imp Sprite Sheet_3: -4303437075756346585
+      Imp Sprite Sheet_30: 6399323660450090918
+      Imp Sprite Sheet_31: 3483542119605871135
+      Imp Sprite Sheet_32: 5256776862375074738
+      Imp Sprite Sheet_33: 3829870408328581606
+      Imp Sprite Sheet_34: -4567651919298045073
+      Imp Sprite Sheet_35: 4858444893887966754
+      Imp Sprite Sheet_36: 349423989964397893
+      Imp Sprite Sheet_37: -650850377368004069
+      Imp Sprite Sheet_38: -1041050545479752391
+      Imp Sprite Sheet_39: -3803979400497922343
+      Imp Sprite Sheet_4: -6834534244677126249
+      Imp Sprite Sheet_40: 3371627859376957050
+      Imp Sprite Sheet_41: -3700183294463154650
+      Imp Sprite Sheet_42: -7776175830413122528
+      Imp Sprite Sheet_43: -849575147430391290
+      Imp Sprite Sheet_44: -4662546823774023677
+      Imp Sprite Sheet_45: -2143358964275748111
+      Imp Sprite Sheet_46: -52948197992090251
+      Imp Sprite Sheet_47: -3955934358525847082
+      Imp Sprite Sheet_48: -3267268341729050927
+      Imp Sprite Sheet_49: 6015250911928504873
+      Imp Sprite Sheet_5: -4631332355939174100
+      Imp Sprite Sheet_50: -7733473722192663148
+      Imp Sprite Sheet_51: 7159575296342961036
+      Imp Sprite Sheet_52: 1750769831183858808
+      Imp Sprite Sheet_53: 7014634417467823104
+      Imp Sprite Sheet_54: -3520037285322877892
+      Imp Sprite Sheet_55: -3315827861055641536
+      Imp Sprite Sheet_56: 3574230294595610358
+      Imp Sprite Sheet_57: -2977134422441006127
+      Imp Sprite Sheet_58: -1669697114704650523
+      Imp Sprite Sheet_59: -2101279757016366961
+      Imp Sprite Sheet_6: 2559073871556193069
+      Imp Sprite Sheet_60: 4778254834851712368
+      Imp Sprite Sheet_61: -6321666208280337480
+      Imp Sprite Sheet_7: 3327920378395661321
+      Imp Sprite Sheet_8: 6591182423979453482
+      Imp Sprite Sheet_9: 6117253617616554438
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

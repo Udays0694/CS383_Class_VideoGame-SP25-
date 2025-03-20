@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 movement;
     public float health = 100;
+    
 
     void Start()
     {
