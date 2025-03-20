@@ -15,7 +15,7 @@ public class RoomGenerator : MonoBehaviour
     private void Update()
     {
         if (GeneratableRooms == null) { Debug.Log("No Avaliable Rooms to Generate"); }
-        if (Input.GetKeyDown(KeyCode.E)) { GenerateRoom(); }
+       // if (Input.GetKeyDown(KeyCode.E)) { GenerateRoom(); }
     }
 
     int DetermineRoom() {
@@ -26,18 +26,18 @@ public class RoomGenerator : MonoBehaviour
     }
     void UpdateRoomsList()
     {
-        Rooms = GameObject.FindObjectsByType<Room>(FindObjectsSortMode.None);
+        Rooms = GameObject.FindObjectsByType<Room>(FindObjectsSortMode.InstanceID);
     }
 
-    Room GenerateRoom() {
-        int ind; 
-        ind = DetermineRoom();
+  public  Room GenerateRoom()
+    {
+        int ind = DetermineRoom();
         Debug.Log("Spawning room" + ind);
-        Instantiate(GeneratableRooms[ind], new Vector2(12, 30), Quaternion.identity);
+        Room newRoom = Instantiate(GeneratableRooms[ind], Vector3.zero, Quaternion.identity);
         UpdateRoomsList();
-        return null; // null for now;
-
+        return newRoom;
     }
+
 
 
 }

@@ -6,10 +6,10 @@ public class MainMenu : MonoBehaviour
     // This function starts the game by loading the main game scene
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene"); // Change "GameScene" to your actual scene name
+        SceneManager.LoadScene(1); 
     }
 
-    // This function can be used to open settings (currently, it just logs a message)
+    // This function can be used to open settings (currently it just logs a message)
     public void OpenSettings()
     {
         Debug.Log("Settings Opened!"); 
