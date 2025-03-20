@@ -1,27 +1,22 @@
-//Initializes xp variables 
-
 using UnityEngine;
 
-namespace Zach.Leveling
+public class XP : MonoBehaviour
 {
-    public class XP : MonoBehaviour
+    private int xp = 0;
+    private int level = 1;
+
+    public void AddXP(int amount)
     {
-        private int xp = 0;
-        private int level = 1;
+        xp += amount;
+    }
 
-        public void AddXP(int amount)
-        {
-            xp += amount;
-        }
+    public int GetLevel()
+    {
+        return level;
+    }
 
-        public int GetLevel()
-        {
-            return level;
-        }
-
-        public int GetXP()
-        {
-            return xp;
-        }
+    public int GetXP()
+    {
+        return xp;
     }
 }

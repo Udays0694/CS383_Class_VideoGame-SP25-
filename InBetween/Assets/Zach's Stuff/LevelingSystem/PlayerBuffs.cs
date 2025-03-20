@@ -1,10 +1,8 @@
-//manages player buffs/upgrades
-
 using UnityEngine;
 
 public class PlayerBuffs : MonoBehaviour
 {
-    public float health = 100f; 
+    public float health = 100f;
     public int strength = 10;
     public int agility = 10;
 
@@ -13,7 +11,5 @@ public class PlayerBuffs : MonoBehaviour
         health += healthIncrease;
         strength += strengthIncrease;
         agility += agilityIncrease;
-
-
     }
 }
