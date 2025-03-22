@@ -1,14 +1,54 @@
+using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+
+public class SkeletonScriptDataBC
+{
+    public float health = 100;
+
+    public virtual float getHealth()
+    {
+        health = 0;
+        return health;
+    }
+
+    public virtual void setHealth(float damage)
+    {
+        health = 0;
+    }
+
+    public static implicit operator SkeletonScriptDataBC(SkeletonScript v)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class SkeletonScriptData : SkeletonScriptDataBC
+{
+    public override float getHealth()
+    {
+        return base.health;
+    }
+
+    public override void setHealth(float damage)
+    {
+        base.health -= damage;
+    }
+}
 
 public class SkeletonScript : EnemyClass
 {
     public string nameType = "Skeleton";
-    public float health = 100;
     public float movementSpeed = 3f;
     public float attackDamage = 30f;
     public float xpAward = 10f;
 
+    public SkeletonScriptDataBC skeletonScript;
 
+    private void Start()
+    {
+        skeletonScript = new SkeletonScript();
+    }
 
     public override void Navigation()
     {
@@ -45,8 +85,8 @@ public class SkeletonScript : EnemyClass
 
     public override void OnTakeDamage(float damage)
     {
-        health -= damage;
-        if (health <= 0)
+        skeletonScript.setHealth(damage);
+        if (skeletonScript.getHealth() <= 0)
         {
             base.XPAward(xpAward);
         }
