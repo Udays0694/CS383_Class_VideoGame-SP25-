@@ -1,5 +1,5 @@
 {
-    "name": "StressTest",
+    "name": "zachStressTest",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
