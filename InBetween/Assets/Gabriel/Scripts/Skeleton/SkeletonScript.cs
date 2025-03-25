@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SkeletonScriptDataBC
 {
-    public float health = 100;
+    protected float health = 100;
 
     public virtual float getHealth()
     {
+        Debug.Log("setHealth called in super class");
         health = 0;
         return health;
     }
@@ -15,6 +16,7 @@ public class SkeletonScriptDataBC
     public virtual void setHealth(float damage)
     {
         health = 0;
+     
     }
 
     public static implicit operator SkeletonScriptDataBC(SkeletonScript v)
@@ -27,6 +29,7 @@ public class SkeletonScriptData : SkeletonScriptDataBC
 {
     public override float getHealth()
     {
+        Debug.Log("setHealth called in sub class");
         return base.health;
     }
 
@@ -45,13 +48,15 @@ public class SkeletonScript : EnemyClass
 
     public SkeletonScriptDataBC skeletonScript;
 
-    private void Start()
+    protected override void Start()
     {
-        skeletonScript = new SkeletonScript();
+        base.Start();
+        skeletonScript = new SkeletonScriptData();
     }
 
     public override void Navigation()
     {
+        //skeletonScript.getHealth();
         if (transform.position.x < base.playerScript.rb.position.x)
         {
             base._rb.linearVelocityX = movementSpeed;

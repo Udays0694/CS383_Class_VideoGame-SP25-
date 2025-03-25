@@ -13,7 +13,7 @@ public class EnemyClass : MonoBehaviour
     // Animate
     public SpriteRenderer _spriteRenderer = null;
 
-    void Start()
+    protected virtual void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
