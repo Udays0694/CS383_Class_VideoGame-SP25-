@@ -53,6 +53,7 @@ public class BulletController : MonoBehaviour
 	// Move the bullet in whatever direction its facing
 	private void move()
 	{
+		// Lag behind player position to make the "heatseeking" effect more natural
 		const float LERP_AMT = 0.03f;
 		Vector3 playerDir = Player.transform.position - transform.position;
 		moveDir = new Vector2(Mathf.Lerp(moveDir.x, playerDir.x, LERP_AMT * (1 / playerDir.magnitude)),

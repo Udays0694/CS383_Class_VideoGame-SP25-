@@ -12,6 +12,7 @@ public class BossController : MonoBehaviour
 	// Characteristics
 	private Slider healthBar; 
     private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
 	private float attack1Timer = 0;
 	[SerializeField] private GameObject Bullet1;
 	private bool facingLeft = true;
@@ -27,14 +28,17 @@ public class BossController : MonoBehaviour
     {
 		// Initiate health bar
 		healthBar = GetComponentInChildren<Slider>();
-    	healthBar.maxValue = health;
+    	healthBar.maxValue = health + 2f;
 		healthBar.value = health;
 		
 		// Get reference to player
 		Player = GameObject.FindGameObjectWithTag("Player");
 		
-		// Initiate animator
+		// Get reference to animator
 		_animator = GetComponent<Animator>();
+		
+		// Get reference to sprite renderer
+		_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
     // Update is called once per frame
@@ -55,18 +59,22 @@ public class BossController : MonoBehaviour
 		float flipTransformDist = 3.08f;  
 		
 		// Calculate direction to player
-		playerDir = Player.transform.position - (transform.position + new Vector3(centerDiff, -3.5f, 0));
+		playerDir = Player.transform.position - (transform.position + new Vector3(centerDiff, -2.5f, 0));
 		
 		// Face the player
-		if(facingLeft && playerDir.x > 0)//flipTransformDist)
+		if(facingLeft && playerDir.x > 0)
 		{
 			transform.position += new Vector3(flipTransformDist, 0, 0);
+//			_spriteRenderer.flipX = true;
+			healthBar.transform.Rotate(0, 180, 0);
 			transform.Rotate(0, 180, 0);
 			facingLeft = false;
 		}
-		else if(!facingLeft && playerDir.x < 0)//-flipTransformDist)
+		else if(!facingLeft && playerDir.x < 0)
 		{
 			transform.position += new Vector3(-flipTransformDist, 0, 0);
+//			_spriteRenderer.flipX = false;
+			healthBar.transform.Rotate(0, 180, 0);
 			transform.Rotate(0, 180, 0);
 			facingLeft = true;
 		}
@@ -85,9 +93,7 @@ public class BossController : MonoBehaviour
 	// Base attack
 	public void attack1()
 	{
-		// Generate quaternion
-//		Vector3 playerDir3d = new Vector3(playerDir.x, playerDir.y, 0);
-//		Quaternion shootDir = Quaternion.LookRotation(Vector3.forward, playerDir3d);
+		// Generate quaternion for spawn rotation of bullet
 		int xDir = 1;
 		if(facingLeft)
 		{
@@ -95,31 +101,23 @@ public class BossController : MonoBehaviour
 		}
 		Quaternion shootDir = Quaternion.LookRotation(Vector3.forward, new Vector3(xDir, 0, 0));
 		
-		
+		// Spawn bullet
 		Instantiate(Bullet1, mouthPos, shootDir);
-		
-		// Play animation
-		//_animator.Play("BossAttack");
 	}
 
 	// Move towards player
 	private void chasePlayer()
 	{
 		// Move away from player if its too close
-		Vector2 moveDir = playerDir;
+		Vector3 moveDir = playerDir;
 /*		if(playerDir.magnitude < 3.5f)
 		{
 			moveDir = -moveDir;
 		}
 */		
 		// Calculate move distance
-		Vector2 move;
-		move.x = transform.position.x
-				 + moveDir.normalized.x * Time.deltaTime * speed;
-		move.y = transform.position.y
-				   	  + moveDir.normalized.y * Time.deltaTime * speed;
-		
-
+		Vector3 move;
+		move = transform.position + moveDir.normalized * Time.deltaTime * speed;
 
 		// Apply movement
 		transform.position = move;
