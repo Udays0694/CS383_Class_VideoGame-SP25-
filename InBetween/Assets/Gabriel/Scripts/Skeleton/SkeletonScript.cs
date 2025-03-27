@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkeletonScriptDataBC
 {
-    protected float health = 100;
+    protected float health = 100f;
 
     public virtual float getHealth()
     {
@@ -44,6 +44,9 @@ public class SkeletonScript : EnemyClass
     public string nameType = "Skeleton";
     public float movementSpeed = 3f;
     public float attackDamage = 30f;
+    public float attackCooldown = 0.5f;
+    public float attackCooldownTimer = 0f;
+    public bool attackReady = true;
     public float xpAward = 10f;
 
     public SkeletonScriptDataBC skeletonScript;
@@ -52,6 +55,20 @@ public class SkeletonScript : EnemyClass
     {
         base.Start();
         skeletonScript = new SkeletonScriptData();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        if (!attackReady)
+        {
+            attackCooldownTimer += Time.deltaTime;
+            if (attackCooldownTimer >= attackCooldown / 1000f)
+            {
+                attackReady = true;
+                attackCooldownTimer = 0f;
+            }
+        }
     }
 
     public override void Navigation()
@@ -77,7 +94,7 @@ public class SkeletonScript : EnemyClass
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, base.playerScript.rb.position);
-        if (distanceToPlayer < 3)
+        if (distanceToPlayer < 3 && attackReady == true)
         {
             Attack();
         }
@@ -85,7 +102,9 @@ public class SkeletonScript : EnemyClass
 
     public override void Attack()
     {
+        //Debug.Log("Attacked player");
         base.DamagePlayer(attackDamage);
+        attackReady = false;
     }
 
     public override void OnTakeDamage(float damage)

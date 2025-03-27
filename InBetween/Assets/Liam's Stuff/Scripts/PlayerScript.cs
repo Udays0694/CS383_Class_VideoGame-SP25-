@@ -1,16 +1,43 @@
 using UnityEngine;
 
+public class PlayerScriptDataBC
+{
+    protected float health = 100f;
+
+    public virtual float getHealth()
+    {
+        return health;
+    }
+
+    public virtual void setHealth(float damage)
+    {
+        Debug.Log("setHealth called in super class");
+        health -= 5f;
+    }
+}
+
+public class PlayerScriptData : PlayerScriptDataBC
+{
+    public override void setHealth(float damage)
+    {
+        Debug.Log("setHealth called in sub class");
+        base.health -= damage;
+    }
+}
+
 public class PlayerScript : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Vector2 movement;
-    public float health = 100;
-    
+    public float health = 0f;
+
+    public PlayerScriptDataBC playerScript;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerScript = new PlayerScriptData();
     }
 
     void Update()
@@ -38,6 +65,7 @@ public class PlayerScript : MonoBehaviour
         
         // Normalize movement to prevent faster diagonal movement
         movement = movement.normalized;
+        health = playerScript.getHealth();
     }
 
     void FixedUpdate()
@@ -48,8 +76,8 @@ public class PlayerScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        if (health < 0)
+        playerScript.setHealth(damage);
+        if (playerScript.getHealth() <= 0)
         {
             Death();
         }
@@ -57,6 +85,7 @@ public class PlayerScript : MonoBehaviour
 
     void Death()
     {
+        Debug.Log("Player Died");
         Destroy(gameObject);
     }
 }

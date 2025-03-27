@@ -7,9 +7,14 @@ using UnityEngine.SceneManagement;
 public class HealthBar2 : MonoBehaviour
 {
     public Image healthBar;
-    public float healthAmount = 100;
+    public PlayerScript playerScript;
+    public float healthAmount;
 
-
+    private void Start()
+    {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+        healthAmount = playerScript.health;
+    }
 
     private void Update()
     {
@@ -24,6 +29,7 @@ public class HealthBar2 : MonoBehaviour
             Healing(5);
         }
 
+        UpdateHealthBar();
     }
 
 
@@ -38,6 +44,12 @@ public class HealthBar2 : MonoBehaviour
         healthAmount += healPoints;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100);
 
+        healthBar.fillAmount = healthAmount / 100;
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthAmount = playerScript.health;
         healthBar.fillAmount = healthAmount / 100;
     }
 }
