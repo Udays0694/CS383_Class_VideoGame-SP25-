@@ -49,6 +49,10 @@ public class SkeletonScript : EnemyClass
     public bool attackReady = true;
     public float xpAward = 10f;
 
+    public Sprite Skeleton;
+    public Sprite SkeletonCharge;
+    public Sprite SkeletonLunge;
+
     public SkeletonScriptDataBC skeletonScript;
 
     protected override void Start()
@@ -67,6 +71,7 @@ public class SkeletonScript : EnemyClass
             {
                 attackReady = true;
                 attackCooldownTimer = 0f;
+                base._spriteRenderer.sprite = Skeleton;
             }
         }
     }
@@ -74,27 +79,35 @@ public class SkeletonScript : EnemyClass
     public override void Navigation()
     {
         //skeletonScript.getHealth();
-        if (transform.position.x < base.playerScript.rb.position.x)
+        if (attackReady)
         {
-            base._rb.linearVelocityX = movementSpeed;
-            base._spriteRenderer.flipX = false;
+            if (transform.position.x < base.playerScript.rb.position.x)
+            {
+                base._rb.linearVelocityX = movementSpeed;
+                base._spriteRenderer.flipX = false;
+            }
+            else
+            {
+                base._rb.linearVelocityX = -1 * movementSpeed;
+                base._spriteRenderer.flipX = true;
+            }
+
+            if (transform.position.y < base.playerScript.rb.position.y)
+            {
+                base._rb.linearVelocityY = movementSpeed;
+            }
+            else
+            {
+                base._rb.linearVelocityY = -1 * movementSpeed;
+            }
         } else
         {
-            base._rb.linearVelocityX = -1 * movementSpeed;
-            base._spriteRenderer.flipX = true;
-        }
-
-        if (transform.position.y < base.playerScript.rb.position.y)
-        {
-            base._rb.linearVelocityY = movementSpeed;
-        }
-        else
-        {
-            base._rb.linearVelocityY = -1 * movementSpeed;
+            base._rb.linearVelocityX = 0;
+            base._rb.linearVelocityY = 0;
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, base.playerScript.rb.position);
-        if (distanceToPlayer < 3 && attackReady == true)
+        if (distanceToPlayer < 1.5 && attackReady == true)
         {
             Attack();
         }
@@ -105,6 +118,7 @@ public class SkeletonScript : EnemyClass
         //Debug.Log("Attacked player");
         base.DamagePlayer(attackDamage);
         attackReady = false;
+        base._spriteRenderer.sprite = SkeletonLunge;
     }
 
     public override void OnTakeDamage(float damage)

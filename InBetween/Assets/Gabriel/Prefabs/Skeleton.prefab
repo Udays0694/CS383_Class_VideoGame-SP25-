@@ -195,7 +195,12 @@ MonoBehaviour:
   _rb: {fileID: 5928351514009367454}
   _spriteRenderer: {fileID: 5579728072880662307}
   nameType: Skeleton
-  health: 100
   movementSpeed: 3
   attackDamage: 1
+  attackCooldown: 0.5
+  attackCooldownTimer: 0
+  attackReady: 1
   xpAward: 10
+  Skeleton: {fileID: 6730731893986024075, guid: ab41ea3014a85f7438919a0a2503f577, type: 3}
+  SkeletonCharge: {fileID: -3005895968986233309, guid: 83e6f047e7b033b43b4b962333f2918d, type: 3}
+  SkeletonLunge: {fileID: -3281707252372194088, guid: 8759b530024b76a439d2d51b8771c33d, type: 3}
