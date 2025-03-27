@@ -29,6 +29,16 @@ public class CoinManager : MonoBehaviour
         {
             AddCoins(1); // Adds 1 coin when C is pressed 
         }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            AddCoins(10); // Adds 1 coin when C is pressed 
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            SubtractCoins(10); // Adds 1 coin when C is pressed 
+        }
     }
     public void AddCoins(int amount)
     {
