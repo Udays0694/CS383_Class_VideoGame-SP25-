@@ -1,32 +1,40 @@
 using UnityEngine;
-//This is the room Class that will run 
+
 public class Room : MonoBehaviour
 {
-    [SerializeField] // for debug purposes (unessesary)
-    RoomGenerator RoomGeneratorObj;
-    FurnitureSpawnPoint[] SpawnPointfurn;
+    [SerializeField] private GameObject[] furniturePrefabs;
 
-    private void Start() // Everything here only needs to run once as it is running the generation algorythsm
+    private FurnitureSpawnPoint[] spawnPoints;
+
+    private void Start()
     {
-        RoomGeneratorObj = GameObject.FindAnyObjectByType<RoomGenerator>();
-        SpawnPointfurn = FindSpawnPoints();
+        spawnPoints = GetComponentsInChildren<FurnitureSpawnPoint>();
 
+        if (spawnPoints.Length > 0)
+        {
+            Debug.Log("Room has furniture spawn points.");
+            GenerateFurniture();
+        }
+        else
+        {
+            Debug.Log("Room has no furniture points.");
+        }
     }
 
-    FurnitureSpawnPoint[] FindSpawnPoints() {
-        FurnitureSpawnPoint[] spwn;
-        spwn = GetComponentsInChildren<FurnitureSpawnPoint>();
-        if (spwn.Length > 0) { Debug.Log("Found " + spwn.Length + " Spawn Points Attempting to spawn furniture"); } 
-        else {  Debug.Log("Can Not Generate Furniture Loading Default Layout"); } // my bad for if else statement lmao 
-        return spwn;
-    }
-
-    void PlaceObjects()
+    private void GenerateFurniture()
     {
+        if (furniturePrefabs == null || furniturePrefabs.Length == 0)
+        {
+            Debug.LogWarning("No furniture prefabs assigned to room.");
+            return;
+        }
 
+        foreach (FurnitureSpawnPoint point in spawnPoints)
+        {
+            int randomIndex = Random.Range(0, furniturePrefabs.Length);
+            Instantiate(furniturePrefabs[randomIndex], point.transform.position, point.transform.rotation, transform);
+        }
     }
 
-    void InitializeRoom() { 
-    
-    }
+    public FurnitureSpawnPoint[] GetFurniturePoints() => spawnPoints;
 }

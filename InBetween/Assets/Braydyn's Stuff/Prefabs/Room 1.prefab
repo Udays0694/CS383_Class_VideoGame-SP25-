@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3902764360911919324}
   - component: {fileID: 2840558116880768895}
+  - component: {fileID: 7292562207210755532}
   m_Layer: 0
   m_Name: Room 1
   m_TagString: Untagged
@@ -54,7 +55,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6371a3efe86a34db3a810846816f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomGeneratorObj: {fileID: 0}
+--- !u!61 &7292562207210755532
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648530364951392268}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.037942886, y: 0.5122299}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 13.310179, y: 12.648479}
+  m_EdgeRadius: 0
 --- !u!1 &1423099042313870315
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +987,7 @@ Transform:
   m_GameObject: {fileID: 4297601794485866656}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41, y: 6.47, z: -0.041829806}
+  m_LocalPosition: {x: 0.41, y: 6.03, z: -0.041829806}
   m_LocalScale: {x: 1.4769399, y: 1.11393, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1062,7 +1108,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 6813345967570101363}
+  corridorPrefab: {fileID: 0}
+  brokenCorridorPrefab: {fileID: 0}
   roomGenerator: {fileID: 0}
+  direction: 0
 --- !u!61 &1961297532312275268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2161,7 +2210,7 @@ Transform:
   m_GameObject: {fileID: 7809897273946200153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.00000035762784}
-  m_LocalPosition: {x: 0.0896, y: -5.97, z: -0.041829806}
+  m_LocalPosition: {x: 0.09, y: -4.95, z: -0.041829806}
   m_LocalScale: {x: 1.7160001, y: 1.11393, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2282,7 +2331,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 6183110526615490291}
+  corridorPrefab: {fileID: 0}
+  brokenCorridorPrefab: {fileID: 0}
   roomGenerator: {fileID: 0}
+  direction: 0
 --- !u!61 &5272201337332275472
 BoxCollider2D:
   m_ObjectHideFlags: 0
