@@ -1,19 +1,103 @@
 fileFormatVersion: 2
-guid: 6ba22c873f34e76ce9df42deeb4a0c90
+guid: c8e5ebc593ca363a5bf7a8870c44626d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6772775923325811741
-    second: FLYING_0
+      213: -1745646317731160461
+    second: DEATH_0
   - first:
-      213: 5941632107932350943
-    second: FLYING_1
+      213: -1962882971833571424
+    second: DEATH_1
   - first:
-      213: -2846053855543560624
-    second: FLYING_2
+      213: 7163519229324203079
+    second: DEATH_2
   - first:
-      213: -6678637041112908962
-    second: FLYING_3
+      213: -2824850348822682002
+    second: DEATH_3
+  - first:
+      213: -4395442915117589123
+    second: DEATH_4
+  - first:
+      213: 7527047216810660112
+    second: DEATH_5
+  - first:
+      213: -6116082883535636463
+    second: DEATH_6
+  - first:
+      213: -5775218795824829258
+    second: DEATH_7
+  - first:
+      213: -5608201998214337042
+    second: DEATH_8
+  - first:
+      213: 6576388434661106147
+    second: DEATH_9
+  - first:
+      213: -1154471196408308341
+    second: DEATH_10
+  - first:
+      213: 2149593603886717485
+    second: DEATH_11
+  - first:
+      213: 908584393007459520
+    second: DEATH_12
+  - first:
+      213: 740597910810140825
+    second: DEATH_13
+  - first:
+      213: 4599535859148058893
+    second: DEATH_14
+  - first:
+      213: 5733224033033023741
+    second: DEATH_15
+  - first:
+      213: -4626742975923083756
+    second: DEATH_16
+  - first:
+      213: -22728116269279974
+    second: DEATH_17
+  - first:
+      213: -8574646061081483984
+    second: DEATH_18
+  - first:
+      213: 3354254753243013499
+    second: DEATH_19
+  - first:
+      213: 3603651926767336185
+    second: DEATH_20
+  - first:
+      213: 8392728427981504658
+    second: DEATH_21
+  - first:
+      213: 8484927564709351694
+    second: DEATH_22
+  - first:
+      213: 6499388409754968467
+    second: DEATH_23
+  - first:
+      213: 1300136920628527571
+    second: DEATH_24
+  - first:
+      213: -4068846982135085252
+    second: DEATH_25
+  - first:
+      213: -3250762713044352934
+    second: DEATH_26
+  - first:
+      213: -5346464119348968536
+    second: DEATH_27
+  - first:
+      213: -7410524592387431091
+    second: DEATH_28
+  - first:
+      213: -1955636503513311880
+    second: DEATH_29
+  - first:
+      213: 4931257810929999505
+    second: DEATH_30
+  - first:
+      213: -4594944892682639505
+    second: DEATH_31
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +130,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -135,89 +219,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FLYING_0
+      name: DEATH_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 80
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 0
+        width: 81
+        height: 71
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1c372d81dbbdfd50800000000000000
-      internalID: 6772775923325811741
+      spriteID: 37e5a204ce736c7e0800000000000000
+      internalID: -1745646317731160461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FLYING_1
+      name: DEATH_1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 1
-        width: 66
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 81
+        y: 0
+        width: 81
+        height: 71
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd9fc5b0ceae47250800000000000000
-      internalID: 5941632107932350943
+      spriteID: 0a76230465072c4e0800000000000000
+      internalID: -1962882971833571424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FLYING_2
+      name: DEATH_2
       rect:
         serializedVersion: 2
-        x: 168
-        y: 5
-        width: 70
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 162
+        y: 0
+        width: 81
+        height: 71
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 056f1b0f819c088d0800000000000000
-      internalID: -2846053855543560624
+      spriteID: 7449c8df8cee96360800000000000000
+      internalID: 7163519229324203079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FLYING_3
+      name: DEATH_3
       rect:
         serializedVersion: 2
-        x: 249
-        y: 5
-        width: 69
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 243
+        y: 0
+        width: 81
+        height: 71
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5bf2bcfef6b053a0800000000000000
-      internalID: -6678637041112908962
+      spriteID: e6629ce039d1cc8d0800000000000000
+      internalID: -2824850348822682002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATH_4
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 81
+        height: 71
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7d98ede4ff3003c0800000000000000
+      internalID: -4395442915117589123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATH_5
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 0
+        width: 81
+        height: 71
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011979d4091757860800000000000000
+      internalID: 7527047216810660112
       vertices: []
       indices: 
       edges: []
@@ -226,7 +354,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5292d364e7c07e5149e8ba4e15381567
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +364,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FLYING_0: 6772775923325811741
-      FLYING_1: 5941632107932350943
-      FLYING_2: -2846053855543560624
-      FLYING_3: -6678637041112908962
+      DEATH_0: -1745646317731160461
+      DEATH_1: -1962882971833571424
+      DEATH_2: 7163519229324203079
+      DEATH_3: -2824850348822682002
+      DEATH_4: -4395442915117589123
+      DEATH_5: 7527047216810660112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

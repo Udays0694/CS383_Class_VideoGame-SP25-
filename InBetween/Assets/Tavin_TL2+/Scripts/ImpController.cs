@@ -55,7 +55,7 @@ public class ImpController : MonoBehaviour
 		// Generate quaternion
 		Vector3 playerDir3d = new Vector3(playerDir.x, playerDir.y, 0);
 		Quaternion shootDir = Quaternion.LookRotation(Vector3.forward, playerDir3d);
-		Instantiate(Bullet1, transform.position, shootDir);
+//		Instantiate(Bullet1, transform.position, shootDir);
 	}
 
 	// Move towards player
