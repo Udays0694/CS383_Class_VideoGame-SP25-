@@ -30,7 +30,7 @@ public class BossController : MonoBehaviour
 
 	// Player
 	private GameObject Player;
-//	[SerializeField] private PlayerScript playerScript;
+	private PlayerScript playerScript;
 	private Vector2 playerDir;
 
     // Start is called once before the first execution of Update after the
