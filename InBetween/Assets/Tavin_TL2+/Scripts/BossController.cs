@@ -14,9 +14,19 @@ public class BossController : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
 	private float attack1Timer = 0;
+	
+	// Fireball
 	[SerializeField] private GameObject Bullet1;
-	private bool facingLeft = true;
 	private Vector2 mouthPos;
+	
+	// Orb
+	[SerializeField] private GameObject Orb;
+	private float orbRespawnTimer = 0;
+	private float orbRespawnTime = 1;
+	private bool respawnOrb = true;
+	
+	// Public so orb can see it
+	public bool facingLeft = true;
 
 	// Player
 	private GameObject Player;
@@ -39,6 +49,9 @@ public class BossController : MonoBehaviour
 		
 		// Get reference to sprite renderer
 		_spriteRenderer = GetComponent<SpriteRenderer>();
+		
+		// Test orb attack
+		attack2();
 	}
 
     // Update is called once per frame
@@ -83,14 +96,28 @@ public class BossController : MonoBehaviour
 		chasePlayer();
         if(attack1Timer >= attack1Cooldown)
 		{
+			// attack1() is called from the animation 
 			_animator.Play("BossAttack");
 			attack1Timer = 0;
+		}
+		
+		// Tell the boss to spawn another orb
+    	if(respawnOrb)
+    	{
+			orbRespawnTimer += Time.deltaTime;
+			
+			if(orbRespawnTimer >= orbRespawnTime)
+			{
+				orbRespawnTimer = 0;
+				respawnOrb = false; // Prevents the orb from spawning multiple orbs
+				Instantiate(Orb);
+			}
 		}
 
 		attack1Timer += Time.deltaTime;
 	}
 
-	// Base attack
+	// Fireball attack
 	public void attack1()
 	{
 		// Generate quaternion for spawn rotation of bullet
@@ -104,17 +131,23 @@ public class BossController : MonoBehaviour
 		// Spawn bullet
 		Instantiate(Bullet1, mouthPos, shootDir);
 	}
+	
+	// Orb attack
+	public void attack2()
+	{
+		respawnOrb = true;
+	}
 
 	// Move towards player
 	private void chasePlayer()
 	{
 		// Move away from player if its too close
 		Vector3 moveDir = playerDir;
-/*		if(playerDir.magnitude < 3.5f)
+		if(playerDir.magnitude < 3.5f)
 		{
 			moveDir = -moveDir;
 		}
-*/		
+		
 		// Calculate move distance
 		Vector3 move;
 		move = transform.position + moveDir.normalized * Time.deltaTime * speed;

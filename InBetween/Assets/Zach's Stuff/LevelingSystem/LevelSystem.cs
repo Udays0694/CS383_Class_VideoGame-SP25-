@@ -58,6 +58,7 @@ private void LevelUp()
         if (playerStats != null)
         {
             playerStats.IncreaseStats(10f, 2, 2); // Increment player stats
+            //Debug.LogWarning($"Stats Increased! Health: {health}, Strength: {Strength}, Agility: {Agility} ")
         }
         else
         {
