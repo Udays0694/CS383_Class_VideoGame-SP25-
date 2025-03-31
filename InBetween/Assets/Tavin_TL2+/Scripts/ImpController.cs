@@ -10,7 +10,10 @@ public class ImpController : MonoBehaviour
 	private float attack1Cooldown = 1f;
 
 	// Characteristics
-//	private Slider healthBar; 
+//	private Slider healthBar;
+	private Animator animator;
+
+	// Attack
 	private float attack1Timer = 0;
 	[SerializeField] private GameObject Bullet1;
 
@@ -27,6 +30,9 @@ public class ImpController : MonoBehaviour
     	healthBar.maxValue = health;
 		healthBar.value = health;
 */		
+		// Get animator
+		animator = GetComponent<Animator>(); 
+
 		// Get reference to player
 		Player = GameObject.FindGameObjectWithTag("Player");
 	}
