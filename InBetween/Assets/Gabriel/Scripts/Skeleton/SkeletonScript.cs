@@ -78,38 +78,42 @@ public class SkeletonScript : EnemyClass
 
     public override void Navigation()
     {
-        //skeletonScript.getHealth();
-        if (attackReady)
+        if (base.playerScript != null)
         {
-            if (transform.position.x < base.playerScript.rb.position.x)
+            //skeletonScript.getHealth();
+            if (attackReady)
             {
-                base._rb.linearVelocityX = movementSpeed;
-                base._spriteRenderer.flipX = false;
+                if (transform.position.x < base.playerScript.rb.position.x)
+                {
+                    base._rb.linearVelocityX = movementSpeed;
+                    base._spriteRenderer.flipX = false;
+                }
+                else
+                {
+                    base._rb.linearVelocityX = -1 * movementSpeed;
+                    base._spriteRenderer.flipX = true;
+                }
+
+                if (transform.position.y < base.playerScript.rb.position.y)
+                {
+                    base._rb.linearVelocityY = movementSpeed;
+                }
+                else
+                {
+                    base._rb.linearVelocityY = -1 * movementSpeed;
+                }
             }
             else
             {
-                base._rb.linearVelocityX = -1 * movementSpeed;
-                base._spriteRenderer.flipX = true;
+                base._rb.linearVelocityX = 0;
+                base._rb.linearVelocityY = 0;
             }
 
-            if (transform.position.y < base.playerScript.rb.position.y)
+            float distanceToPlayer = Vector2.Distance(transform.position, base.playerScript.rb.position);
+            if (distanceToPlayer < 1.5 && attackReady == true)
             {
-                base._rb.linearVelocityY = movementSpeed;
+                Attack();
             }
-            else
-            {
-                base._rb.linearVelocityY = -1 * movementSpeed;
-            }
-        } else
-        {
-            base._rb.linearVelocityX = 0;
-            base._rb.linearVelocityY = 0;
-        }
-
-        float distanceToPlayer = Vector2.Distance(transform.position, base.playerScript.rb.position);
-        if (distanceToPlayer < 1.5 && attackReady == true)
-        {
-            Attack();
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class EnemyClass : MonoBehaviour
 {
     // Player script
-    public PlayerScript playerScript;
+    public PlayerScript playerScript = null;
 
     // Rigid body
     public Rigidbody2D _rb = null;
@@ -16,9 +16,18 @@ public class EnemyClass : MonoBehaviour
     protected virtual void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
         _rb.freezeRotation = true;
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerScript = player.GetComponent<PlayerScript>();
+        }
+        else
+        {
+            Debug.LogWarning("No player found. The enemy will not be able to interact with the player.");
+        }
     }
 
     // Update is called once per frame
