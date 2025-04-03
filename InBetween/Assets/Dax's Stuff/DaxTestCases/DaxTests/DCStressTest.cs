@@ -20,15 +20,15 @@ public class DCStressTest
     [UnityTest]
     public IEnumerator StressTest_SubtractCoins()
     {
-        //Set coins to 10,000
+        //Set coins to 100,000
         coinManager.coinsCount = 10000;
         Debug.Log("Starting Coins: " + coinManager.coinsCount);
 
-        for (int i = 0; i < 2000; i++)
+        for (int i = 0; i < 2001; i++)
         {
             coinManager.SubtractCoins(10); // subtract 10 coins each time
 
-            // Log every 1000 iterations
+            // Log every 100 iterations
             if (i % 100 == 0)
             {
                 Debug.Log("Coins Left: " + coinManager.coinsCount);

@@ -1,155 +1,205 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+
+public enum DoorDirection
+{
+    North,
+    South,
+    East,
+    West
+}
 
 public class Door : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private GameObject corridorPrefab;
+    [SerializeField] private GameObject brokenCorridorPrefab;
     [SerializeField] private RoomGenerator roomGenerator;
-    private bool playerNearby = false;
+    [SerializeField] private DoorDirection direction;
 
-    // Static list to track all opened door positions
     private static HashSet<Vector3> openedDoors = new HashSet<Vector3>();
+    private bool playerNearby = false;
 
     private void Start()
     {
-        // Automatically find the RoomGenerator if not assigned
         if (roomGenerator == null)
-        {
             roomGenerator = GameObject.FindAnyObjectByType<RoomGenerator>();
-        }
 
-        // Check if this door has already been opened
         if (openedDoors.Contains(transform.position))
-        {
-            Debug.Log($"This door at {transform.position} was opened before. Disabling.");
-            this.gameObject.SetActive(false);
-        }
+            gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        // Check if the player presses the interaction key (E) while nearby
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
         {
-            // Check if this door has already been opened
-            if (openedDoors.Contains(transform.position))
+            if (!openedDoors.Contains(transform.position))
             {
-                Debug.Log($"This door at {transform.position} was already opened. Ignoring.");
-                return;
-            }
-
-            // Otherwise, open the room
-            InstantiateRoom();
-        }
-    }
-
-    private void InstantiateRoom()
-    {
-        if (roomGenerator != null)
-        {
-            // Capture the global position of the current door
-            Vector3 doorPosition = transform.position;
-            Debug.Log($"Opening Door at Position: {doorPosition}");
-
-            // Add this door to the openedDoors list
-            openedDoors.Add(doorPosition);
-
-            // Generate the new room at the position and rotation of the spawnPoint
-            Room newRoom = roomGenerator.GenerateRoom();
-            if (newRoom != null && spawnPoint != null)
-            {
-                newRoom.transform.position = spawnPoint.position;
-                newRoom.transform.rotation = spawnPoint.rotation;
-                Debug.Log("New room instantiated at door's spawn point with position and rotation.");
-
-                // Disable this door
-                this.gameObject.SetActive(false);
-                Debug.Log($"Disabled the current door at: {transform.position}");
-
-                // Find and disable the closest door in the new room
-                DisableClosestDoor(newRoom, doorPosition);
-
-                // Disable all previously opened doors in the new room
-                DisablePreviouslyOpenedDoors(newRoom);
+                StartCoroutine(SpawnCorridorAndRoom());
             }
         }
     }
 
-    private void DisableClosestDoor(Room newRoom, Vector3 referencePosition)
+    private IEnumerator SpawnCorridorAndRoom()
     {
-        // Find all doors in the new room
-        Door[] doors = newRoom.GetComponentsInChildren<Door>();
-
-        if (doors.Length > 0)
+        if (roomGenerator == null || spawnPoint == null || corridorPrefab == null)
         {
-            Door closestDoor = null;
-            float closestDistance = Mathf.Infinity;
+            Debug.LogWarning("Missing references for spawning corridor and room.");
+            yield break;
+        }
 
-            foreach (Door door in doors)
+        // Spawn corridor
+        GameObject corridor = Instantiate(corridorPrefab, spawnPoint.position, spawnPoint.rotation);
+        Transform endPoint = corridor.transform.Find("CorridorEndPoint");
+
+        if (endPoint == null)
+        {
+            Debug.LogError("Corridor prefab must have a 'CorridorEndPoint' child.");
+            Destroy(corridor);
+            yield break;
+        }
+
+        yield return null;
+
+        // Overlap check
+        Vector3 roomSpawnPos = endPoint.position;
+        Collider2D[] hits = Physics2D.OverlapBoxAll(roomSpawnPos, roomGenerator.RoomBoundsSize, 0f);
+        bool blocked = false;
+
+        foreach (var hit in hits)
+        {
+            if (hit.CompareTag("Room") || hit.CompareTag("Corridor"))
             {
-                // Calculate the distance from the reference position
-                float distance = Vector3.Distance(referencePosition, door.transform.position);
-                Debug.Log($"Checking door: {door.gameObject.name}, Distance: {distance}");
+                blocked = true;
+                break;
+            }
+        }
 
-                // Find the closest door
-                if (distance < closestDistance)
+        if (blocked)
+        {
+            Debug.Log("Spawn blocked — replacing with broken corridor.");
+            Destroy(corridor);
+
+            if (brokenCorridorPrefab != null)
+                Instantiate(brokenCorridorPrefab, spawnPoint.position, spawnPoint.rotation);
+
+            openedDoors.Add(transform.position);
+            gameObject.SetActive(false);
+
+            // Disable opposite door in blocking room
+            foreach (var hit in hits)
+            {
+                if (hit.CompareTag("Room"))
                 {
-                    closestDistance = distance;
-                    closestDoor = door;
+                    Room blockingRoom = hit.GetComponent<Room>();
+                    if (blockingRoom != null)
+                    {
+                        DoorDirection opposite = GetOppositeDirection(direction);
+                        Door[] doors = blockingRoom.GetComponentsInChildren<Door>();
+
+                        foreach (Door d in doors)
+                        {
+                            if (d.direction == opposite)
+                            {
+                                d.enabled = false;
+                                openedDoors.Add(d.transform.position);
+                                Debug.Log("Disabled matching opposite door in blocking room.");
+                                break;
+                            }
+                        }
+
+                        break;
+                    }
                 }
             }
 
-            // Disable the closest door
-            if (closestDoor != null)
-            {
-                closestDoor.gameObject.SetActive(false);
-                Debug.Log($"Disabled the closest door in the new room at {closestDoor.transform.position}");
-            }
-            else
-            {
-                Debug.LogWarning("No closest door found to disable.");
-            }
+            yield break;
         }
-        else
+
+        // Success case: spawn room
+        Room newRoom = roomGenerator.GenerateRoom();
+        if (newRoom != null)
         {
-            Debug.Log("No doors found in the new room to disable.");
+            newRoom.transform.position = roomSpawnPos;
+            // No rotation applied — keep prefab’s original orientation
+
+            openedDoors.Add(transform.position);
+            gameObject.SetActive(false);
+
+            DisableOppositeDoorInNewRoom(newRoom);
+            DisablePreviouslyOpenedDoors(newRoom);
         }
+    }
+
+    private void DisableOppositeDoorInNewRoom(Room newRoom)
+    {
+        DoorDirection opposite = GetOppositeDirection(direction);
+        Door[] doors = newRoom.GetComponentsInChildren<Door>();
+
+        foreach (Door d in doors)
+        {
+            if (d.direction == opposite)
+            {
+                d.gameObject.SetActive(false);
+                openedDoors.Add(d.transform.position);
+                Debug.Log($"Disabled opposite door ({opposite}) in new room at {d.transform.position}");
+                return;
+            }
+        }
+
+        Debug.LogWarning("No matching opposite door found in new room.");
     }
 
     private void DisablePreviouslyOpenedDoors(Room newRoom)
     {
-        // Find all doors in the new room
-        Door[] doors = newRoom.GetComponentsInChildren<Door>();
-
-        if (doors.Length > 0)
+        foreach (Door d in newRoom.GetComponentsInChildren<Door>())
         {
-            foreach (Door door in doors)
+            if (openedDoors.Contains(d.transform.position))
             {
-                // Check if this door's position is in the openedDoors list
-                if (openedDoors.Contains(door.transform.position))
-                {
-                    door.gameObject.SetActive(false);
-                    Debug.Log($"Disabled previously opened door at: {door.transform.position}");
-                }
+                d.enabled = false;
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private DoorDirection GetOppositeDirection(DoorDirection dir)
     {
-        // Check if the player is nearby
-        if (collision.CompareTag("Player"))
+        switch (dir)
         {
-            playerNearby = true;
+            case DoorDirection.North: return DoorDirection.South;
+            case DoorDirection.South: return DoorDirection.North;
+            case DoorDirection.East: return DoorDirection.West;
+            case DoorDirection.West: return DoorDirection.East;
+            default: return dir;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        // Check if the player leaves the area
-        if (collision.CompareTag("Player"))
-        {
+        if (col.CompareTag("Player"))
+            playerNearby = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
             playerNearby = false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (corridorPrefab != null && roomGenerator != null && spawnPoint != null)
+        {
+            Transform corridorEnd = corridorPrefab.transform.Find("CorridorEndPoint");
+
+            if (corridorEnd != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireCube(
+                    spawnPoint.position + (corridorEnd.position - corridorPrefab.transform.position),
+                    roomGenerator.RoomBoundsSize
+                );
+            }
         }
     }
 }

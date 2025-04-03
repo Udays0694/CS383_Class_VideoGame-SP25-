@@ -1,0 +1,332 @@
+fileFormatVersion: 2
+guid: 1e8f11aa26d7d798db577add9a9f8491
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2607582146889883992
+    second: OrbHit_0
+  - first:
+      213: -4413613349138918895
+    second: OrbHit_1
+  - first:
+      213: 3012855035665650309
+    second: OrbHit_2
+  - first:
+      213: 6340699945067729450
+    second: OrbHit_3
+  - first:
+      213: 6117418852661959673
+    second: OrbHit_4
+  - first:
+      213: -8212019832988376710
+    second: OrbHit_5
+  - first:
+      213: -4934391451541427095
+    second: OrbHit_6
+  - first:
+      213: 5039958317200569804
+    second: OrbHit_7
+  - first:
+      213: -7511475107183380364
+    second: OrbHit_8
+  - first:
+      213: 3360439496765503663
+    second: OrbHit_9
+  - first:
+      213: -677708252875169327
+    second: OrbHit_10
+  - first:
+      213: 4550992442420388054
+    second: OrbHit_11
+  - first:
+      213: 6889641743592602993
+    second: OrbHit_12
+  - first:
+      213: 2162424183522081520
+    second: OrbHit_13
+  - first:
+      213: -6841738711878485906
+    second: OrbHit_14
+  - first:
+      213: -4574704110968002761
+    second: OrbHit_15
+  - first:
+      213: -5385685878206902887
+    second: OrbHit_16
+  - first:
+      213: -6477318385781797815
+    second: OrbHit_17
+  - first:
+      213: -228685508500846943
+    second: OrbHit_18
+  - first:
+      213: -4604322599372825932
+    second: OrbHit_19
+  - first:
+      213: -4466848229579564242
+    second: OrbHit_20
+  - first:
+      213: 8286861409742293392
+    second: OrbHit_21
+  - first:
+      213: -3265106705478740637
+    second: OrbHit_22
+  - first:
+      213: 9019043764456163099
+    second: OrbHit_23
+  - first:
+      213: -7883428150589194221
+    second: OrbHit_24
+  - first:
+      213: 4290844558329815438
+    second: OrbHit_25
+  - first:
+      213: 1858670611463325104
+    second: OrbHit_26
+  - first:
+      213: 2997046056927350721
+    second: OrbHit_27
+  - first:
+      213: -3505126804218553704
+    second: OrbHit_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OrbHit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2fc7a9ad03df9a5823d267a89bb7e4
+      internalID: -1846857563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbHit_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7bcfe33c3654d3799bf27c6438a65ff
+      internalID: -77550702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbHit_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b01fa2b965db1360a64c4895da4112d
+      internalID: -1837945446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbHit_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ad1f81b64fcf5a2bddd7f5aa372670
+      internalID: -358222522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OrbHit_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51481d198e56cc3dea4abe26a7470067
+      internalID: -746288779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1e56812d2b91e4679a60e1f39c1eb816
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      OrbHit_0: -1846857563
+      OrbHit_1: -77550702
+      OrbHit_2: -1837945446
+      OrbHit_3: -358222522
+      OrbHit_4: -746288779
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
