@@ -5,9 +5,8 @@ public class BossController : MonoBehaviour
 {
 	// Options
 	public float speed = 0.5f;
-	public float damage = 5f;
 	public float health = 10f;
-	private float attack1Cooldown = 1f;
+	private float attack1Cooldown = 2f;
 
 	// Characteristics
 	private Slider healthBar; 
@@ -73,7 +72,8 @@ public class BossController : MonoBehaviour
 		float flipTransformDist = 3.08f;  
 		
 		// Calculate direction to player
-		playerDir = Player.transform.position - (transform.position + new Vector3(centerDiff, -2.5f, 0));
+		playerDir = Player.transform.position
+					- (transform.position + new Vector3(centerDiff, -2.5f, 0));
 		
 		// Face the player
 		if(facingLeft && playerDir.x > 0)

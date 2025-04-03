@@ -3,10 +3,10 @@ using UnityEngine;
 public class OrbController : MonoBehaviour
 {
 	// Characteristics
-	[SerializeField] private float speed = 8f;
+	[SerializeField] private float speed = 10f;
 	
 	private float deathTimer = 0;
-	[SerializeField] private float deathTime = 3f;
+	private float deathTime = 10f;
 	
 	private Vector3 moveDir;
 
@@ -96,7 +96,6 @@ public class OrbController : MonoBehaviour
 		{
 			BossScript.attack2();
 		}
-		
 		Destroy(gameObject);
 	}
 
@@ -106,12 +105,11 @@ public class OrbController : MonoBehaviour
         if(collideObj.tag == "Player")
         {
         	// Deal damage to the player
-//            collideObj.GetComponent<PlayerScript>().TakeDamage(5f);
+            collideObj.GetComponent<PlayerScript>().TakeDamage(10f);
 			
-			// Stop the fireball from moving while it's playing the animation
-			speed = 0f;
-//			animator.Play("OrbHit");
-			destroy();
+			speed /= 2f;
+
+			animator.Play("OrbHit");
         }
     }
 }

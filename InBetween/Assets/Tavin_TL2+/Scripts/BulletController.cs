@@ -82,7 +82,7 @@ public class BulletController : MonoBehaviour
         if(collideObj.tag == "Player")
         {
         	// Deal damage to the player
-//            collideObj.GetComponent<PlayerScript>().TakeDamage(5f);
+            collideObj.GetComponent<PlayerScript>().TakeDamage(5f);
 			
 			// Stop the fireball from moving while it's playing the animation
 			speed = 0f;
