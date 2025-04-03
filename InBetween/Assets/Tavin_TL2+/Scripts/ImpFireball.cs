@@ -34,6 +34,9 @@ public class ImpFireball : MonoBehaviour
         	// Deal damage to the player
             collideObj.GetComponent<PlayerScript>().TakeDamage(4f);
 			activated = false;
+        	
+        	// Stop fireball from moving
+        	speed = 0;
         }
     }
 }
