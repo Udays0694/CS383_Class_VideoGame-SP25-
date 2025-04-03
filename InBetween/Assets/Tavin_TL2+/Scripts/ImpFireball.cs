@@ -9,7 +9,7 @@ public class ImpFireball : MonoBehaviour
 	void Start()
 	{
 		Debug.Log(transform.localEulerAngles.y);
-		if(transform.localEulerAngles.y == 180)
+		if(transform.localEulerAngles.y > 175 && transform.localEulerAngles.y < 185)
 		{
 			// Moving left
 			moveDir = -1;
