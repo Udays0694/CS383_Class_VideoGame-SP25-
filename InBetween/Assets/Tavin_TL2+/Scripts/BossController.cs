@@ -5,7 +5,7 @@ public class BossController : MonoBehaviour
 {
 	// Options
 	public float speed = 0.5f;
-	public float health = 10f;
+	public float health = 100f;
 	private float attack1Cooldown = 2f;
 
 	// Characteristics
@@ -22,7 +22,10 @@ public class BossController : MonoBehaviour
 	[SerializeField] private GameObject Orb;
 	private float orbRespawnTimer = 0;
 	private float orbRespawnTime = 1;
-	private bool respawnOrb = true;
+	private bool respawnOrb = false;
+	
+	// Minions
+	private bool spawnMinions = true;
 	
 	// Public so orb can see it
 	public bool facingLeft = true;
@@ -38,7 +41,7 @@ public class BossController : MonoBehaviour
     {
 		// Initiate health bar
 		healthBar = GetComponentInChildren<Slider>();
-    	healthBar.maxValue = health + 2f;
+    	healthBar.maxValue = health;
 		healthBar.value = health;
 		
 		// Get reference to player
@@ -102,7 +105,7 @@ public class BossController : MonoBehaviour
 			attack1Timer = 0;
 		}
 		
-		// Tell the boss to spawn another orb
+		// Spawn another orb after delay
     	if(respawnOrb)
     	{
 			orbRespawnTimer += Time.deltaTime;
@@ -157,6 +160,12 @@ public class BossController : MonoBehaviour
 		transform.position = move;
 	}
 
+	// Called by death animation
+	private void destroy()
+	{
+		Destroy(gameObject);
+	}	
+	
 	// Take damage
 	public void takeDamage(float amount)
 	{
@@ -168,12 +177,22 @@ public class BossController : MonoBehaviour
 		if(health <= 0)
 		{
 			_animator.Play("BossDie");
-			Destroy(gameObject);
 		}
 		// Play damage animation
 		else
 		{
 			_animator.Play("BossHurt");
+		}
+		
+		// Enable orb attack and minion spawning
+		if(health <= healthBar.maxValue * 0.333f)
+		{
+			spawnMinions = true;
+		}
+		// Enable minion spawning
+		else if(health <= healthBar.maxValue * 0.667f)
+		{
+			respawnOrb = true;
 		}
 	}
 }

@@ -87,8 +87,10 @@ public class BulletController : MonoBehaviour
 			// Stop the fireball from moving while it's playing the animation
 			speed = 0f;
 //			transform.localRotation = Quaternion.LookRotation(Vector3.forward, playerDir);
-			animator.Play("FireballHit");
-
+			if(!animator.GetCurrentAnimatorStateInfo(0).IsName("FireballDisappear"))
+			{
+				animator.Play("FireballHit");
+			}
         }
     }
 }
