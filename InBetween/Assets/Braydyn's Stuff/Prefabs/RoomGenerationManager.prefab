@@ -48,3 +48,5 @@ MonoBehaviour:
   Rooms: []
   GeneratableRooms:
   - {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
+  DefaultRoom: {fileID: 0}
+  RoomBoundsSize: {x: 10, y: 10}

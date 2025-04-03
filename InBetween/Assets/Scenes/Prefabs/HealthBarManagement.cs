@@ -18,25 +18,7 @@ public class HealthBar2 : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TakeDamage(15);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Healing(5);
-        }
-
         UpdateHealthBar();
-    }
-
-
-    public void TakeDamage(float Damage)
-    {
-        healthAmount -= Damage;
-        healthBar.fillAmount = healthAmount / 100;
     }
 
     public void Healing(float healPoints)
