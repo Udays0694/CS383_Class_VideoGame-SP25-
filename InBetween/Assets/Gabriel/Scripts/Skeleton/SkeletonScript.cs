@@ -44,7 +44,7 @@ public class SkeletonScript : EnemyClass
     public string nameType = "Skeleton";
     public float movementSpeed = 3f;
     public float attackDamage = 30f;
-    public float attackCooldown = 0.5f;
+    public float attackCooldown = 0.4f;
     public float attackCooldownTimer = 0f;
     public bool attackReady = true;
     public float xpAward = 10f;
