@@ -27,6 +27,7 @@ public class PlayerScriptData : PlayerScriptDataBC
 
 public class PlayerScript : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Vector2 movement;
@@ -72,11 +73,14 @@ public class PlayerScript : MonoBehaviour
         
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
             movementKeyPressed = true;
+            _animator.SetBool("isRunning", true);
         } else
         {
             movementKeyPressed = false;
+            _animator.SetBool("isRunning", false);
         }
 
+       
         // Normalize movement to prevent faster diagonal movement
         movement = movement.normalized;
         health = playerScript.getHealth();
