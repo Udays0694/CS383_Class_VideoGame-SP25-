@@ -13,9 +13,11 @@ public class ImpController : MonoBehaviour
 	private Animator animator;
 	private SpriteRenderer sprite;
 	private bool facingRight = true;
+	private bool activated = false;
 
 	// Attack
 	private float updateMoveTimer = 0.5f;
+	private float updateMoveTime = 0.5f;
 	private Vector3 moveDir;
 	private float shootDist = 2f;
 	
@@ -35,6 +37,9 @@ public class ImpController : MonoBehaviour
     	healthBar.maxValue = health;
 		healthBar.value = health;
 */		
+		GetComponent<Rigidbody2D>().gravityScale = 0;
+		GetComponent<Rigidbody2D>().freezeRotation = true;
+
 		// Get animator
 		animator = GetComponent<Animator>(); 
 		sprite = GetComponent<SpriteRenderer>();
@@ -46,21 +51,30 @@ public class ImpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		// Calculate direction to player
-		playerDir = Player.transform.position - transform.position;
-		
-		// Flip player if necessary
-		if((playerDir.x < 0 && facingRight)
-		|| (playerDir.x > 0 && !facingRight))
-		{
-			transform.Rotate(0, 180, 0);
-			facingRight = !facingRight;
+    	if(activated)
+    	{
+			// Calculate direction to player
+			playerDir = Player.transform.position - transform.position;
+			
+			// Flip player if necessary
+			if((playerDir.x < 0 && facingRight)
+			|| (playerDir.x > 0 && !facingRight))
+			{
+				transform.Rotate(0, 180, 0);
+				facingRight = !facingRight;
+			}
+
+			// Attack player
+			move();
+
+			attackTimer += Time.deltaTime;
 		}
+	}
 
-		// Attack player
-		move();
-
-		attackTimer += Time.deltaTime;
+	// Called at the end of the enemy spawn animation
+	private void activate()
+	{
+		activated = true;
 	}
 
 	// Attack
@@ -84,15 +98,18 @@ public class ImpController : MonoBehaviour
 			animator.Play("ImpAttack");
 			attackTimer = 0;
 		}
-		else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpAttack"))
+		else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpAttack")
+		     && !animator.GetCurrentAnimatorStateInfo(0).IsName("ImpSpawn"))
 		{
 			animator.Play("ImpRun");
 		}
 		
 		// Only update move direction every half second
 		updateMoveTimer += Time.deltaTime;
-		if(updateMoveTimer >= 0.5f)
+		if(updateMoveTimer >= updateMoveTime)
 		{
+			// Reset timer and randomize update move time
+			updateMoveTime = Random.Range(0.25f, 0.75f);
 			updateMoveTimer = 0;
 			
 			// Round movement to nearest 45 degree angle
