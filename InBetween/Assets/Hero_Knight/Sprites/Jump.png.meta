@@ -1,24 +1,28 @@
 fileFormatVersion: 2
-guid: eb2ee6700eb4dfb0d86a8cbdb53344a4
+guid: 724e79479548b1b4eba4ee49aeeee4aa
+AssetOrigin:
+  serializedVersion: 1
+  productId: 167779
+  packageName: Hero Knight
+  packageVersion: 1.0
+  assetPath: Assets/Hero_Knight/Sprites/Jump.png
+  uploadId: 380670
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 815424164945274260
-    second: IDLE_0
+      213: 7460046300004610927
+    second: Jump_0
   - first:
-      213: -270785710348516584
-    second: IDLE_1
+      213: 7034338576483803127
+    second: Jump_1
   - first:
-      213: 8443794771774750484
-    second: IDLE_2
-  - first:
-      213: 1777182293076053196
-    second: IDLE_3
+      213: 6054277451648750542
+    second: Jump_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -75,16 +79,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +110,20 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Lumin
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +140,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,89 +152,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IDLE_0
+      name: Jump_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 81
-        height: 71
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 49525dc25f7f05b00800000000000000
-      internalID: 815424164945274260
+      spriteID: 48a237ab2d4133148a53827da64bda30
+      internalID: 7460046300004610927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IDLE_1
+      name: Jump_1
       rect:
         serializedVersion: 2
-        x: 81
+        x: 180
         y: 0
-        width: 81
-        height: 71
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 813cc64c4d9fd3cf0800000000000000
-      internalID: -270785710348516584
+      spriteID: 61fd5edf92bc32144a0676fef1284bed
+      internalID: 7034338576483803127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IDLE_2
+      name: Jump_2
       rect:
         serializedVersion: 2
-        x: 162
+        x: 360
         y: 0
-        width: 81
-        height: 71
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 41f3fe79b926e2570800000000000000
-      internalID: 8443794771774750484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IDLE_3
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 0
-        width: 81
-        height: 71
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ccc89ef21e1d9a810800000000000000
-      internalID: 1777182293076053196
+      spriteID: b36d70f468e7e254ba2b529a7d2c6628
+      internalID: 6054277451648750542
       vertices: []
       indices: 
       edges: []
@@ -226,7 +221,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ca3fc94c03f106076ac8c0e1009c1e03
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -236,10 +231,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IDLE_0: 815424164945274260
-      IDLE_1: -270785710348516584
-      IDLE_2: 8443794771774750484
-      IDLE_3: 1777182293076053196
+      Jump_0: 7460046300004610927
+      Jump_1: 7034338576483803127
+      Jump_2: 6054277451648750542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
