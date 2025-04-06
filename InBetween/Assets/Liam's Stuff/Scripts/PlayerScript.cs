@@ -34,6 +34,13 @@ public class PlayerScript : MonoBehaviour
 
     public PlayerScriptDataBC playerScript;
 
+    //demo move settings
+    public bool moveUp = false;
+    public bool moveDown = false;
+    public bool moveLeft = false;
+    public bool moveRight = false;
+    public bool movementKeyPressed = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -46,23 +53,30 @@ public class PlayerScript : MonoBehaviour
         movement.x = 0;
         movement.y = 0;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || moveUp == true)
         {
             movement.y = 1;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || moveDown == true)
         {
             movement.y = -1;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || moveLeft == true)
         {
             movement.x = -1;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || moveRight == true)
         {
             movement.x = 1;
         }
         
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
+            movementKeyPressed = true;
+        } else
+        {
+            movementKeyPressed = false;
+        }
+
         // Normalize movement to prevent faster diagonal movement
         movement = movement.normalized;
         health = playerScript.getHealth();
