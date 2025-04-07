@@ -3354,10 +3354,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3128817523385269916, guid: 8a32beacc02b4f444808a81756495134, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 322376a116892d6468acad6d3152e2ed, type: 2}
     - target: {fileID: 4479496810567618185, guid: 8a32beacc02b4f444808a81756495134, type: 3}
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9146810504685524141, guid: 8a32beacc02b4f444808a81756495134, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1612061681}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3374,6 +3382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952566f0390a0474784a56eee4ffbf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1612061681 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3128817523385269916, guid: 8a32beacc02b4f444808a81756495134, type: 3}
+  m_PrefabInstance: {fileID: 1612061678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625204064
 GameObject:
   m_ObjectHideFlags: 0

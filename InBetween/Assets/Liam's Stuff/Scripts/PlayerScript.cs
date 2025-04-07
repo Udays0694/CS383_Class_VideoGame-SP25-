@@ -106,4 +106,6 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("Player Died");
         Destroy(gameObject);
     }
+
+   
 }
