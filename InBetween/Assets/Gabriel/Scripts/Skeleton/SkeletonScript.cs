@@ -47,7 +47,12 @@ public class SkeletonScript : EnemyClass
     public float attackCooldown = 0.4f;
     public float attackCooldownTimer = 0f;
     public bool attackReady = true;
+
     public float xpAward = 10f;
+
+    public float spriteFlipCooldownTimer = 0.0f;
+    public float spriteFlipCooldown = 0.5f;
+    public bool spriteFlipReady = true;
 
     public Sprite Skeleton;
     public Sprite SkeletonCharge;
@@ -55,10 +60,18 @@ public class SkeletonScript : EnemyClass
 
     public SkeletonScriptDataBC skeletonScript;
 
+
+    //lhelp get untsuck
+    public Vector2 oldPosition = Vector2.zero;
+    public bool Stuck = false;
+    public GameObject NearestDoor = null;
+    public bool movedOnce = false;
+
     protected override void Start()
     {
         base.Start();
         skeletonScript = new SkeletonScriptData();
+        oldPosition = transform.position;
     }
 
     public override void Update()
@@ -67,34 +80,89 @@ public class SkeletonScript : EnemyClass
         if (!attackReady)
         {
             attackCooldownTimer += Time.deltaTime;
-            if (attackCooldownTimer >= attackCooldown / 1000f)
+            if (attackCooldownTimer >= attackCooldown)
             {
                 attackReady = true;
+                movedOnce = false;
                 attackCooldownTimer = 0f;
                 base._spriteRenderer.sprite = Skeleton;
             }
         }
+        if (!spriteFlipReady)
+        {
+            spriteFlipCooldownTimer += Time.deltaTime;
+            if (spriteFlipCooldownTimer >= spriteFlipCooldown)
+            {
+                spriteFlipReady = true;
+                spriteFlipCooldownTimer = 0f;
+            }
+        }
     }
+
+    GameObject FindNearestDoor()
+    {
+        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+        GameObject nearestDoor = null;
+        float shortestDistance = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach (GameObject door in doors)
+        {
+            float distance = Vector3.Distance(currentPosition, door.transform.position);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                nearestDoor = door;
+            }
+        }
+
+        return nearestDoor;
+    }
+
 
     public override void Navigation()
     {
         if (base.playerScript != null)
         {
+            
+            float targetX = base.playerScript.rb.position.x;
+            float targetY = base.playerScript.rb.position.y;
+
+            if ( (Vector2.Distance(transform.position, oldPosition) < 0.0005) && movedOnce && attackReady)
+            {
+                Stuck = true;
+                NearestDoor = FindNearestDoor();
+            }
+
+            if (Stuck)
+            {
+                targetX = NearestDoor.transform.position.x;
+                targetY = NearestDoor.transform.position.y;
+            }
+
             //skeletonScript.getHealth();
             if (attackReady)
             {
-                if (transform.position.x < base.playerScript.rb.position.x)
+                if (transform.position.x < targetX)
                 {
                     base._rb.linearVelocityX = movementSpeed;
-                    base._spriteRenderer.flipX = false;
+                    if (spriteFlipReady)
+                    {
+                        base._spriteRenderer.flipX = false;
+                        spriteFlipReady = false;
+                    }
                 }
                 else
                 {
                     base._rb.linearVelocityX = -1 * movementSpeed;
-                    base._spriteRenderer.flipX = true;
+                    if (spriteFlipReady)
+                    {
+                        base._spriteRenderer.flipX = true;
+                        spriteFlipReady = false;
+                    }
                 }
 
-                if (transform.position.y < base.playerScript.rb.position.y)
+                if (transform.position.y < targetY)
                 {
                     base._rb.linearVelocityY = movementSpeed;
                 }
@@ -114,6 +182,18 @@ public class SkeletonScript : EnemyClass
             {
                 Attack();
             }
+
+            // check if moved
+            if (!movedOnce)
+            {
+                if (Vector2.Distance(transform.position, oldPosition) > 0.01f)
+                {
+                    movedOnce = true;
+                }
+            }
+
+            // update old
+            oldPosition = transform.position;
         }
     }
 
