@@ -305,7 +305,7 @@ Transform:
   m_GameObject: {fileID: 6763856213880315173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.26, y: 0.23, z: 0}
+  m_LocalPosition: {x: 5.69, y: 0.07, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -355,7 +355,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 25
   m_Sprite: {fileID: 815424164945274260, guid: eb2ee6700eb4dfb0d86a8cbdb53344a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -380,9 +380,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  damage: 5
   health: 10
   Bullet1: {fileID: 319877769471581982, guid: b127c6af3ba99a84181e33c4e2ef6315, type: 3}
+  Orb: {fileID: 0}
+  facingLeft: 1
 --- !u!50 &3395841593366759454
 Rigidbody2D:
   serializedVersion: 5

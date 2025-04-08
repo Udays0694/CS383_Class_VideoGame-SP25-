@@ -12,6 +12,7 @@ public class ImpController : MonoBehaviour
 //	private Slider healthBar;
 	private Animator animator;
 	private SpriteRenderer sprite;
+	private Rigidbody2D rigidbody;
 	private bool facingRight = true;
 	private bool activated = false;
 
@@ -37,8 +38,9 @@ public class ImpController : MonoBehaviour
     	healthBar.maxValue = health;
 		healthBar.value = health;
 */		
-		GetComponent<Rigidbody2D>().gravityScale = 0;
-		GetComponent<Rigidbody2D>().freezeRotation = true;
+		rigidbody = GetComponent<Rigidbody2D>();
+		rigidbody.gravityScale = 0;
+		rigidbody.freezeRotation = true;
 
 		// Get animator
 		animator = GetComponent<Animator>(); 
@@ -51,6 +53,7 @@ public class ImpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    	rigidbody.linearVelocity = Vector2.zero;
     	if(activated)
     	{
 			// Calculate direction to player
