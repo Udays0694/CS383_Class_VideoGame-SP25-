@@ -8,7 +8,7 @@ public class LevelSystem : MonoBehaviour
 
     public int levelCap = 50;
 
-    public PlayerScript playerScript; // Reference to the PlayerScript
+    private UpgradeSystem upgradeSystem; // Reference to UpgradeSystem
 
     void Start()
     {
@@ -18,11 +18,10 @@ public class LevelSystem : MonoBehaviour
             Debug.LogError("XP component not found on the GameObject.");
         }
 
-        // Attempt to find PlayerScript
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
-        if (playerScript == null)
+        upgradeSystem = GetComponent<UpgradeSystem>(); // Initialize UpgradeSystem
+        if (upgradeSystem == null)
         {
-            Debug.LogError("PlayerScript not found on the Player.");
+            Debug.LogError("UpgradeSystem component not found on the GameObject.");
         }
     }
 
@@ -57,21 +56,31 @@ public class LevelSystem : MonoBehaviour
         levelThreshold += 50; // Increase level up threshold
 
         IncreasePlayerStats();
-        Debug.LogWarning($"Player Leveled Up! Current Level: {level}");
+        
+        string upgradeGiven = AwardRandomUpgrade(); // Store the upgrade given
+        Debug.LogWarning($"Player Leveled Up! Current Level: {level}. Upgrade given: {upgradeGiven}"); // Log the upgrade type
     }
 
     private void IncreasePlayerStats()
     {
-        // Increase player stats - let's start with just increasing speed for now
-        if (playerScript != null)
+        PlayerBuffs playerStats = GetComponent<PlayerBuffs>();
+        if (playerStats != null)
         {
-            float speedIncrease = 1f; // Increase speed by 1 each level up
-            playerScript.moveSpeed += speedIncrease; // Increase player speed
-            Debug.Log($"Player speed increased to {playerScript.moveSpeed}");
+            playerStats.IncreaseStats(10f, 2, 2); // Increment player stats
+            // Debug.LogWarning($"Stats Increased! Health: {health}, Strength: {Strength}, Agility: {Agility}");
         }
         else
         {
-            Debug.LogWarning("PlayerScript component not found on the GameObject.");
+            Debug.LogWarning("PlayerBuffs component not found on the GameObject.");
         }
+    }
+
+    // Method to award a random upgrade and return the upgrade type as a string
+    private string AwardRandomUpgrade()
+    {
+        string[] upgradeTypes = { "Speed", "Strength", "Health" };
+        string randomUpgrade = upgradeTypes[Random.Range(0, upgradeTypes.Length)];
+        upgradeSystem.AwardUpgrade(randomUpgrade); // Call the UpgradeSystem to award the upgrade
+        return randomUpgrade; // Return the name of the upgrade
     }
 }
