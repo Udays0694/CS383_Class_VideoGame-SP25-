@@ -9,7 +9,7 @@ public class PlayerScriptDataBC
         return health;
     }
 
-    public void setHealth(float damage)
+    public virtual void setHealth(float damage)
     {
         Debug.Log("setHealth called in super class");
         health -= 5f;
@@ -18,7 +18,7 @@ public class PlayerScriptDataBC
 
 public class PlayerScriptData : PlayerScriptDataBC
 {
-    public void setHealth(float damage)
+    public override void setHealth(float damage)
     {
         Debug.Log("setHealth called in sub class");
         base.health -= damage;
