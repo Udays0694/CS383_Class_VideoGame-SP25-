@@ -8,15 +8,17 @@ public class LevelSystem : MonoBehaviour
     public int level = 1;
     public int levelCap = 50;
     public Slider xpSlider; // Reference to the XP Slider
-
     private UpgradeSystem upgradeSystem; // Reference to UpgradeSystem
 
     void Start()
     {
-        xpSystem = GetComponent<XP>();
         if (xpSystem == null)
         {
-            Debug.LogError("XP component not found on the GameObject.");
+            xpSystem = GetComponent<XP>();
+            if (xpSystem == null)
+            {
+                Debug.LogError("XP component not found on the GameObject.");
+            }
         }
 
         upgradeSystem = GetComponent<UpgradeSystem>(); // Initialize UpgradeSystem
@@ -25,7 +27,6 @@ public class LevelSystem : MonoBehaviour
             Debug.LogError("UpgradeSystem component not found on the GameObject.");
         }
 
-        // Initialize the slider max value to the initial threshold
         if (xpSlider != null)
         {
             xpSlider.maxValue = levelThreshold;
@@ -51,7 +52,7 @@ public class LevelSystem : MonoBehaviour
         {
             LevelUp();
         }
-        // Update the slider's value based on current XP
+
         if (xpSlider != null)
         {
             xpSlider.value = xpSystem.GetXP();
@@ -60,18 +61,16 @@ public class LevelSystem : MonoBehaviour
 
     private void LevelUp()
     {
-        // Check if the player is at the maximum level (50 in this case)
         if (level >= levelCap)
         {
             Debug.LogWarning("Player has reached the maximum level! Leveling up is not possible.");
-            return; // Prevent leveling up beyond 50
+            return;
         }
 
         level++; // Only increment if not at max level
         xpSystem.AddXP(-levelThreshold); // Subtract XP equal to the threshold (so it resets)
         levelThreshold += 50; // Increase level-up threshold (for the next level)
 
-        // Adjust the slider max value to the new threshold
         if (xpSlider != null)
         {
             xpSlider.maxValue = levelThreshold;
@@ -79,8 +78,8 @@ public class LevelSystem : MonoBehaviour
 
         IncreasePlayerStats();
 
-        string upgradeGiven = AwardRandomUpgrade(); // Store the upgrade given
-        Debug.LogWarning($"Player Leveled Up! Current Level: {level}. Upgrade given: {upgradeGiven}"); // Log the upgrade type
+        string upgradeGiven = AwardRandomUpgrade();
+        Debug.LogWarning($"Player Leveled Up! Current Level: {level}. Upgrade given: {upgradeGiven}");
     }
 
     private void IncreasePlayerStats()
@@ -88,7 +87,7 @@ public class LevelSystem : MonoBehaviour
         PlayerBuffs playerStats = GetComponent<PlayerBuffs>();
         if (playerStats != null)
         {
-            playerStats.IncreaseStats(10f, 2, 2); // Increment player stats
+            playerStats.IncreaseStats(10f, 2, 2);
         }
         else
         {
@@ -96,12 +95,11 @@ public class LevelSystem : MonoBehaviour
         }
     }
 
-    // Method to award a random upgrade and return the upgrade type as a string
     private string AwardRandomUpgrade()
     {
         string[] upgradeTypes = { "Speed", "Strength", "Health" };
         string randomUpgrade = upgradeTypes[Random.Range(0, upgradeTypes.Length)];
-        upgradeSystem.AwardUpgrade(randomUpgrade); // Call the UpgradeSystem to award the upgrade
-        return randomUpgrade; // Return the name of the upgrade
+        upgradeSystem.AwardUpgrade(randomUpgrade);
+        return randomUpgrade;
     }
 }

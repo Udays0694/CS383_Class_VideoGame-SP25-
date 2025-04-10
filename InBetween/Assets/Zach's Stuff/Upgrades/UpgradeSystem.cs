@@ -6,15 +6,23 @@ public class UpgradeSystem : MonoBehaviour
 
     void Start()
     {
-        playerScript = GetComponent<PlayerScript>(); // Get PlayerScript component from the same GameObject
+        // Find the player GameObject and get the PlayerScript component
+        playerScript = GameObject.FindWithTag("Player").GetComponent<PlayerScript>();
+
         if (playerScript == null)
         {
-            Debug.LogError("PlayerScript not found!");
+            Debug.LogError("PlayerScript not found! Ensure PlayerScript is attached to the player object.");
         }
     }
 
     public void AwardUpgrade(string upgradeType)
     {
+        if (playerScript == null)
+        {
+            Debug.LogError("PlayerScript is not initialized, can't award upgrades.");
+            return; // Exit if PlayerScript is not found
+        }
+
         switch (upgradeType)
         {
             case "Speed":
@@ -40,8 +48,8 @@ public class UpgradeSystem : MonoBehaviour
 
     private void IncreaseStrength()
     {
-        // Assuming you have strength implemented
-        Debug.Log("Strength Upgrade Awarded!");
+        playerScript.strength += 2; // Increase strength
+        Debug.Log("Strength Upgrade Awarded! New Strength: " + playerScript.strength);
     }
 
     private void IncreaseHealth()
