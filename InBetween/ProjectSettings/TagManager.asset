@@ -8,11 +8,12 @@ TagManager:
   - Door
   - Room
   - Corridor
+  - Boss
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 
