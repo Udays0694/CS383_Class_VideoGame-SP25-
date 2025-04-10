@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelSystem : MonoBehaviour
 {
     public XP xpSystem;
     public int levelThreshold = 100;
     public int level = 1;
-
     public int levelCap = 50;
+    public Slider xpSlider; // Reference to the XP Slider
 
     private UpgradeSystem upgradeSystem; // Reference to UpgradeSystem
 
@@ -23,13 +24,23 @@ public class LevelSystem : MonoBehaviour
         {
             Debug.LogError("UpgradeSystem component not found on the GameObject.");
         }
+
+        // Initialize the slider max value to the initial threshold
+        if (xpSlider != null)
+        {
+            xpSlider.maxValue = levelThreshold;
+        }
+        else
+        {
+            Debug.LogError("XP Slider is not assigned.");
+        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GainXP(10); // On 'X' input give XP for testing
+            GainXP(10); // On 'X' input, give XP for testing
         }
     }
 
@@ -40,23 +51,34 @@ public class LevelSystem : MonoBehaviour
         {
             LevelUp();
         }
+        // Update the slider's value based on current XP
+        if (xpSlider != null)
+        {
+            xpSlider.value = xpSystem.GetXP();
+        }
     }
 
     private void LevelUp()
     {
         // Check if the player is at the maximum level (50 in this case)
-        if (level >= 50)
+        if (level >= levelCap)
         {
             Debug.LogWarning("Player has reached the maximum level! Leveling up is not possible.");
             return; // Prevent leveling up beyond 50
         }
 
         level++; // Only increment if not at max level
-        xpSystem.AddXP(-levelThreshold);
-        levelThreshold += 50; // Increase level up threshold
+        xpSystem.AddXP(-levelThreshold); // Subtract XP equal to the threshold (so it resets)
+        levelThreshold += 50; // Increase level-up threshold (for the next level)
+
+        // Adjust the slider max value to the new threshold
+        if (xpSlider != null)
+        {
+            xpSlider.maxValue = levelThreshold;
+        }
 
         IncreasePlayerStats();
-        
+
         string upgradeGiven = AwardRandomUpgrade(); // Store the upgrade given
         Debug.LogWarning($"Player Leveled Up! Current Level: {level}. Upgrade given: {upgradeGiven}"); // Log the upgrade type
     }
@@ -67,7 +89,6 @@ public class LevelSystem : MonoBehaviour
         if (playerStats != null)
         {
             playerStats.IncreaseStats(10f, 2, 2); // Increment player stats
-            // Debug.LogWarning($"Stats Increased! Health: {health}, Strength: {Strength}, Agility: {Agility}");
         }
         else
         {
