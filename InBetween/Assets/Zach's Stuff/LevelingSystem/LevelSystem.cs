@@ -78,8 +78,16 @@ public class LevelSystem : MonoBehaviour
 
         IncreasePlayerStats();
 
-        string upgradeGiven = AwardRandomUpgrade();
-        Debug.LogWarning($"Player Leveled Up! Current Level: {level}. Upgrade given: {upgradeGiven}");
+        UpgradeUIManager uiManager = FindFirstObjectByType<UpgradeUIManager>();
+        if (uiManager != null)
+        {
+            uiManager.ShowUpgradeOptions();
+        }
+        else
+        {
+            Debug.LogWarning("Upgrade UI Manager not found in scene.");
+        }
+
     }
 
     private void IncreasePlayerStats()

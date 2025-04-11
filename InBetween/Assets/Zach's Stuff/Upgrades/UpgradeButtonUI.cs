@@ -1,23 +1,31 @@
-/*using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UpgradeButtonUI : MonoBehaviour
 {
-    public TMP_Text upgradeNameText;
-    private string upgradeType;
-    private UpgradeUIManager manager;
+    public TextMeshProUGUI upgradeNameText;
+    public TextMeshProUGUI upgradeDescriptionText;
+    public Image upgradeIcon;
 
-    public void Initialize(string type, UpgradeUIManager uiManager)
+    private string upgradeType;
+    private UpgradeUIManager upgradeUIManager;
+
+    public void Initialize(string name, string description, Sprite icon, string type, UpgradeUIManager manager)
     {
+        upgradeNameText.text = name;
+        upgradeDescriptionText.text = description;
+        upgradeIcon.sprite = icon;
+
         upgradeType = type;
-        upgradeNameText.text = type;
-        manager = uiManager;
+        upgradeUIManager = manager;
+
+        // ✅ THIS IS THE IMPORTANT PART:
+        GetComponent<Button>().onClick.AddListener(OnClick);
     }
 
     public void OnClick()
     {
-        manager.SelectUpgrade(upgradeType);
+        upgradeUIManager.SelectUpgrade(upgradeType);
     }
 }
-*/
