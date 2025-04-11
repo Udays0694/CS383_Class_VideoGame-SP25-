@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5579728072880662307}
   - component: {fileID: 1182804643239324247}
   - component: {fileID: 5928351514009367454}
-  - component: {fileID: 1248074680831797728}
   - component: {fileID: 4286066483092590512}
   m_Layer: 0
   m_Name: Skeleton
@@ -164,21 +163,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1248074680831797728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2529410704935851373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08ce5ecf86c99914d82757bd625862c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerScript: {fileID: 0}
-  _rb: {fileID: 5928351514009367454}
-  _spriteRenderer: {fileID: 5579728072880662307}
 --- !u!114 &4286066483092590512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,9 +178,11 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   _rb: {fileID: 5928351514009367454}
   _spriteRenderer: {fileID: 5579728072880662307}
+  XPBar: {fileID: 0}
+  xp: {fileID: 0}
   nameType: Skeleton
   movementSpeed: 3
-  attackDamage: 1
+  attackDamage: 30
   attackCooldown: 0.5
   attackCooldownTimer: 0
   attackReady: 1
@@ -208,6 +194,8 @@ MonoBehaviour:
   SkeletonCharge: {fileID: -3005895968986233309, guid: 83e6f047e7b033b43b4b962333f2918d, type: 3}
   SkeletonLunge: {fileID: -3281707252372194088, guid: 8759b530024b76a439d2d51b8771c33d, type: 3}
   oldPosition: {x: 0, y: 0}
-  Stuck: 0
-  NearestDoor: {fileID: 0}
+  DoWander: 0
+  Wandering: 0
   movedOnce: 0
+  targetX: 0
+  targetY: 0

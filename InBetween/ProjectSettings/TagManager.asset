@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - MusicSFX
   - SFXManager
+  - XPBar
   layers:
   - Default
   - TransparentFX

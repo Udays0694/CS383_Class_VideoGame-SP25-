@@ -11,7 +11,7 @@ public class PlayerScriptDataBC
 
     public virtual void setHealth(float damage)
     {
-        Debug.Log("setHealth called in super class");
+        Debug.Log($"PLAYER getHealth called in super class — current health: {health}");
         health -= 5f;
     }
 }
@@ -20,7 +20,7 @@ public class PlayerScriptData : PlayerScriptDataBC
 {
     public override void setHealth(float damage)
     {
-        Debug.Log("setHealth called in sub class");
+        Debug.Log($"PLAYER getHealth called in sub class — current health: {base.health}");
         base.health -= damage;
     }
 }
@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Vector2 movement;
-    public float health = 0f;
+    public float health = 0f; //updated to dynamic binding version
     public int strength = 10; 
 
 

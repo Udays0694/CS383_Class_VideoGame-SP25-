@@ -15,6 +15,14 @@ public class UpgradeSystem : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            FindFirstObjectByType<UpgradeUIManager>().ShowUpgradeOptions(); // Replaced FindObjectOfType with FindFirstObjectByType
+        }
+    }
+
     public void AwardUpgrade(string upgradeType)
     {
         if (playerScript == null)
@@ -56,5 +64,20 @@ public class UpgradeSystem : MonoBehaviour
     {
         playerScript.health += 50f; // Increase health
         Debug.Log("Health Upgrade Awarded! New Health: " + playerScript.health);
+    }
+
+    public string GetUpgradeDescription(string upgradeType)
+    {
+        switch (upgradeType)
+        {
+            case "Speed":
+                return "Increases your movement speed by 5.";
+            case "Strength":
+                return "Increases your strength by 2.";
+            case "Health":
+                return "Increases your max health by 50.";
+            default:
+                return "No description available.";
+        }
     }
 }
