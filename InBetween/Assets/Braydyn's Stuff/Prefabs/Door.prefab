@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8109958190252081714}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   brokenCorridorPrefab: {fileID: 3731498089122143325, guid: 5587f1782096e004b9451c2c7bd32167, type: 3}
   roomGenerator: {fileID: 0}
   direction: 0
+  openSFX: {fileID: 8300000, guid: 36c8c27b2a5722e4184c38eb21b48bb1, type: 3}
 --- !u!61 &8109958190252081714
 BoxCollider2D:
   m_ObjectHideFlags: 0
