@@ -63,9 +63,13 @@ public class SkeletonScript : EnemyClass
 
     //lhelp get untsuck
     public Vector2 oldPosition = Vector2.zero;
-    public bool Stuck = false;
+    public bool DoWander = false;
+    public bool Wandering = false;
     public GameObject NearestDoor = null;
     public bool movedOnce = false;
+
+    public float targetX = 0;
+    public float targetY = 0;
 
     protected override void Start()
     {
@@ -99,64 +103,69 @@ public class SkeletonScript : EnemyClass
         }
     }
 
-    GameObject FindNearestDoor()
+    public void WanderMove()
     {
-        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-        GameObject nearestDoor = null;
-        float shortestDistance = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
+        float direction = 0;
+        Wandering = true;
 
-        foreach (GameObject door in doors)
+        if (UnityEngine.Random.Range(0, 2) == 0)
         {
-            Vector3 doorPosition = door.transform.position;
-            float distance = Vector3.Distance(currentPosition, doorPosition);
-
-            // Print each door's position and distance to this skeleton
-            Debug.Log($"Door: {door.name} at {doorPosition} — Distance: {distance}");
-
-            if (distance < shortestDistance)
-            {
-                shortestDistance = distance;
-                nearestDoor = door;
-            }
-        }
-
-        if (nearestDoor != null)
-        {
-            Debug.Log($"Nearest door is: {nearestDoor.name} at {nearestDoor.transform.position}");
+            direction = 1;
+            base._spriteRenderer.flipX = true;
         }
         else
         {
-            Debug.LogWarning("No doors found in scene.");
+            direction = -1;
+            base._spriteRenderer.flipX = false;
         }
 
-        return nearestDoor;
+        if (UnityEngine.Random.Range(0, 2) == 0)
+        {
+            base._rb.linearVelocityX = direction * movementSpeed;
+        }
+        else
+        {
+            base._rb.linearVelocityY = direction * movementSpeed; ;
+        }
+
+        StartCoroutine(base.Delayed(() => ClearWanderingMovement(), UnityEngine.Random.Range(1f, 3f)));
     }
-
-
 
     public override void Navigation()
     {
         if (base.playerScript != null)
         {
-            
-            float targetX = base.playerScript.rb.position.x;
-            float targetY = base.playerScript.rb.position.y;
 
-            if ( (Vector2.Distance(transform.position, oldPosition) < 0.0005) && movedOnce && attackReady)
+            float distanceToPlayer = Vector2.Distance(transform.position, base.playerScript.rb.position);
+            if (distanceToPlayer < 10f)
             {
-                Stuck = true;
-                NearestDoor = FindNearestDoor();
+                targetX = base.playerScript.rb.position.x;
+                targetY = base.playerScript.rb.position.y;
+                DoWander = false;
+
+            } else
+            {
+                base._rb.linearVelocityX = 0;
+                base._rb.linearVelocityY = 0;
+                DoWander = true;
             }
 
-            if (Stuck)
+            if ((Vector2.Distance(transform.position, oldPosition) < 0.0005) && movedOnce && attackReady && !DoWander)
             {
-                targetX = NearestDoor.transform.position.x;
-                targetY = NearestDoor.transform.position.y;
+                DoWander = true;
+            }
+
+            if (DoWander)
+            {
+                if (Wandering == false)
+                {
+                    WanderMove();
+                }
+                DoWander = false;
             }
 
             //skeletonScript.getHealth();
-            if (attackReady)
+            if (attackReady && !Wandering)
             {
                 if (transform.position.x < targetX)
                 {
@@ -186,13 +195,7 @@ public class SkeletonScript : EnemyClass
                     base._rb.linearVelocityY = -1 * movementSpeed;
                 }
             }
-            else
-            {
-                base._rb.linearVelocityX = 0;
-                base._rb.linearVelocityY = 0;
-            }
 
-            float distanceToPlayer = Vector2.Distance(transform.position, base.playerScript.rb.position);
             if (distanceToPlayer < 1.5 && attackReady == true)
             {
                 Attack();
@@ -210,6 +213,13 @@ public class SkeletonScript : EnemyClass
             // update old
             oldPosition = transform.position;
         }
+    }
+
+    public void ClearWanderingMovement()
+    {
+        base._rb.linearVelocityX = 0;
+        base._rb.linearVelocityY = 0;
+        Wandering = false;
     }
 
     public override void Attack()

@@ -1,6 +1,7 @@
 using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class EnemyClass : MonoBehaviour
 {
@@ -29,8 +30,13 @@ public class EnemyClass : MonoBehaviour
             Debug.LogWarning("No player found. The enemy will not be able to interact with the player.");
         }
     }
+    protected IEnumerator Delayed(System.Action action, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        action();
+    }
 
-    // Update is called once per frame
+
     public virtual void Update()
     {
         Navigation();
