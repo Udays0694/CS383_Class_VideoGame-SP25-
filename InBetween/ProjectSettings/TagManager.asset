@@ -9,6 +9,8 @@ TagManager:
   - Room
   - Corridor
   - Boss
+  - MusicSFX
+  - SFXManager
   layers:
   - Default
   - TransparentFX

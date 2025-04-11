@@ -17,6 +17,8 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject brokenCorridorPrefab;
     [SerializeField] private RoomGenerator roomGenerator;
     [SerializeField] private DoorDirection direction;
+    AudioSource DoorAudio;
+   public AudioClip openSFX;
 
     private static HashSet<Vector3> openedDoors = new HashSet<Vector3>();
     private bool playerNearby = false;
@@ -28,7 +30,10 @@ public class Door : MonoBehaviour
 
         if (openedDoors.Contains(transform.position))
             gameObject.SetActive(false);
+    
+    DoorAudio = GameObject.FindGameObjectWithTag("SFXManager").GetComponent<AudioSource>();
     }
+
 
     private void Update()
     {
@@ -36,6 +41,7 @@ public class Door : MonoBehaviour
         {
             if (!openedDoors.Contains(transform.position))
             {
+                DoorAudio.PlayOneShot(openSFX);
                 StartCoroutine(SpawnCorridorAndRoom());
             }
         }
