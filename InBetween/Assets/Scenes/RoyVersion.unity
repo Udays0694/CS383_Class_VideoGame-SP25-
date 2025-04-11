@@ -483,6 +483,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 13.474605, y: 12.675739}
   m_EdgeRadius: 0
+--- !u!114 &273684325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1845323031125185049, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
+  m_PrefabInstance: {fileID: 6348210609322069425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273684320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6371a3efe86a34db3a810846816f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &362350504
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +530,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &455772384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455772386}
+  - component: {fileID: 455772385}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &455772385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455772384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be01e21a036a36040a2aa1c6d1c2a3c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  rayDistance: 0.1
+  player: {fileID: 0}
+  floorMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!4 &455772386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455772384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &481682148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8365380763927441018, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
@@ -2527,6 +2588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf2
       objectReference: {fileID: 0}
+    - target: {fileID: 4414428192445605096, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5182334315588967396, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.17401212
@@ -2697,6 +2762,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
+      propertyPath: SpawnRoom
+      value: 
+      objectReference: {fileID: 273684325}
+    - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: DefaultRoom
       value: 
       objectReference: {fileID: 1845323031125185049, guid: 388264f37f44c5246adfc7488b6d3214, type: 3}
@@ -2776,3 +2845,4 @@ SceneRoots:
   - {fileID: 1256340588}
   - {fileID: 214505347}
   - {fileID: 915329080}
+  - {fileID: 455772386}

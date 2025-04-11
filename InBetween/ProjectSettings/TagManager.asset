@@ -12,6 +12,7 @@ TagManager:
   - MusicSFX
   - SFXManager
   - XPBar
+  - RoomFloor
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - 
+  - Floor
   - 
   - 
   - 
