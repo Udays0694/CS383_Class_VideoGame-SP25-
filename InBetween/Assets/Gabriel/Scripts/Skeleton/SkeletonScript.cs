@@ -108,7 +108,12 @@ public class SkeletonScript : EnemyClass
 
         foreach (GameObject door in doors)
         {
-            float distance = Vector3.Distance(currentPosition, door.transform.position);
+            Vector3 doorPosition = door.transform.position;
+            float distance = Vector3.Distance(currentPosition, doorPosition);
+
+            // Print each door's position and distance to this skeleton
+            Debug.Log($"Door: {door.name} at {doorPosition} — Distance: {distance}");
+
             if (distance < shortestDistance)
             {
                 shortestDistance = distance;
@@ -116,8 +121,18 @@ public class SkeletonScript : EnemyClass
             }
         }
 
+        if (nearestDoor != null)
+        {
+            Debug.Log($"Nearest door is: {nearestDoor.name} at {nearestDoor.transform.position}");
+        }
+        else
+        {
+            Debug.LogWarning("No doors found in scene.");
+        }
+
         return nearestDoor;
     }
+
 
 
     public override void Navigation()

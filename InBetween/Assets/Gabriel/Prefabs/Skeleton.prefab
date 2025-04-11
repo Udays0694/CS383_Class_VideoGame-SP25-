@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4286066483092590512}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.7}
+  m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &5928351514009367454
 Rigidbody2D:
@@ -207,3 +207,7 @@ MonoBehaviour:
   Skeleton: {fileID: 6730731893986024075, guid: ab41ea3014a85f7438919a0a2503f577, type: 3}
   SkeletonCharge: {fileID: -3005895968986233309, guid: 83e6f047e7b033b43b4b962333f2918d, type: 3}
   SkeletonLunge: {fileID: -3281707252372194088, guid: 8759b530024b76a439d2d51b8771c33d, type: 3}
+  oldPosition: {x: 0, y: 0}
+  Stuck: 0
+  NearestDoor: {fileID: 0}
+  movedOnce: 0
