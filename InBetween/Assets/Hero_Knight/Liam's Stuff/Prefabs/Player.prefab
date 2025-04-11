@@ -288,10 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 8967317711725211469}
   attackOrigin: {fileID: 3235474097206113746}
-  attackRadius: 1.16
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 8
+  attackRange: 1.5
+  attackBoxSize: {x: 1.32, y: 1.99}
   cooldownTime: 0.5
   attackDamage: 25
 --- !u!114 &809392302341543279
