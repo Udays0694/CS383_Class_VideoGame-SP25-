@@ -8,7 +8,7 @@ public class SkeletonScriptDataBC
 
     public virtual float getHealth()
     {
-        Debug.Log("setHealth called in super class");
+        //Debug.Log($"getHealth called in super class — current health: {health}");
         health = 0;
         return health;
     }
@@ -16,7 +16,6 @@ public class SkeletonScriptDataBC
     public virtual void setHealth(float damage)
     {
         health = 0;
-     
     }
 
     public static implicit operator SkeletonScriptDataBC(SkeletonScript v)
@@ -29,7 +28,7 @@ public class SkeletonScriptData : SkeletonScriptDataBC
 {
     public override float getHealth()
     {
-        Debug.Log("setHealth called in sub class");
+        //Debug.Log($"getHealth called in sub class — current health: {base.health}");
         return base.health;
     }
 
@@ -48,7 +47,7 @@ public class SkeletonScript : EnemyClass
     public float attackCooldownTimer = 0f;
     public bool attackReady = true;
 
-    public float xpAward = 10f;
+    public int xpAward = 10;
 
     public float spriteFlipCooldownTimer = 0.0f;
     public float spriteFlipCooldown = 0.5f;
@@ -65,7 +64,6 @@ public class SkeletonScript : EnemyClass
     public Vector2 oldPosition = Vector2.zero;
     public bool DoWander = false;
     public bool Wandering = false;
-    public GameObject NearestDoor = null;
     public bool movedOnce = false;
 
     public float targetX = 0;
@@ -230,8 +228,9 @@ public class SkeletonScript : EnemyClass
         base._spriteRenderer.sprite = SkeletonLunge;
     }
 
-    public override void OnTakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
+        Debug.Log("Taking Damage");
         skeletonScript.setHealth(damage);
         if (skeletonScript.getHealth() <= 0)
         {

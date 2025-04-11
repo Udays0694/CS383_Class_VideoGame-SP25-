@@ -14,11 +14,15 @@ public class EnemyClass : MonoBehaviour
     // Animate
     public SpriteRenderer _spriteRenderer = null;
 
+    public GameObject XPBar = null;
+    public XP xp;
+
     protected virtual void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.freezeRotation = true;
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        XPBar = GameObject.FindGameObjectWithTag("XPBar");
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
@@ -49,21 +53,19 @@ public class EnemyClass : MonoBehaviour
 
     public void DamagePlayer(float damage)
     {
+        Debug.Log($"Damaged Player for: {damage}");
         playerScript.TakeDamage(damage);
     }
 
-    public void TakeDamage(float damage)
-    { 
-        OnTakeDamage(damage);
-    }
-
-    public virtual void OnTakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
+        Debug.Log("Old TakeDamage");
         // Class specific health here
     }
 
-    public void XPAward(float xp_amount)
+    public void XPAward(int xp_amount)
     {
+        XPBar.GetComponent<XP>().AddXP(xp_amount);
         Death();
     }
 

@@ -3,30 +3,31 @@ using UnityEngine;
 // Just a simple health manager to show how you can controll the HealthBar UI
 public class HealthManager : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
 
     public HealthBar healthBar;
+    public PlayerScript playerScript;
 
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
-
-    void Update()
-    {
-        // Damage player when we press the G key
-        if (Input.GetKeyDown(KeyCode.G))
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            TakeDamage(20);
+            playerScript = player.GetComponent<PlayerScript>();
         }
+        else
+        {
+            Debug.LogWarning("No player found. The enemy will not be able to interact with the player.");
+        }
+        healthBar.SetMaxHealth(100);
     }
 
-    void TakeDamage(int damage)
+    private void Update()
     {
-        currentHealth -= damage;
+        UpdateBar();
+    }
 
-        healthBar.SetCurrentHealth(currentHealth);
+    void UpdateBar()
+    {
+        healthBar.SetCurrentHealth(playerScript.health);
     }
 }

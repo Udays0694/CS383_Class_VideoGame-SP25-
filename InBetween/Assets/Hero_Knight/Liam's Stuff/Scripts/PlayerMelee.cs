@@ -11,7 +11,7 @@ public class PlayerMelee : MonoBehaviour
     public float cooldownTime = 0.3f;
     private float cooldownTimer = 0f;
 
-    public int attackDamage = 25;
+    public float attackDamage = 50f;
     private Vector2 attackDirection = Vector2.right;
 
     // Dict that sets the offset for tha attacks 
@@ -57,12 +57,12 @@ public class PlayerMelee : MonoBehaviour
 
         Collider2D[] hits = Physics2D.OverlapBoxAll(boxCenter, attackBoxSize, angle);
 
-        foreach (var hit in hits) // finds if they have the ennemy tag 
+        foreach (var hit in hits) // finds if they have the enemy tag 
         {
             if (hit.CompareTag("Enemy"))
             {
                 Debug.Log($"Hit: {hit.name}");
-                // hit.GetComponent<HealthManager>().TakeDamage(attackDamage, transform.position);
+                hit.GetComponent<EnemyClass>().TakeDamage(attackDamage);
             }
         }
     }

@@ -10,7 +10,7 @@ public class SpiderScript : EnemyClass
     public float attackCooldown = 0.2f;
     public float attackCooldownTimer = 0f;
     public bool attackReady = true;
-    public float xpAward = 5f;
+    public int xpAward = 5;
     public float health = 40f;
 
     public Sprite Spider;
@@ -82,7 +82,7 @@ public class SpiderScript : EnemyClass
         base._spriteRenderer.sprite = SpiderLunge;
     }
 
-    public override void OnTakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
