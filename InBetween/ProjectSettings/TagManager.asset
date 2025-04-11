@@ -8,11 +8,14 @@ TagManager:
   - Door
   - Room
   - Corridor
+  - Boss
+  - MusicSFX
+  - SFXManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 

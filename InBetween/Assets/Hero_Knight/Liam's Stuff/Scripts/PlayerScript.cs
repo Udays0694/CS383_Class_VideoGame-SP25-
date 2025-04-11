@@ -28,6 +28,7 @@ public class PlayerScriptData : PlayerScriptDataBC
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    public SpriteRenderer Sprite;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Vector2 movement;
@@ -48,6 +49,7 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerScript = new PlayerScriptData();
+        Sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -67,10 +69,12 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || moveLeft == true)
         {
             movement.x = -1;
+            Sprite.flipX = true;
         }
         if (Input.GetKey(KeyCode.D) || moveRight == true)
         {
             movement.x = 1;
+            Sprite.flipX = false;
         }
         
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
