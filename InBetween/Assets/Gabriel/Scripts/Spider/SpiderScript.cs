@@ -13,10 +13,6 @@ public class SpiderScript : EnemyClass
     public int xpAward = 5;
     public float health = 40f;
 
-    public Sprite Spider;
-    public Sprite SpiderCharge;
-    public Sprite SpiderLunge;
-
     protected override void Start()
     {
         base.Start();
@@ -32,43 +28,14 @@ public class SpiderScript : EnemyClass
             {
                 attackReady = true;
                 attackCooldownTimer = 0f;
-                base._spriteRenderer.sprite = Spider;
             }
         }
     }
 
     public override void Navigation()
     {
-        //skeletonScript.getHealth();
-        if (attackReady)
-        {
-            if (transform.position.x < base.playerScript.rb.position.x)
-            {
-                base._rb.linearVelocityX = movementSpeed;
-                base._spriteRenderer.flipX = false;
-            }
-            else
-            {
-                base._rb.linearVelocityX = -1 * movementSpeed;
-                base._spriteRenderer.flipX = true;
-            }
-
-            if (transform.position.y < base.playerScript.rb.position.y)
-            {
-                base._rb.linearVelocityY = movementSpeed;
-            }
-            else
-            {
-                base._rb.linearVelocityY = -1 * movementSpeed;
-            }
-        } else
-        {
-            base._rb.linearVelocityX = 0;
-            base._rb.linearVelocityY = 0;
-        }
-
         float distanceToPlayer = Vector2.Distance(transform.position, base.playerScript.rb.position);
-        if (distanceToPlayer < 1.5 && attackReady == true)
+        if (distanceToPlayer < 1 && attackReady == true)
         {
             Attack();
         }
@@ -79,7 +46,6 @@ public class SpiderScript : EnemyClass
         //Debug.Log("Attacked player");
         base.DamagePlayer(attackDamage);
         attackReady = false;
-        base._spriteRenderer.sprite = SpiderLunge;
     }
 
     public override void TakeDamage(float damage)
