@@ -58,6 +58,8 @@ public class PlayerScript : MonoBehaviour
         movement.x = 0;
         movement.y = 0;
 
+
+
         if (Input.GetKey(KeyCode.W) || moveUp == true)
         {
             movement.y = 1;
@@ -86,7 +88,11 @@ public class PlayerScript : MonoBehaviour
             _animator.SetBool("isRunning", false);
         }
 
-       
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            TakeDamage(20);
+        }
+
         // Normalize movement to prevent faster diagonal movement
         movement = movement.normalized;
         health = playerScript.getHealth();
@@ -101,6 +107,7 @@ public class PlayerScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
         playerScript.setHealth(damage);
+        GameObject.Find("DamageSound").GetComponent<AudioSource>().Play();
         if (playerScript.getHealth() <= 0)
         {
             Death();
