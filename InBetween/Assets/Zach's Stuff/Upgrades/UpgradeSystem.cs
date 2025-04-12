@@ -63,8 +63,8 @@ public class UpgradeSystem : MonoBehaviour
     private void IncreaseHealth()
     {
         PlayerScript player = FindFirstObjectByType<PlayerScript>();
-        playerScript.TakeDamage(-50f); // Increase health
-        Debug.Log("Health Upgrade Awarded! New Health: " + playerScript.health);
+        playerScript.setHealth(healbase);
+       
     }
 
     public string GetUpgradeDescription(string upgradeType)

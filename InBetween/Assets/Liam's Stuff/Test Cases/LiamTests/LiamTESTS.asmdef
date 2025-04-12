@@ -1,0 +1,6 @@
+{
+    "name": "LIAMTests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}

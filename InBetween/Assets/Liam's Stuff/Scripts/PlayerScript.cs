@@ -1,10 +1,13 @@
 using UnityEngine;
+//This entire area of the project took me about 35-40 hours, this was due to some reworks and certain things not taking as long as expected.
+//Reworking code or communicating with partners was probably the greatest holdup as we were unable to have meetings as frequently as we should have. 
+//I estimated it would take around 46 hours.I learned that typically in these scenarios when I am estimating, it is that typically I tend to overestimate heavily, especially when dealing with a project of this magnitude.
 
 public class PlayerScriptDataBC
 {
-    protected float health = 100f;
-
-    public virtual float getHealth()
+    protected float health = 100f; //Private Class Data Pattern example, as it uses encapsulation to protect interal data
+    public float healbase = 20f;
+    public virtual float getHealth() //Health is not directly exposed, rather it is accessed via methods.
     {
         return health;
     }
@@ -45,8 +48,8 @@ public class PlayerScript : MonoBehaviour
     public bool moveRight = false;
     public bool movementKeyPressed = false;
 
-    void Start()
-    {
+    void Start() //This is part of the Strategy pattern as it works within the use of PlayerScriptDataBC and PlayerScriptData polymorphically in PlayerScript. 
+    { //Used to define a family of algorithms/behaviors, in this case alllowing for things such as setHealth and getHealth to be swapped at runtime, with a subclass implementation such as PlayerScriptData.
         rb = GetComponent<Rigidbody2D>();
         playerScript = new PlayerScriptData();
         Sprite = GetComponent<SpriteRenderer>();
@@ -111,6 +114,15 @@ public class PlayerScript : MonoBehaviour
         if (playerScript.getHealth() <= 0)
         {
             Death();
+        }
+    }
+
+    public void HealME(float healbase)
+    {
+        playerScript.setHealth(healbase);
+        if(playerScript.getHealth() >= health)
+        {
+            playerScript.setHealth(health);
         }
     }
 
