@@ -674,7 +674,6 @@ GameObject:
   - component: {fileID: 515464566}
   - component: {fileID: 515464565}
   - component: {fileID: 515464568}
-  - component: {fileID: 515464569}
   - component: {fileID: 515464571}
   m_Layer: 5
   m_Name: XPBarSlider
@@ -800,21 +799,6 @@ MonoBehaviour:
   level: 1
   levelCap: 50
   xpSlider: {fileID: 515464567}
---- !u!114 &515464569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515464563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf868218ed2c5548a1a1c6358b9d3f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  strength: 10
-  agility: 10
 --- !u!114 &515464571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,7 +1733,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7835432662140014913, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

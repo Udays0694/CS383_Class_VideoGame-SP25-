@@ -8,7 +8,7 @@ public class SkeletonScriptDataBC
 
     public virtual float getHealth()
     {
-        //Debug.Log($"getHealth called in super class — current health: {health}");
+        Debug.Log($"getHealth called in super class ï¿½ current health: {health}");
         health = 0;
         return health;
     }
@@ -28,7 +28,7 @@ public class SkeletonScriptData : SkeletonScriptDataBC
 {
     public override float getHealth()
     {
-        //Debug.Log($"getHealth called in sub class — current health: {base.health}");
+        //Debug.Log($"getHealth called in sub class ï¿½ current health: {base.health}");
         return base.health;
     }
 
