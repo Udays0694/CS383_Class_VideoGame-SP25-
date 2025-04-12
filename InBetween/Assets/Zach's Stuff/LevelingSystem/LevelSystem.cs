@@ -7,8 +7,9 @@ public class LevelSystem : MonoBehaviour
     public int levelThreshold = 100;
     public int level = 1;
     public int levelCap = 50;
-    public Slider xpSlider; // Reference to the XP Slider
-    private UpgradeSystem upgradeSystem; // Reference to UpgradeSystem
+    public Slider xpSlider;
+    private UpgradeSystem upgradeSystem;
+    private PlayerScript playerScript;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class LevelSystem : MonoBehaviour
             }
         }
 
-        upgradeSystem = GetComponent<UpgradeSystem>(); // Initialize UpgradeSystem
+        upgradeSystem = GetComponent<UpgradeSystem>();
         if (upgradeSystem == null)
         {
             Debug.LogError("UpgradeSystem component not found on the GameObject.");
@@ -41,7 +42,12 @@ public class LevelSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GainXP(10); // On 'X' input, give XP for testing
+            GainXP(10); // Give player 10 XP
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            LevelUp(); // Simulate level-up manually
         }
     }
 
@@ -67,16 +73,16 @@ public class LevelSystem : MonoBehaviour
             return;
         }
 
-        level++; // Only increment if not at max level
-        xpSystem.AddXP(-levelThreshold); // Subtract XP equal to the threshold (so it resets)
-        levelThreshold += 50; // Increase level-up threshold (for the next level)
+        level++;
+        xpSystem.AddXP(-levelThreshold);
+        levelThreshold += 50;
 
         if (xpSlider != null)
         {
             xpSlider.maxValue = levelThreshold;
         }
 
-        IncreasePlayerStats();
+        ApplyStatIncreases();
 
         UpgradeUIManager uiManager = FindFirstObjectByType<UpgradeUIManager>();
         if (uiManager != null)
@@ -87,27 +93,22 @@ public class LevelSystem : MonoBehaviour
         {
             Debug.LogWarning("Upgrade UI Manager not found in scene.");
         }
-
     }
 
-    private void IncreasePlayerStats()
+    private void ApplyStatIncreases()
     {
-        PlayerBuffs playerStats = GetComponent<PlayerBuffs>();
-        if (playerStats != null)
+        PlayerScript player = FindFirstObjectByType<PlayerScript>();
+        if (player != null)
         {
-            playerStats.IncreaseStats(10f, 2, 2);
+            player.moveSpeed += 0.2f;
+            player.strength += 1;
+            player.playerScript.setHealth(-2f); // Heal for 2
+
+            Debug.Log($"Passive stat increases applied: Speed={player.moveSpeed}, Strength={player.strength}, Health={player.playerScript.getHealth()}");
         }
         else
         {
-            Debug.LogWarning("PlayerBuffs component not found on the GameObject.");
+            Debug.LogWarning("PlayerScript not found when applying stat increases.");
         }
-    }
-
-    private string AwardRandomUpgrade()
-    {
-        string[] upgradeTypes = { "Speed", "Strength", "Health" };
-        string randomUpgrade = upgradeTypes[Random.Range(0, upgradeTypes.Length)];
-        upgradeSystem.AwardUpgrade(randomUpgrade);
-        return randomUpgrade;
     }
 }
