@@ -3,11 +3,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-
+    // Misc
     public PlayerScript playerScript;
-    public float rayDistance = 100f;
     public GameObject player = null;
-    public LayerMask floorMask;
+    public Vector3 oldPlayerPosition;
+
+    // Skeleton
+    public GameObject SkeletonPrefab;
+    public GameObject Skeleton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,11 +24,20 @@ public class EnemySpawner : MonoBehaviour
         {
             Debug.LogWarning("No player found. The enemy will not be able to interact with the player.");
         }
+
+        Invoke("QueueSkeletonSpawn", 10f);
     }
 
-    // Update is called once per 
-    void Update()
+    public void QueueSkeletonSpawn()
     {
-        
+        oldPlayerPosition = player.transform.position;
+        oldPlayerPosition.z = -1f;
+        Invoke("SpawnSkeleton", Random.Range(5f, 10f));
+    }
+
+    public void SpawnSkeleton()
+    {
+        Skeleton = Instantiate(SkeletonPrefab, oldPlayerPosition, Quaternion.identity);
+        QueueSkeletonSpawn();
     }
 }

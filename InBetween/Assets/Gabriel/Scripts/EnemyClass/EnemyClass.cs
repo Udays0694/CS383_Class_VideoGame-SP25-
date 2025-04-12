@@ -66,7 +66,8 @@ public class EnemyClass : MonoBehaviour
     public void XPAward(int xp_amount)
     {
         XPBar.GetComponent<XP>().AddXP(xp_amount);
-        Death();
+        this.enabled = false;
+        Invoke("Death", 2f);
     }
 
     void Death()

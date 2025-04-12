@@ -62,18 +62,23 @@ public class SkeletonScript : EnemyClass
 
     //lhelp get untsuck
     public Vector2 oldPosition = Vector2.zero;
-    public bool DoWander = false;
-    public bool Wandering = false;
+    public bool doWander = false;
+    public bool wandering = false;
     public bool movedOnce = false;
 
     public float targetX = 0;
     public float targetY = 0;
 
+    // sound effect
+    public AudioSource skeletonHit;
+    public AudioSource skeletonDeath;
+    
     protected override void Start()
     {
         base.Start();
         skeletonScript = new SkeletonScriptData();
         oldPosition = transform.position;
+        skeletonDeath.Play();
     }
 
     public override void Update()
@@ -104,7 +109,7 @@ public class SkeletonScript : EnemyClass
     public void WanderMove()
     {
         float direction = 0;
-        Wandering = true;
+        wandering = true;
 
         if (UnityEngine.Random.Range(0, 2) == 0)
         {
@@ -139,31 +144,31 @@ public class SkeletonScript : EnemyClass
             {
                 targetX = base.playerScript.rb.position.x;
                 targetY = base.playerScript.rb.position.y;
-                DoWander = false;
+                doWander = false;
 
             } else
             {
                 base._rb.linearVelocityX = 0;
                 base._rb.linearVelocityY = 0;
-                DoWander = true;
+                doWander = true;
             }
 
-            if ((Vector2.Distance(transform.position, oldPosition) < 0.0005) && movedOnce && attackReady && !DoWander)
+            if ((Vector2.Distance(transform.position, oldPosition) < 0.0005) && movedOnce && attackReady && !doWander)
             {
-                DoWander = true;
+                doWander = true;
             }
 
-            if (DoWander)
+            if (doWander)
             {
-                if (Wandering == false)
+                if (wandering == false)
                 {
                     WanderMove();
                 }
-                DoWander = false;
+                doWander = false;
             }
 
             //skeletonScript.getHealth();
-            if (attackReady && !Wandering)
+            if (attackReady && !wandering)
             {
                 if (transform.position.x < targetX)
                 {
@@ -194,7 +199,15 @@ public class SkeletonScript : EnemyClass
                 }
             }
 
-            if (distanceToPlayer < 1.5 && attackReady == true)
+            if (distanceToPlayer < 2 && attackReady == true && !wandering)
+            {
+                base._spriteRenderer.sprite = SkeletonCharge;
+            } else
+            {
+                base._spriteRenderer.sprite = Skeleton;
+            }
+
+            if (distanceToPlayer < 1.5 && attackReady == true && !wandering)
             {
                 Attack();
             }
@@ -217,7 +230,7 @@ public class SkeletonScript : EnemyClass
     {
         base._rb.linearVelocityX = 0;
         base._rb.linearVelocityY = 0;
-        Wandering = false;
+        wandering = false;
     }
 
     public override void Attack()
@@ -232,6 +245,7 @@ public class SkeletonScript : EnemyClass
     {
         Debug.Log("Taking Damage");
         skeletonScript.setHealth(damage);
+        skeletonHit.Play();
         if (skeletonScript.getHealth() <= 0)
         {
             base.XPAward(xpAward);
