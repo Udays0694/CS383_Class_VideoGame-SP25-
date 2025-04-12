@@ -1,7 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelSystem : MonoBehaviour
+public class LevelSystemBase : MonoBehaviour // Superclass for dynamic binding
+{
+    // Virtual method that can be overridden in subclasses
+    public virtual void GainXP(int amount)
+    {
+        Debug.Log("Base GainXP called with: " + amount); // Virtual method in the base class
+    }
+}
+
+public class LevelSystem : LevelSystemBase // Subclass for static binding
 {
     public XP xpSystem;
     public int levelThreshold = 100;
@@ -40,18 +49,27 @@ public class LevelSystem : MonoBehaviour
 
     void Update()
     {
+        // Demonstrate dynamic binding
+        LevelSystemBase baseRef = this;
+
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GainXP(10); // Give player 10 XP
+            baseRef.GainXP(10); // Dynamically bound to the overridden method in LevelSystem
         }
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-            LevelUp(); // Simulate level-up manually
+            LevelUp(); // Manual level-up
+        }
+
+        // To demonstrate static binding, you can call the base GainXP method directly like this:
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            CallBaseGainXP(10); // This calls the base method, demonstrating static binding
         }
     }
 
-    public void GainXP(int amount)
+    public override void GainXP(int amount) // Overridden method for dynamic binding
     {
         xpSystem.AddXP(amount);
         if (xpSystem.GetXP() >= levelThreshold)
@@ -63,6 +81,14 @@ public class LevelSystem : MonoBehaviour
         {
             xpSlider.value = xpSystem.GetXP();
         }
+
+        Debug.Log("Overridden GainXP called with: " + amount);
+    }
+
+    // Static binding example: calls the base class's GainXP method directly
+    public void CallBaseGainXP(int amount)
+    {
+        base.GainXP(amount); // Static binding - calls the base class method directly
     }
 
     private void LevelUp()
