@@ -63,8 +63,8 @@ public class PlayerMelee : MonoBehaviour
             {
                 Debug.Log($"Hit: {hit.name}");
                 hit.GetComponent<EnemyClass>().TakeDamage(attackDamage);
-                //hit.GetComponent<BossController>().takeDamage(attackDamage);
-                //hit.GetComponent<ImpController>().takeDamage(attackDamage);
+                hit.GetComponent<BossController>().takeDamage(attackDamage);
+                hit.GetComponent<ImpController>().takeDamage(attackDamage);
             }
         }
     }

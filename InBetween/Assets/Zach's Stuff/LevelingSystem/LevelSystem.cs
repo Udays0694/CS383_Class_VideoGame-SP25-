@@ -17,8 +17,8 @@ public class LevelSystem : LevelSystemBase // Subclass for static binding
     public int level = 1;
     public int levelCap = 50;
     public Slider xpSlider;
-    private UpgradeSystem upgradeSystem;
-    private PlayerScript playerScript;
+    public UpgradeSystem upgradeSystem;
+    public PlayerScript playerScript;
     public AudioSource levelUpAudio;
 
 
@@ -107,6 +107,7 @@ public class LevelSystem : LevelSystemBase // Subclass for static binding
         levelUpAudio.Play();
          // original audio composition protected under copyright as sound/music held by Microsoft,need permission
         //Transformative, different genre, gameplay, transformative remix, very short, no additional assets used, no theme / market effect
+        //fines, takedowns, copyright infringement, DMCA, loss of monetization.
         if (xpSlider != null)
         {
             xpSlider.maxValue = levelThreshold;
