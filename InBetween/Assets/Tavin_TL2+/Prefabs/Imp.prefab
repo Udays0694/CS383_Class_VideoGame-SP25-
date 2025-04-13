@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 359451323245046255}
   - component: {fileID: 72375607044383471}
   - component: {fileID: 4675420666680761974}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Imp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,9 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  damage: 5
   health: 40
-  Bullet1: {fileID: 0}
+  fireball: {fileID: 0}
 --- !u!50 &359451323245046255
 Rigidbody2D:
   serializedVersion: 5

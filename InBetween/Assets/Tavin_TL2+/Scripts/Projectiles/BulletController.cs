@@ -79,8 +79,8 @@ public class BulletController : MonoBehaviour
 	// Handle player collisions
     void OnTriggerEnter2D(Collider2D collideObj)
     {
-        if(collideObj.tag == "Player")
-        {
+//        if(collideObj.tag == "Player")
+//        {
         	// Deal damage to the player
             collideObj.GetComponent<PlayerScript>().TakeDamage(5f);
 			
@@ -91,6 +91,6 @@ public class BulletController : MonoBehaviour
 			{
 				animator.Play("FireballHit");
 			}
-        }
+//        }
     }
 }

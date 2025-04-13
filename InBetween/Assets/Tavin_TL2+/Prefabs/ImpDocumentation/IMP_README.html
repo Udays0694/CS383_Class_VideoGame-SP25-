@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Imp Unity Prefab</h1>
+
+<p>$12.23</p>
+<p>★☆☆☆☆ (69,420 reviews)</p>
+
+<video controls>
+	<source src="ImpVid.mp4" type="video/mp4">
+</video>
+
+<p>
+	<b>Author: </b>
+	Tavin Yorgason
+</p>
+
+<p><b>Version:</b> 1.0</p>
+
+<p><b>Unity Version:</b> 6000.0.34f1</p>
+
+<h3>Description</h3>
+<p>
+	Small enemy that follows the player around and has a close range fireball attack. Once the imp is close enough to the player, it will move up and down to juke the player attacks. A prefab for the fireball it throws is included.
+</p>
+
+<p>
+	<h3>Components</h3>
+	<ol>
+		<li><b>Sprite renderer</b> – Used to control the spawn, idle, run, attack, hurt, and die animations.</li>
+		<li><b>Imp Controller (Script)</b> – Contains the movement AI, attacking, activating animations, and collision handling. Has variables to customize movement speed, attack cooldown time, health, and more.</li>
+		<li><b>Rigidbody 2D</b> – Used to activate collision handling function in the Imp Controller script. Handles physics interactions.</li>
+		<li><b>Animator</b> – Contains animations, and is activated by the Imp Controller script.</li>
+		<li><b>Box Collider 2D</b> – Used by Rigidbody 2D to determine when a collision has happened.</li>
+	</ol>
+</p>
+
+<p>
+	<h3>Setup Instructions</h3>
+	<ol>
+		<li>Drag the Imp prefab into the scene.</li>
+		<li>Drag your player from the scene and the Fireball prefab into their respective references on the Imp Controller script.</li>
+		<li>Drag the given animator into the reference under the Animator component of the Imp.</li>
+		<li>Repeat the same for the fireball prefab.</li>
+	</ol>
+</p>
+
+
+
