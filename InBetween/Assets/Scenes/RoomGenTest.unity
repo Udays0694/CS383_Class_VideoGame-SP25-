@@ -529,9 +529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf868218ed2c5548a1a1c6358b9d3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  strength: 10
-  agility: 10
 --- !u!114 &515464571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,18 +1135,6 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 1256340589}
-    - target: {fileID: 3011102399983535236, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
-      propertyPath: attackBoxSize.x
-      value: 1.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 3011102399983535236, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
-      propertyPath: attackBoxSize.y
-      value: 1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 3322359228304189035, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3478273211448092952, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
       propertyPath: xpSlider
       value: 

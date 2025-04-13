@@ -36,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.09, y: -0.3, z: 0}
-  m_LocalScale: {x: 2.448804, y: 2.448804, z: 2.448804}
+  m_LocalScale: {x: 2.6219344, y: 2.6219344, z: 2.6219344}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3235474097206113746}
@@ -146,7 +146,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &5046144893328756856
 BoxCollider2D:
@@ -182,7 +182,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0076247454, y: -0.1194572}
+  m_Offset: {x: 0.04932572, y: -0.014671385}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -192,7 +192,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.21464536, y: 0.2349743}
+  m_Size: {x: 0.38786492, y: 0.44454592}
   m_EdgeRadius: 0
 --- !u!114 &5061979456798770037
 MonoBehaviour:
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c5a3976c763de45b6ba140f1b9c425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 0}
+  playerScript: {fileID: 6483386229162122263}
 --- !u!95 &8967317711725211469
 Animator:
   serializedVersion: 7
