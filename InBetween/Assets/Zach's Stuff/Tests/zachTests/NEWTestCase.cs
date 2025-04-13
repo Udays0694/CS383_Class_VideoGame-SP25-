@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 [TestFixture]
 public class BoundaryTest
@@ -256,18 +257,93 @@ public IEnumerator LevelPlayer_OfferedUpgrades()
         for (int i = 0; i < 100; i++)
         {
             upgradeSystem.AwardUpgrade("Speed");
-            yield return null; // Yield between frames to allow for processing
+            yield return null; 
         }
 
         Debug.Log("Awarded 100 Speed upgrades.");
 
-        // Wait for 10 seconds
         yield return new WaitForSeconds(10f);
 
         Debug.Log("10 second wait complete after upgrades.");
     }
 
+    [UnityTest]
+    public IEnumerator Award999999999999HealthUpgrades() //BROKE THE CODE LIAM SWITCHED TO VIRTUAL
+    {
+        var upgradeSystem = UnityEngine.Object.FindFirstObjectByType<UpgradeSystem>();
+        Assert.IsNotNull(upgradeSystem, "UpgradeSystem could not be found in the scene.");
 
+        const long upgradeCount = 10000;
+
+        for (long i = 0; i < upgradeCount; i++)
+        {
+            upgradeSystem.AwardUpgrade("Health");
+
+            // Yield occasionally to avoid freezing the editor completely
+            if (i % 1000000 == 0)
+            {
+                Debug.Log($"Applied {i} health upgrades...");
+                yield return null;
+            }
+        }
+
+        Debug.Log("Finished applying 999,999,999,999 health upgrades.");
+        yield return null;
+    }
+
+    
+    [UnityTest]
+    public IEnumerator Apply1000HealthUpgrades()
+    {
+        // Grab the UpgradeSystem
+        var upgradeSystem = UnityEngine.Object.FindFirstObjectByType<UpgradeSystem>();
+        Assert.IsNotNull(upgradeSystem, "UpgradeSystem could not be found in the scene.");
+
+        // Apply 1000 Health upgrades
+        for (int i = 0; i < 1000; i++)
+        {
+            upgradeSystem.AwardUpgrade("Health");
+            yield return null; // Yield between frames to allow for processing
+        }
+
+        Debug.Log("Awarded 1000 Health upgrades.");
+
+        // Optionally wait for a short period to allow for any UI updates or changes
+        yield return new WaitForSeconds(1f);
+    }
+
+
+
+    [UnityTest]
+    public IEnumerator LevelPlayer_10000XP()
+    {
+        xpSystem.AddXP(10000);  // check xp gain
+        yield return null;
+
+        Assert.Greater(xpSystem.GetXP(), 0, "XP did not increase as expected.");
+        Debug.Log("Current XP: " + xpSystem.GetXP());
+
+    }
+    [UnityTest]
+    public IEnumerator Award100StrengthUpgrades() //BROKE CODE WHEN DAMAGE REWORKED
+    {
+        // Get the UpgradeSystem reference
+        var upgradeSystem = UnityEngine.Object.FindFirstObjectByType<UpgradeSystem>();
+        Assert.IsNotNull(upgradeSystem, "UpgradeSystem could not be found in the scene.");
+
+        // Apply 100 Speed upgrades
+        for (int i = 0; i < 100; i++)
+        {
+            upgradeSystem.AwardUpgrade("Strength");
+            yield return null; 
+        }
+
+        Debug.Log("Awarded 100 Speed upgrades.");
+
+        yield return new WaitForSeconds(10f);
+
+        Debug.Log("10 second wait complete after upgrades.");
+    }
 
 
 }

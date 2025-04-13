@@ -6,8 +6,11 @@ public class LevelSystemBase : MonoBehaviour // Superclass for dynamic binding
     // Virtual method that can be overridden in subclasses
     public virtual void GainXP(int amount)
     {
-        Debug.Log("Base GainXP called with: " + amount); // Virtual method in the base class
+        Debug.Log("Base GainXP called with: " + amount);
+        FindFirstObjectByType<XP>().AddXP(amount);
+         Camera.main.backgroundColor = new Color(Random.value, Random.value, Random.value); // Visual change
     }
+
 }
 
 public class LevelSystem : LevelSystemBase // Subclass for static binding
