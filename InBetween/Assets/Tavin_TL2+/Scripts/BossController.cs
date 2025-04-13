@@ -59,7 +59,7 @@ public class BossController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {	
 		// Calculate mouth position and center of face
 		float xTransform = 1.1f;
 		float centerDiff = 1.54f;
@@ -98,7 +98,9 @@ public class BossController : MonoBehaviour
 
 		// Attack player
 		chasePlayer();
-        if(attack1Timer >= attack1Cooldown)
+        if(attack1Timer >= attack1Cooldown
+        && !_animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie")
+        && !_animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt"))
 		{
 			// attack1() is called from the animation 
 			_animator.Play("BossAttack");
@@ -173,13 +175,14 @@ public class BossController : MonoBehaviour
 		health -= amount;
 		healthBar.value = health;
 		
+		Debug.Log("Boss Health: " + health);
 		// Die
-		if(health <= 0)
+		if(health <= 0 && !_animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie"))
 		{
 			_animator.Play("BossDie");
 		}
 		// Play damage animation
-		else
+		else if(!_animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt"))
 		{
 			_animator.Play("BossHurt");
 		}

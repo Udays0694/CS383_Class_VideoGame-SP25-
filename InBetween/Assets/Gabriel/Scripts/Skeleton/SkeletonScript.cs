@@ -76,9 +76,13 @@ public class SkeletonScript : EnemyClass
     protected override void Start()
     {
         base.Start();
-        skeletonScript = new SkeletonScriptData();
         oldPosition = transform.position;
         skeletonDeath.Play();
+    }
+
+    public void Awake()
+    {
+        skeletonScript = new SkeletonScriptData();
     }
 
     public override void Update()

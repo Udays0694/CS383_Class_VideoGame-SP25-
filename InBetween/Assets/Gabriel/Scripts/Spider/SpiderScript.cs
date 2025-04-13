@@ -1,5 +1,3 @@
-using System;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class SpiderScript : EnemyClass
@@ -13,18 +11,27 @@ public class SpiderScript : EnemyClass
     public int xpAward = 5;
     public float health = 40f;
 
+    private Vector2 moveDirection;
+
     protected override void Start()
     {
         base.Start();
+
+        // Random starting direction
+        moveDirection = Random.insideUnitCircle.normalized;
+
+        // Set initial velocity
+        _rb.linearVelocity = moveDirection * movementSpeed;
     }
 
     public override void Update()
     {
         base.Update();
+
         if (!attackReady)
         {
             attackCooldownTimer += Time.deltaTime;
-            if (attackCooldownTimer >= attackCooldown / 1000f)
+            if (attackCooldownTimer >= attackCooldown)
             {
                 attackReady = true;
                 attackCooldownTimer = 0f;
@@ -32,10 +39,16 @@ public class SpiderScript : EnemyClass
         }
     }
 
+    void FixedUpdate()
+    {
+        // Maintain constant movement in current direction
+        _rb.linearVelocity = moveDirection * movementSpeed;
+    }
+
     public override void Navigation()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, base.playerScript.rb.position);
-        if (distanceToPlayer < 1 && attackReady == true)
+        float distanceToPlayer = Vector2.Distance(transform.position, playerScript.rb.position);
+        if (distanceToPlayer < 1.5 && attackReady)
         {
             Attack();
         }
@@ -43,7 +56,6 @@ public class SpiderScript : EnemyClass
 
     public override void Attack()
     {
-        //Debug.Log("Attacked player");
         base.DamagePlayer(attackDamage);
         attackReady = false;
     }
@@ -54,6 +66,17 @@ public class SpiderScript : EnemyClass
         if (health <= 0)
         {
             base.XPAward(xpAward);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.contacts.Length > 0)
+        {
+            Vector2 normal = collision.contacts[0].normal;
+
+            // Reflect direction on impact
+            moveDirection = Vector2.Reflect(moveDirection, normal).normalized;
         }
     }
 }

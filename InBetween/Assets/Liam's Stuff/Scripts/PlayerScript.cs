@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //This entire area of the project took me about 35-40 hours, this was due to some reworks and certain things not taking as long as expected.
 //Reworking code or communicating with partners was probably the greatest holdup as we were unable to have meetings as frequently as we should have. 
 //I estimated it would take around 46 hours.I learned that typically in these scenarios when I am estimating, it is that typically I tend to overestimate heavily, especially when dealing with a project of this magnitude.
@@ -14,7 +15,7 @@ public class PlayerScriptDataBC
 
     public virtual void setHealth(float damage)
     {
-        Debug.Log($"PLAYER getHealth called in super class � current health: {health}");
+        Debug.Log($"PLAYER getHealth called in super class ? current health: {health}");
         health -= 5f;
     }
 }
@@ -23,7 +24,7 @@ public class PlayerScriptData : PlayerScriptDataBC
 {
     public override void setHealth(float damage)
     {
-        Debug.Log($"PLAYER getHealth called in sub class � current health: {base.health}");
+        Debug.Log($"PLAYER getHealth called in sub class ? current health: {base.health}");
         base.health -= damage;
     }
 }
@@ -36,7 +37,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 movement;
     public float health = 0f; //updated to dynamic binding version
-    public int strength = 10; 
+    public int strength = 10;
 
 
     public PlayerScriptDataBC playerScript;
@@ -81,11 +82,13 @@ public class PlayerScript : MonoBehaviour
             movement.x = 1;
             Sprite.flipX = false;
         }
-        
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
             movementKeyPressed = true;
             _animator.SetBool("isRunning", true);
-        } else
+        }
+        else
         {
             movementKeyPressed = false;
             _animator.SetBool("isRunning", false);
@@ -113,6 +116,7 @@ public class PlayerScript : MonoBehaviour
         //GameObject.Find("DamageSound").GetComponent<AudioSource>().Play();
         if (playerScript.getHealth() <= 0)
         {
+            _animator.SetBool("isDead", true);
             Death();
         }
     }
@@ -120,7 +124,7 @@ public class PlayerScript : MonoBehaviour
     public void HealME(float healbase)
     {
         playerScript.setHealth(healbase);
-        if(playerScript.getHealth() >= health)
+        if (playerScript.getHealth() >= health)
         {
             playerScript.setHealth(health);
         }
@@ -129,8 +133,10 @@ public class PlayerScript : MonoBehaviour
     void Death()
     {
         Debug.Log("Player Died");
+        _animator.SetBool("isDead", true);
         Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 
-   
+
 }

@@ -223,6 +223,9 @@ MonoBehaviour:
   level: 1
   levelCap: 50
   xpSlider: {fileID: 0}
+  upgradeSystem: {fileID: 0}
+  playerScript: {fileID: 0}
+  levelUpAudio: {fileID: 0}
 --- !u!114 &2613459535869071625
 MonoBehaviour:
   m_ObjectHideFlags: 0
