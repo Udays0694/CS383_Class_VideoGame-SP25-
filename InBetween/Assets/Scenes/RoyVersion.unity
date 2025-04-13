@@ -564,6 +564,8 @@ MonoBehaviour:
   oldPlayerPosition: {x: 0, y: 0, z: 0}
   SkeletonPrefab: {fileID: 2529410704935851373, guid: 91d4c8ae1a356e74d8d9f1c3a63eb91f, type: 3}
   Skeleton: {fileID: 0}
+  SpiderPrefab: {fileID: 2529410704935851373, guid: 5cbe07ccf63378f409c6e24290063a55, type: 3}
+  Spider: {fileID: 0}
 --- !u!4 &455772386
 Transform:
   m_ObjectHideFlags: 0
@@ -735,9 +737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaf868218ed2c5548a1a1c6358b9d3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  strength: 10
-  agility: 10
 --- !u!114 &515464571
 MonoBehaviour:
   m_ObjectHideFlags: 0
