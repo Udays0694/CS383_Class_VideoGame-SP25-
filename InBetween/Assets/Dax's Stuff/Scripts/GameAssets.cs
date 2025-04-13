@@ -16,6 +16,7 @@ public class GameAssets : MonoBehaviour
     public Sprite s_SwordOne;
     public Sprite s_SwordTwo;
     public Sprite s_AxeOne;
+    public Sprite s_AxeTwo;
     public Sprite s_DaggerOne;
     public Sprite s_PotionOne;
 

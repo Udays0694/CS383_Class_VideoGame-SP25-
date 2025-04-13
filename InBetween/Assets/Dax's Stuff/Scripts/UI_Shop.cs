@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class UI_Shop : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class UI_Shop : MonoBehaviour
 
     private IShopCustomer shopCustomer;
 
+    private List<Item.ItemType> GetAllItemTypes()
+    {
+        return new List<Item.ItemType>((Item.ItemType[])System.Enum.GetValues(typeof(Item.ItemType))); //Builds the item list
+    }
     private void Awake()
     {
         container = transform.Find("container");
@@ -50,16 +55,55 @@ public class UI_Shop : MonoBehaviour
 
     private void TryBuyItem(Item.ItemType itemType)
     {
-        shopCustomer.BoughtItem(itemType);
+        if(shopCustomer.TrySpendCoins(Item.GetCost(itemType))) //Checks if the player has enough coins for the item
+        {
+            shopCustomer.BoughtItem(itemType);
+        }
+        else
+        {
+            Debug.Log("Can Not Afford Item");
+        }
     }
 
     public void Show(IShopCustomer shopCustomer)
     {
         this.shopCustomer = shopCustomer;
         gameObject.SetActive(true);
+
+        List<Transform> toDelete = new List<Transform>();
+        foreach (Transform child in container) //Clears previous shop items
+        {
+            if (child != shopItemTemplate) //Stops from removing template  
+            {
+                toDelete.Add(child);
+            }
+        }
+        foreach (Transform child in toDelete)
+        {
+            Destroy(child.gameObject);
+        }
+
+        List<Item.ItemType> allItems = GetAllItemTypes();
+
+        //Shuffle the items in the list 
+        for( int i = 0; i < allItems.Count; i++)
+        {
+            int rand = Random.Range(i, allItems.Count);
+            var temp = allItems[i];
+            allItems[i] = allItems[rand];
+            allItems[rand] = temp;
+        }
+
+        //Show 5 items, differnt each time to the shop is opened 
+        for( int i = 0; i < 5; i++)
+        {
+            Item.ItemType type = allItems[i];
+            CreateItemButton(type, Item.GetSprite(type), type.ToString(), Item.GetCost(type), i);
+        }
+    
     }
 
-    public void Hide()
+    public void Hide() //Close the shop menu 
     {
         gameObject.SetActive(false);
     }
