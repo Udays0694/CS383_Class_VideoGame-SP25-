@@ -14,7 +14,7 @@ public class PlayerScriptDataBC
 
     public virtual void setHealth(float damage)
     {
-        Debug.Log($"PLAYER getHealth called in super class � current health: {health}");
+        Debug.Log($"PLAYER getHealth called in super class ? current health: {health}");
         health -= 5f;
     }
 }
@@ -23,7 +23,7 @@ public class PlayerScriptData : PlayerScriptDataBC
 {
     public override void setHealth(float damage)
     {
-        Debug.Log($"PLAYER getHealth called in sub class � current health: {base.health}");
+        Debug.Log($"PLAYER getHealth called in sub class ? current health: {base.health}");
         base.health -= damage;
     }
 }
@@ -36,7 +36,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 movement;
     public float health = 0f; //updated to dynamic binding version
-    public int strength = 10; 
+    public int strength = 10;
 
 
     public PlayerScriptDataBC playerScript;
@@ -81,11 +81,13 @@ public class PlayerScript : MonoBehaviour
             movement.x = 1;
             Sprite.flipX = false;
         }
-        
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
             movementKeyPressed = true;
             _animator.SetBool("isRunning", true);
-        } else
+        }
+        else
         {
             movementKeyPressed = false;
             _animator.SetBool("isRunning", false);
@@ -120,7 +122,7 @@ public class PlayerScript : MonoBehaviour
     public void HealME(float healbase)
     {
         playerScript.setHealth(healbase);
-        if(playerScript.getHealth() >= health)
+        if (playerScript.getHealth() >= health)
         {
             playerScript.setHealth(health);
         }
@@ -132,5 +134,5 @@ public class PlayerScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-   
+
 }
