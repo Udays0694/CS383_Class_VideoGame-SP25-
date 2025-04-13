@@ -23,7 +23,7 @@ public class ImpFireball : MonoBehaviour
 
     private void destroy()
     {
-    	Debug.Log("destroying imp fireball");
+ //   	Debug.Log("destroying imp fireball");
     	Destroy(gameObject);
     }
     

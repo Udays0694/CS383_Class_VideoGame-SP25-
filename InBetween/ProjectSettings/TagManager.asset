@@ -13,6 +13,7 @@ TagManager:
   - SFXManager
   - XPBar
   - RoomFloor
+  - Imp
   layers:
   - Default
   - TransparentFX

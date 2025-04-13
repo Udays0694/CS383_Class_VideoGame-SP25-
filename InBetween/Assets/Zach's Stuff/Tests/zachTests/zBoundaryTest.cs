@@ -1,5 +1,5 @@
 /*boundary test 1 puts the player at max level and attempts to bypass the max level
-boundary test 2 puts the player at level -1 and tries to gain xp*/
+boundary test 2 puts the player at level -1 and tries to gain xp
 
 using System.Collections;
 using NUnit.Framework;
@@ -76,3 +76,4 @@ public class BoundaryTest
         yield return null;
     }
 }
+*/

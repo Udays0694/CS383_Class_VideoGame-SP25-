@@ -59,13 +59,18 @@ public class PlayerMelee : MonoBehaviour
 
         foreach (var hit in hits) // finds if they have the enemy tag 
         {
-            if (hit.CompareTag("Enemy") || hit.CompareTag("Boss"))
+            if (hit.CompareTag("Enemy"))
             {
-                Debug.Log($"Hit: {hit.name}");
                 hit.GetComponent<EnemyClass>().TakeDamage(attackDamage);
-                hit.GetComponent<BossController>().takeDamage(attackDamage);
+            }
+            else if (hit.CompareTag("Imp"))
+            {
                 hit.GetComponent<ImpController>().takeDamage(attackDamage);
             }
+            else if (hit.CompareTag("Boss"))
+            {
+                hit.GetComponent<BossController>().takeDamage(attackDamage);
+        	}
         }
     }
 
