@@ -102,7 +102,9 @@ public class ImpController : MonoBehaviour
 			attackTimer = 0;
 		}
 		else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpAttack")
-		     && !animator.GetCurrentAnimatorStateInfo(0).IsName("ImpSpawn"))
+		     && !animator.GetCurrentAnimatorStateInfo(0).IsName("ImpSpawn")
+		     && !animator.GetCurrentAnimatorStateInfo(0).IsName("ImpHurt")
+		     && !animator.GetCurrentAnimatorStateInfo(0).IsName("ImpDie"))
 		{
 			animator.Play("ImpRun");
 		}
@@ -128,14 +130,22 @@ public class ImpController : MonoBehaviour
 		transform.position += moveDir.normalized * Time.deltaTime * speed;
 	}
 
+	// Called by die animation
+	private void destroy()
+	{
+		Destroy(gameObject);
+	}
+
 	// Take damage
 	public void takeDamage(float amount)
 	{
 		health -= amount;
 //		healthBar.value = health;
+		animator.Play("ImpHurt");
 		if(health <= 0)
 		{
-			Destroy(gameObject);
+			activated = false;
+			animator.Play("ImpDie");
 		}
 	}
 }
