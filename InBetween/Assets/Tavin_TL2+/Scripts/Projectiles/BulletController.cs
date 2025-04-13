@@ -32,7 +32,7 @@ public class BulletController : MonoBehaviour
  		animator.Play("FireballBurn");
  		
  		deathTimer = 0;
- 		speed = 3;
+ 		speed = 3; 
     }
 
     // Update is called once per frame

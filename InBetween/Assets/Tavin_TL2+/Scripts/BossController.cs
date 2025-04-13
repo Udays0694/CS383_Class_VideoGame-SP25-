@@ -101,7 +101,7 @@ public class BossController : MonoBehaviour
 		}
 
 		// Attack player
-		chasePlayer();
+		move();
         if(attack1Timer >= attack1Cooldown
         && !animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie")
         && !animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt"))
@@ -157,7 +157,7 @@ public class BossController : MonoBehaviour
 	}
 
 	// Move towards player
-	private void chasePlayer()
+	private void move()
 	{
 		// Move away from player if its too close
 		Vector3 moveDir = playerDir;
