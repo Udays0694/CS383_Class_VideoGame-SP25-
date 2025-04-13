@@ -47,5 +47,6 @@ MonoBehaviour:
   s_SwordOne: {fileID: -3548928026839867271, guid: 896be884da5dcc449acadcfdc9075f0b, type: 3}
   s_SwordTwo: {fileID: 1563905169154104396, guid: 2eaf63e0dad480e40a6a9dcaccbe283a, type: 3}
   s_AxeOne: {fileID: -2949372453480390737, guid: 65ee052fbd08ff448bbeab57b26f294c, type: 3}
+  s_AxeTwo: {fileID: 212143399115013302, guid: a2e519a17fd8ae5488d21a08236fbb8b, type: 3}
   s_DaggerOne: {fileID: 6764707825347140516, guid: 1acb2997f9d56704ba29b3de6b4a6de8, type: 3}
   s_PotionOne: {fileID: 8695753628343013184, guid: 011ecd76db23bba499467f3bae928433, type: 3}
