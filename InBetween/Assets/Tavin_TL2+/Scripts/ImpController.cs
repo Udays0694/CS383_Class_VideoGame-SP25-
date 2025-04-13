@@ -7,7 +7,6 @@ public class ImpController : BossController
 
 	// Characteristics
 //	private Slider healthBar;
-	private bool activated = false;
 	private Rigidbody2D rigidbody;
 
 	// Attack
@@ -28,6 +27,8 @@ public class ImpController : BossController
     	healthBar.maxValue = health;
 		healthBar.value = health;
 */		
+
+		activated = false;
 		facingLeft = true;
 
 		rigidbody = GetComponent<Rigidbody2D>();
@@ -131,7 +132,7 @@ public class ImpController : BossController
 	}
 
 	// Check for death, called by hurt animation
-	private void deathCheck()
+/*	private void deathCheck()
 	{
 		if(health <= 0)
 		{
@@ -145,13 +146,17 @@ public class ImpController : BossController
 		{
 			animator.Play("ImpRun");
 		}
-	}
+	}*/
 
 	// Take damage
 	public void takeDamage(float amount)
 	{
 		health -= amount;
 //		healthBar.value = health;
-		animator.Play("ImpHurt");
+		if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpHurt")
+		&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+		{
+			animator.Play("ImpHurt");
+		}
 	}
 }

@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XPBarSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 6362741272772316083, guid: 835a9bf54ebb75546ab0aba5fefbf55c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1042,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 5132701784108115832, guid: a93ddacc3d8cf4f8a8d2f3cf5c6d7e29, type: 3}
     - target: {fileID: 4063045415574519943, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
       propertyPath: health
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4063045415574519943, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
       propertyPath: playerScript
@@ -1067,6 +1071,18 @@ PrefabInstance:
     - target: {fileID: 8104812516739186682, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104812516739186682, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360873128500946821, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 473568923}
+    - target: {fileID: 8360873128500946821, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8979063873654124294, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
       propertyPath: m_FlipX
@@ -4864,6 +4880,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1641244740}
     m_Modifications:
+    - target: {fileID: 4271928657065851273, guid: ac21e80283a96711088b11a80739db28, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6805161325275865250, guid: ac21e80283a96711088b11a80739db28, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.994
@@ -5562,6 +5582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Imp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7481020306176387295, guid: a63f32aaa97d1e16380c92ac11a6de0a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5841,6 +5865,10 @@ PrefabInstance:
     - target: {fileID: 7481020306176387295, guid: a63f32aaa97d1e16380c92ac11a6de0a, type: 3}
       propertyPath: m_Name
       value: Imp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481020306176387295, guid: a63f32aaa97d1e16380c92ac11a6de0a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

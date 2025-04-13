@@ -13,6 +13,7 @@ public class BossController : MonoBehaviour
     protected Animator animator;
     protected SpriteRenderer spriteRenderer;
 	private float attack1Timer = 0;
+	protected bool activated = true;
 	
 	// Fireball
 	[SerializeField] private GameObject Bullet1;
@@ -64,6 +65,11 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {	
+    	if(!activated)
+    	{
+    		return;
+    	}
+    	    	
 		// Calculate mouth position and center of face
 		float xTransform = 1.1f;
 		float centerDiff = 1.54f;
@@ -180,6 +186,23 @@ public class BossController : MonoBehaviour
 		Destroy(gameObject);
 	}	
 	
+	// Called by hurt animation
+	protected void deathCheck()
+	{
+		if(health <= 0)
+		{
+			activated = false;
+			if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+			{
+				animator.Play("Die");
+			}
+		}
+		else
+		{
+			animator.Play("Run");
+		}
+	}
+	
 	// Take damage
 	public void takeDamage(float amount)
 	{
@@ -189,20 +212,21 @@ public class BossController : MonoBehaviour
 		
 		Debug.Log("Boss Health: " + health);
 		// Die
-		if(health <= 0)
+/*		if(health <= 0)
 		{
 			destroy();
 		}
-/*		if(health <= 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie"))
+		if(health <= 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie"))
 		{
 			animator.Play("BossDie");
 		}
-		// Play damage animation
-		else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt"))
+*/		// Play damage animation
+		if(!animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt")
+		&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
 		{
 			animator.Play("BossHurt");
 		}
-*/		
+		
 		// Enable orb attack and minion spawning
 		if(health <= healthBar.maxValue * 0.333f)
 		{
