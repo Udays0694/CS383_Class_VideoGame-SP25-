@@ -53,14 +53,13 @@ public class EnemyClass : MonoBehaviour
 
     public void DamagePlayer(float damage)
     {
-        Debug.Log($"Damaged Player for: {damage}");
+        //Debug.Log($"Damaged Player for: {damage}");
         playerScript.TakeDamage(damage);
     }
 
     public virtual void TakeDamage(float damage)
     {
-        Debug.Log("Old TakeDamage");
-        // Class specific health here
+        // Class specific
     }
 
     public void XPAward(int xp_amount)

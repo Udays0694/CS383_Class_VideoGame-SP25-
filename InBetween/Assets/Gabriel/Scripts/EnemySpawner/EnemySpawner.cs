@@ -16,6 +16,10 @@ public class EnemySpawner : MonoBehaviour
     public GameObject SpiderPrefab;
     public GameObject Spider;
 
+    // Zombie
+    public GameObject ZombiePrefab;
+    public GameObject Zombie;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
         Invoke("QueueSkeletonSpawn", 10f);
         Invoke("QueueSpiderSpawn", 5f);
+        Invoke("QueueZombieSpawn", 5f);
     }
 
     public void QueueSkeletonSpawn()
@@ -57,5 +62,18 @@ public class EnemySpawner : MonoBehaviour
     {
         Spider = Instantiate(SpiderPrefab, oldPlayerPosition, Quaternion.identity);
         QueueSpiderSpawn();
+    }
+
+    public void QueueZombieSpawn()
+    {
+        oldPlayerPosition = player.transform.position;
+        oldPlayerPosition.z = -1f;
+        Invoke("SpawnZombie", Random.Range(2f, 5f));
+    }
+
+    public void SpawnZombie()
+    {
+        Spider = Instantiate(ZombiePrefab, oldPlayerPosition, Quaternion.identity);
+        QueueZombieSpawn();
     }
 }
