@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //This entire area of the project took me about 35-40 hours, this was due to some reworks and certain things not taking as long as expected.
 //Reworking code or communicating with partners was probably the greatest holdup as we were unable to have meetings as frequently as we should have. 
 //I estimated it would take around 46 hours.I learned that typically in these scenarios when I am estimating, it is that typically I tend to overestimate heavily, especially when dealing with a project of this magnitude.
@@ -113,6 +114,7 @@ public class PlayerScript : MonoBehaviour
         //GameObject.Find("DamageSound").GetComponent<AudioSource>().Play();
         if (playerScript.getHealth() <= 0)
         {
+            _animator.SetBool("isDead", true);
             Death();
         }
     }
@@ -129,7 +131,9 @@ public class PlayerScript : MonoBehaviour
     void Death()
     {
         Debug.Log("Player Died");
+        _animator.SetBool("isDead", true);
         Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 
    

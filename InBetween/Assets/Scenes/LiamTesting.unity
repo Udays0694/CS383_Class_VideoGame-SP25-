@@ -800,6 +800,8 @@ MonoBehaviour:
   level: 1
   levelCap: 50
   xpSlider: {fileID: 515464567}
+  upgradeSystem: {fileID: 0}
+  playerScript: {fileID: 0}
   levelUpAudio: {fileID: 0}
 --- !u!114 &515464571
 MonoBehaviour:

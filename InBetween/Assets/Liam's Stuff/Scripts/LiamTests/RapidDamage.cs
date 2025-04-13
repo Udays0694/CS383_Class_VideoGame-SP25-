@@ -21,7 +21,7 @@ public class RapidDamageTest : MonoBehaviour
     public IEnumerator TestTakeDamageRapidly()
     {
         float initialHealth = playerHealth;
-        bool soundPlayed = false;
+        
 
         float startTime = Time.time;
         while (Time.time - startTime < 1f)

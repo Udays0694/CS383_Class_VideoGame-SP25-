@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SimulateAttackButtonPress : MonoBehaviour
 {
@@ -11,12 +12,12 @@ public class SimulateAttackButtonPress : MonoBehaviour
         StartCoroutine(SimulateAttack());
     }
 
-    System.Collections.IEnumerator SimulateAttack()
+    IEnumerator SimulateAttack()
     {
         while (Time.time - startTime < testDuration)
         {
             SimulateAttackButtonPressAction();
-            yield return null;
+            yield return null; 
         }
 
         Debug.Log("Attack simulation finished.");
@@ -24,9 +25,6 @@ public class SimulateAttackButtonPress : MonoBehaviour
 
     void SimulateAttackButtonPressAction()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Debug.Log("Simulating attack button press");
-        }
+        Debug.Log("Simulating attack button press");
     }
 }

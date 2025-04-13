@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Reflection;
 
-public class MaxAttackBoxSizeTest : MonoBehaviour
+public class MinAttackBoxSizeTest : MonoBehaviour
 {
     void Start()
     {
-        MonoBehaviour[] allMonoBehaviours = FindObjectsOfType<MonoBehaviour>();
+        // Correct usage with required sort mode parameter
+        MonoBehaviour[] allMonoBehaviours = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
 
         foreach (MonoBehaviour mb in allMonoBehaviours)
         {
@@ -16,11 +17,10 @@ public class MaxAttackBoxSizeTest : MonoBehaviour
 
                 if (attackBoxSizeXField != null && attackBoxSizeYField != null)
                 {
-                    attackBoxSizeXField.SetValue(mb, float.MaxValue);
-                    attackBoxSizeYField.SetValue(mb, float.MaxValue);
+                    attackBoxSizeXField.SetValue(mb, float.MinValue);
+                    attackBoxSizeYField.SetValue(mb, float.MinValue);
 
-                    Debug.Log("Attack Box Size X set to: " + float.MaxValue);
-                    Debug.Log("Attack Box Size Y set to: " + float.MaxValue);
+                    Debug.Log($"{mb.name} - Attack Box Size X and Y set to: {float.MinValue}");
                 }
             }
         }
@@ -28,6 +28,6 @@ public class MaxAttackBoxSizeTest : MonoBehaviour
 
     void Update()
     {
-
+        // Still unused, safe to remove unless you need it later
     }
 }
