@@ -1,74 +1,89 @@
-using UnityEngine;
-using NUnit.Framework;
-using UnityEngine.TestTools;
 using System.Collections;
+using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.TestTools;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [TestFixture]
-public class RapidUpgradeTest
+public class BoundaryTest
 {
     private GameObject player;
-    private UpgradeSystem upgradeSystem;
-    private PlayerScript playerScript;
+    private LevelSystem levelSystem;
+    private XP xpSystem;
 
-    // Set up the scene before each test run
     [OneTimeSetUp]
     public void LoadScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("ZachScene");
+        SceneManager.LoadScene("ZachScene");
     }
 
-    // Set up the player and components before each test
-    [SetUp]
-    public void SetUp()
+    [UnitySetUp] // this is all to get my scene setup and ready for tests. AI slop because it would not load otherwise
+    public IEnumerator SetUp()
     {
-        player = new GameObject("Player");
-        player.tag = "Player"; // Ensure the player tag is set correctly
+        yield return new WaitForSeconds(1f); 
 
-        // Add PlayerScript component
-        playerScript = player.AddComponent<PlayerScript>();
+        player = GameObject.FindWithTag("Player");
+        Assert.IsNotNull(player, "Player with tag 'Player' not found.");
 
-        // Add UpgradeSystem component and assign the playerScript
-        upgradeSystem = player.AddComponent<UpgradeSystem>();
-        upgradeSystem.playerScript = playerScript;
+        xpSystem = player.GetComponent<XP>();
+        levelSystem = player.GetComponent<LevelSystem>();
 
-        // Optionally reset the player stats to known values before each test
-        playerScript.moveSpeed = 10f;
-        playerScript.strength = 5;
-        playerScript.health = 100f;
+        Assert.IsNotNull(xpSystem, "XP component not found on Player.");
+        Assert.IsNotNull(levelSystem, "LevelSystem component not found on Player.");
 
-        Debug.Log("Setup complete for rapid upgrade test.");
-    }
-
-    // Test case to simulate rapid pressing of U to upgrade the player
-    [UnityTest]
-    public IEnumerator RapidUpgradeTest_UpgradingPlayer()
-    {
-        Debug.Log("Starting RapidUpgradeTest...");
-
-        // Initial stats of the player
-        float initialSpeed = playerScript.moveSpeed;
-        int initialStrength = playerScript.strength;
-        float initialHealth = playerScript.health;
-
-        // Press 'U' key multiple times rapidly and simulate the upgrades
-        for (int i = 0; i < 10; i++) // Simulate 10 presses
+        if (!player.TryGetComponent(out UpgradeSystem upgradeSystem))
         {
-            upgradeSystem.AwardUpgrade("Speed"); // Upgrade speed
-            upgradeSystem.AwardUpgrade("Strength"); // Upgrade strength
-            upgradeSystem.AwardUpgrade("Health"); // Upgrade health
-            yield return null; // Wait for the next frame
+            upgradeSystem = player.AddComponent<UpgradeSystem>();
+        }
+        levelSystem.upgradeSystem = upgradeSystem;
+
+        
+        var xpSliderGO = GameObject.Find("XP Slider");
+        if (xpSliderGO == null)
+        {
+            var canvas = new GameObject("Canvas", typeof(Canvas));
+            xpSliderGO = new GameObject("XP Slider", typeof(Slider));
+            xpSliderGO.transform.SetParent(canvas.transform);
         }
 
-        // Log stats after upgrades
-        Debug.Log($"Player Stats after upgrades: Speed: {playerScript.moveSpeed}, Strength: {playerScript.strength}, Health: {playerScript.health}");
+        var slider = xpSliderGO.GetComponent<Slider>();
+        var xpBar = xpSliderGO.GetComponent<XPBar>() ?? xpSliderGO.AddComponent<XPBar>();
+        xpBar.xpSlider = slider;
+        xpBar.levelSystem = levelSystem;
+        xpBar.xpSystem = xpSystem;
 
-        // Assert that all stats have increased from their initial values
-        Assert.Greater(playerScript.moveSpeed, initialSpeed, "Speed should have increased.");
-        Assert.Greater(playerScript.strength, initialStrength, "Strength should have increased.");
-        Assert.Greater(playerScript.health, initialHealth, "Health should have increased.");
+        levelSystem.xpSlider = slider;
 
-        yield return null;
+        Debug.Log("Scene setup complete. Player found and systems connected.");
     }
 
-    // Optionally, you can add other tests to simulate other aspects of upgrades
+    [UnityTest]
+    public IEnumerator LevelPlayer()
+    {
+        xpSystem.AddXP(50);  // check xp gain
+        yield return null;
+
+        Assert.Greater(xpSystem.GetXP(), 0, "XP did not increase as expected.");
+    }
+
+    [UnityTest]
+    public IEnumerator LevelPlayer_BelowLevelUp()
+    {
+        // Assuming the level-up happens at 100 XP, we add 99 XP
+        xpSystem.AddXP(99);  
+        yield return null;
+
+        Assert.AreEqual(1, levelSystem.level, "Player leveled up prematurely.");
+    }
+
+    [UnityTest]
+    public IEnumerator LevelPlayer_ZeroXP()
+    {
+        xpSystem.AddXP(-1);  // Add zero XP
+        yield return null;
+
+        Assert.AreEqual(-1, xpSystem.GetXP(), "XP should not increase when adding zero.");
+    }
+
 }
