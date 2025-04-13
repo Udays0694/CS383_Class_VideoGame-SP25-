@@ -13,23 +13,26 @@ public class BulletController : MonoBehaviour
 	private Vector2 playerDir;
 	private Vector3 playerCenterOffset;
 
-    // Start is called once before the first execution of Update after the
-	// MonoBehaviour is created
-    void Start()
+	// Called at instantiation
+	void Start()
+	{
+		// Initiate animator
+		animator = GetComponent<Animator>();
+		
+		// Get reference to player
+		Player = GameObject.FindGameObjectWithTag("Player");
+	}
+	
+	// Called at the start and when it is activated
+    void OnEnable()
     {
     	// Movement direction
  		moveDir = transform.up;
-        
-        // Get reference to player
-		Player = GameObject.FindGameObjectWithTag("Player");
-		
-		// Find Player centerpoint offset
-/*		playerCenterOffset = Player.GetComponent<SpriteRenderer>().bounds.size / 2;
-		playerCenterOffset.y = -playerCenterOffset.y;
-		playerCenterOffset.z = 0;
-*/		
-		// Initiate animator
-		animator = GetComponent<Animator>();
+ 		
+ 		animator.Play("FireballBurn");
+ 		
+ 		deathTimer = 0;
+ 		speed = 3;
     }
 
     // Update is called once per frame
@@ -73,14 +76,15 @@ public class BulletController : MonoBehaviour
 	// Allows Destroy to be called on a keyframe in an animation
 	private void destroy()
 	{
-		Destroy(gameObject);
+		gameObject.SetActive(false);
+//		Destroy(gameObject);
 	}
 
 	// Handle player collisions
     void OnTriggerEnter2D(Collider2D collideObj)
     {
-//        if(collideObj.tag == "Player")
-//        {
+        if(collideObj.tag == "Player")
+        {
         	// Deal damage to the player
             collideObj.GetComponent<PlayerScript>().TakeDamage(5f);
 			
@@ -91,6 +95,6 @@ public class BulletController : MonoBehaviour
 			{
 				animator.Play("FireballHit");
 			}
-//        }
+        }
     }
 }

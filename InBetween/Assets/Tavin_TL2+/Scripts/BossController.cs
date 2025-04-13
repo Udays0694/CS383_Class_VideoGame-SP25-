@@ -10,12 +10,13 @@ public class BossController : MonoBehaviour
 
 	// Characteristics
 	private Slider healthBar; 
-    private Animator _animator;
-    private SpriteRenderer _spriteRenderer;
+    protected Animator animator;
+    protected SpriteRenderer spriteRenderer;
 	private float attack1Timer = 0;
 	
 	// Fireball
 	[SerializeField] private GameObject Bullet1;
+	private FireballPool pool;
 	private Vector2 mouthPos;
 	
 	// Orb
@@ -31,9 +32,9 @@ public class BossController : MonoBehaviour
 	public bool facingLeft = true;
 
 	// Player
-	private GameObject Player;
-	private PlayerScript playerScript;
-	private Vector2 playerDir;
+	protected GameObject Player;
+	protected PlayerScript playerScript;
+	protected Vector2 playerDir;
 
     // Start is called once before the first execution of Update after the
 	// MonoBehaviour is created
@@ -48,10 +49,13 @@ public class BossController : MonoBehaviour
 		Player = GameObject.FindGameObjectWithTag("Player");
 		
 		// Get reference to animator
-		_animator = GetComponent<Animator>();
+		animator = GetComponent<Animator>();
 		
 		// Get reference to sprite renderer
-		_spriteRenderer = GetComponent<SpriteRenderer>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		
+		// Get fireball pool
+		pool = GameObject.FindGameObjectWithTag("Pool").GetComponent<FireballPool>();
 		
 		// Test orb attack
 		attack2();
@@ -82,7 +86,7 @@ public class BossController : MonoBehaviour
 		if(facingLeft && playerDir.x > 0)
 		{
 			transform.position += new Vector3(flipTransformDist, 0, 0);
-//			_spriteRenderer.flipX = true;
+//			spriteRenderer.flipX = true;
 			healthBar.transform.Rotate(0, 180, 0);
 			transform.Rotate(0, 180, 0);
 			facingLeft = false;
@@ -90,7 +94,7 @@ public class BossController : MonoBehaviour
 		else if(!facingLeft && playerDir.x < 0)
 		{
 			transform.position += new Vector3(-flipTransformDist, 0, 0);
-//			_spriteRenderer.flipX = false;
+//			spriteRenderer.flipX = false;
 			healthBar.transform.Rotate(0, 180, 0);
 			transform.Rotate(0, 180, 0);
 			facingLeft = true;
@@ -99,11 +103,11 @@ public class BossController : MonoBehaviour
 		// Attack player
 		chasePlayer();
         if(attack1Timer >= attack1Cooldown
-        && !_animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie")
-        && !_animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt"))
+        && !animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie")
+        && !animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt"))
 		{
 			// attack1() is called from the animation 
-			_animator.Play("BossAttack");
+			animator.Play("BossAttack");
 			attack1Timer = 0;
 		}
 		
@@ -133,9 +137,17 @@ public class BossController : MonoBehaviour
 			xDir = -1;
 		}
 		Quaternion shootDir = Quaternion.LookRotation(Vector3.forward, new Vector3(xDir, 0, 0));
+	
+		// Get fireball from pool
+		GameObject fireball = pool.getInstance();
 		
+		// Apply transform and rotation
+		fireball.transform.position = mouthPos;
+		fireball.transform.rotation = shootDir;
+		fireball.SetActive(true);
+			
 		// Spawn bullet
-		Instantiate(Bullet1, mouthPos, shootDir);
+//		Instantiate(Bullet1, mouthPos, shootDir);
 	}
 	
 	// Orb attack
@@ -177,16 +189,20 @@ public class BossController : MonoBehaviour
 		
 		Debug.Log("Boss Health: " + health);
 		// Die
-		if(health <= 0 && !_animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie"))
+		if(health <= 0)
 		{
-			_animator.Play("BossDie");
+			destroy();
+		}
+/*		if(health <= 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie"))
+		{
+			animator.Play("BossDie");
 		}
 		// Play damage animation
-		else if(!_animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt"))
+		else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt"))
 		{
-			_animator.Play("BossHurt");
+			animator.Play("BossHurt");
 		}
-		
+*/		
 		// Enable orb attack and minion spawning
 		if(health <= healthBar.maxValue * 0.333f)
 		{

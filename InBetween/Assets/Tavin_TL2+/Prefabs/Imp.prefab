@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3974903099921590212}
   - component: {fileID: 6897005785352973121}
-  - component: {fileID: 3683461806952340383}
+  - component: {fileID: 7217063760234627538}
   - component: {fileID: 359451323245046255}
   - component: {fileID: 72375607044383471}
   - component: {fileID: 4675420666680761974}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -3889081155428412573, guid: 82da79bcf170d53989f2aecb78300b9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3683461806952340383
+--- !u!114 &7217063760234627538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,12 +100,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7481020306176387295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 335102b2db355c04cb6232eb235a3b8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3720118aad0d1c6ae80071dd0ebab3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  health: 40
-  fireball: {fileID: 0}
+  health: 50
+  Bullet1: {fileID: 0}
+  Orb: {fileID: 0}
+  facingLeft: 0
+  fireball: {fileID: 659696715698131801, guid: a955b99b9389799b386582cf69a7958e, type: 3}
 --- !u!50 &359451323245046255
 Rigidbody2D:
   serializedVersion: 5

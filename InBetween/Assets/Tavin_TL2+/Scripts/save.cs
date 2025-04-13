@@ -1,14 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ImpController : BossController
+public class ImpControllerSave : MonoBehaviour
 {
 	// Options
+	public float speed = 1.5f;
+	public float health = 40f;
 	private const float attackCooldown = 1f;
 
 	// Characteristics
 //	private Slider healthBar;
-	private bool activated = false;
+	private Animator animator;
+	private SpriteRenderer sprite;
 	private Rigidbody2D rigidbody;
+	private bool facingRight = true;
+	private bool activated = false;
 
 	// Attack
 	private float updateMoveTimer = 0.5f;
@@ -19,7 +25,11 @@ public class ImpController : BossController
 	private float attackTimer = 0;
 	[SerializeField] private GameObject fireball;
 
-       // Start is called once before the first execution of Update after the
+	// Player
+	private GameObject Player;
+	private Vector3 playerDir;
+
+    // Start is called once before the first execution of Update after the
 	// MonoBehaviour is created
     void Start()
     {
@@ -28,15 +38,13 @@ public class ImpController : BossController
     	healthBar.maxValue = health;
 		healthBar.value = health;
 */		
-		facingLeft = true;
-
 		rigidbody = GetComponent<Rigidbody2D>();
 		rigidbody.gravityScale = 0;
 		rigidbody.freezeRotation = true;
 
 		// Get animator
 		animator = GetComponent<Animator>(); 
-		spriteRenderer = GetComponent<SpriteRenderer>();
+		sprite = GetComponent<SpriteRenderer>();
 
 		// Get reference to player
 		Player = GameObject.FindGameObjectWithTag("Player");
@@ -52,11 +60,11 @@ public class ImpController : BossController
 			playerDir = Player.transform.position - transform.position;
 			
 			// Flip player if necessary
-			if((playerDir.x < 0 && !facingLeft)
-			|| (playerDir.x > 0 && facingLeft))
+			if((playerDir.x < 0 && facingRight)
+			|| (playerDir.x > 0 && !facingRight))
 			{
 				transform.Rotate(0, 180, 0);
-				facingLeft = !facingLeft;
+				facingRight = !facingRight;
 			}
 
 			// Attack player
@@ -65,7 +73,7 @@ public class ImpController : BossController
 			attackTimer += Time.deltaTime;
 		}
 	}
-	
+
 	// Called at the end of the enemy spawn animation
 	private void activate()
 	{
@@ -75,9 +83,7 @@ public class ImpController : BossController
 	// Attack
 	private void attack()
 	{
-		transform.Rotate(0, 180, 0);
 		Instantiate(fireball, transform.position, transform.rotation);
-		transform.Rotate(0, 180, 0);
 	}
 
 	// Random-ish movement
