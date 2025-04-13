@@ -800,6 +800,8 @@ MonoBehaviour:
   level: 1
   levelCap: 50
   xpSlider: {fileID: 515464567}
+  upgradeSystem: {fileID: 0}
+  playerScript: {fileID: 0}
   levelUpAudio: {fileID: 0}
 --- !u!114 &515464571
 MonoBehaviour:
@@ -967,6 +969,37 @@ MonoBehaviour:
   player: {fileID: 481682148}
   smoothTime: 0.25
   offset: {x: 0, y: 0, z: -11}
+--- !u!1 &552872699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552872701}
+  m_Layer: 0
+  m_Name: TestRunner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &552872701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552872699}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,22 +1704,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 948908215}
-    - target: {fileID: 2613459535869071625, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
-      propertyPath: playerScript
-      value: 
-      objectReference: {fileID: 1256340589}
-    - target: {fileID: 3011102399983535236, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
-      propertyPath: attackBoxSize.x
-      value: 1.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 3011102399983535236, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
-      propertyPath: attackBoxSize.y
-      value: 1.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 3322359228304189035, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3478273211448092952, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
       propertyPath: xpSlider
       value: 
@@ -1735,8 +1752,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7835432662140014913, guid: 8ca6252e5e935bd438981e871188cf13, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2917,3 +2933,4 @@ SceneRoots:
   - {fileID: 1256340588}
   - {fileID: 214505347}
   - {fileID: 915329080}
+  - {fileID: 552872701}

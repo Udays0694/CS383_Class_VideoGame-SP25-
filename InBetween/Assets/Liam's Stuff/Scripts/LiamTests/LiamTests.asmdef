@@ -1,0 +1,9 @@
+{
+    "name": "LiamTests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}
