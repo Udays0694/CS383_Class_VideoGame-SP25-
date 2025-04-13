@@ -14,7 +14,7 @@ public class PlayerScriptDataBC
 
     public virtual void setHealth(float damage)
     {
-        Debug.Log($"PLAYER getHealth called in super class — current health: {health}");
+        Debug.Log($"PLAYER getHealth called in super class ï¿½ current health: {health}");
         health -= 5f;
     }
 }
@@ -23,7 +23,7 @@ public class PlayerScriptData : PlayerScriptDataBC
 {
     public override void setHealth(float damage)
     {
-        Debug.Log($"PLAYER getHealth called in sub class — current health: {base.health}");
+        Debug.Log($"PLAYER getHealth called in sub class ï¿½ current health: {base.health}");
         base.health -= damage;
     }
 }
@@ -110,7 +110,7 @@ public class PlayerScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
         playerScript.setHealth(damage);
-        GameObject.Find("DamageSound").GetComponent<AudioSource>().Play();
+        //GameObject.Find("DamageSound").GetComponent<AudioSource>().Play();
         if (playerScript.getHealth() <= 0)
         {
             Death();
