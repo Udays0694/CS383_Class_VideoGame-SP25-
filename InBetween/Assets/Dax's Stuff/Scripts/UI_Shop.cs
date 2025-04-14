@@ -23,17 +23,17 @@ public class UI_Shop : MonoBehaviour
 
     private void Start()
     {
-        CreateItemButton(Item.ItemType.SwordOne, Item.GetSprite(Item.ItemType.SwordTwo), "Iron Sword", Item.GetCost(Item.ItemType.SwordOne), 1);
-        CreateItemButton(Item.ItemType.SwordTwo, Item.GetSprite(Item.ItemType.SwordTwo), "Gold Sword", Item.GetCost(Item.ItemType.SwordTwo), 1);
-        CreateItemButton(Item.ItemType.AxeOne, Item.GetSprite(Item.ItemType.AxeOne), "Axe", Item.GetCost(Item.ItemType.AxeOne), 2);
-        CreateItemButton(Item.ItemType.DaggerOne, Item.GetSprite(Item.ItemType.DaggerOne), "Dagger", Item.GetCost(Item.ItemType.DaggerOne), 3);
-        CreateItemButton(Item.ItemType.PotionOne, Item.GetSprite(Item.ItemType.PotionOne), "Potion", Item.GetCost(Item.ItemType.PotionOne), 4);
+        CreateItemButton(Item.ItemType.SwordOne, Item.GetSprite(Item.ItemType.SwordTwo), "Iron Sword", Item.GetCost(Item.ItemType.SwordOne), 0, Item.GetEffectValue(Item.ItemType.SwordOne), Item.GetDescription(Item.ItemType.SwordOne));
+        CreateItemButton(Item.ItemType.SwordTwo, Item.GetSprite(Item.ItemType.SwordTwo), "Gold Sword", Item.GetCost(Item.ItemType.SwordTwo), 1, Item.GetEffectValue(Item.ItemType.SwordTwo), Item.GetDescription(Item.ItemType.SwordTwo));
+        CreateItemButton(Item.ItemType.AxeOne, Item.GetSprite(Item.ItemType.AxeOne), "Axe", Item.GetCost(Item.ItemType.AxeOne), 2, Item.GetEffectValue(Item.ItemType.AxeOne), Item.GetDescription(Item.ItemType.AxeOne));
+        CreateItemButton(Item.ItemType.DaggerOne, Item.GetSprite(Item.ItemType.DaggerOne), "Dagger", Item.GetCost(Item.ItemType.DaggerOne), 3, Item.GetEffectValue(Item.ItemType.DaggerOne), Item.GetDescription(Item.ItemType.DaggerOne));
+        CreateItemButton(Item.ItemType.PotionOne, Item.GetSprite(Item.ItemType.PotionOne), "Potion", Item.GetCost(Item.ItemType.PotionOne), 4, Item.GetEffectValue(Item.ItemType.PotionOne), Item.GetDescription(Item.ItemType.PotionOne));
 
         Hide();
     }
 
     //Works to reference ShopItemButton prefab and duplicates it for each item needed 
-    private void CreateItemButton(Item.ItemType itemType, Sprite itemSprite, string itemName, int itemCost, int positionIndex)
+    private void CreateItemButton(Item.ItemType itemType, Sprite itemSprite, string itemName, int itemCost, int positionIndex, int effectValue, string description)
     {
         Transform shopItemTransform = Instantiate(shopItemTemplate, container); //Placing each Shop Item 
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
@@ -45,6 +45,8 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.Find("costText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString()); //Set CostText 
 
         shopItemTransform.Find("itemSprite").GetComponent<Image>().sprite = itemSprite; //Set Item Image
+
+        shopItemTransform.Find("descriptionText").GetComponent<TextMeshProUGUI>().SetText(description);
 
         shopItemTransform.GetComponent<Button>().onClick.AddListener(() =>
         {
@@ -98,7 +100,7 @@ public class UI_Shop : MonoBehaviour
         for( int i = 0; i < 5; i++)
         {
             Item.ItemType type = allItems[i];
-            CreateItemButton(type, Item.GetSprite(type), type.ToString(), Item.GetCost(type), i);
+            CreateItemButton(type, Item.GetSprite(type), type.ToString(), Item.GetCost(type), i, Item.GetEffectValue(type), Item.GetDescription(type));
         }
     
     }
