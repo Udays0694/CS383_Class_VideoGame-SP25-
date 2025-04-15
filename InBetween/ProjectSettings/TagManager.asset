@@ -14,6 +14,8 @@ TagManager:
   - XPBar
   - RoomFloor
   - Imp
+  - PauseMenuPanel
+  - SettingsPanel
   layers:
   - Default
   - TransparentFX
