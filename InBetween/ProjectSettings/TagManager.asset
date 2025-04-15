@@ -14,8 +14,12 @@ TagManager:
   - XPBar
   - RoomFloor
   - Imp
+<<<<<<< HEAD
   - PauseMenuPanel
   - SettingsPanel
+=======
+  - Pool
+>>>>>>> 3f44260887ef194c0c16734a26e016b25f3b2069
   layers:
   - Default
   - TransparentFX

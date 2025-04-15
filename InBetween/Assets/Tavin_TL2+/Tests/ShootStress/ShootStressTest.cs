@@ -37,7 +37,7 @@ public class StressTest
             counter++;
             Debug.Log(counter);
             float fps = 1f / Time.deltaTime;
-            Assert.GreaterOrEqual(fps, 10, "Took " + counter + " bullets to get too slow");
+            Assert.GreaterOrEqual(fps, 10, "Took " + counter + " bullets to get below 10 fps");
         }
     }
 }

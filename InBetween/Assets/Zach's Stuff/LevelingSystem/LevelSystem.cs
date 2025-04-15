@@ -6,8 +6,11 @@ public class LevelSystemBase : MonoBehaviour // Superclass for dynamic binding
     // Virtual method that can be overridden in subclasses
     public virtual void GainXP(int amount)
     {
-        Debug.Log("Base GainXP called with: " + amount); // Virtual method in the base class
+        Debug.Log("Base GainXP called with: " + amount);
+        FindFirstObjectByType<XP>().AddXP(amount);
+         Camera.main.backgroundColor = new Color(Random.value, Random.value, Random.value); // Visual change
     }
+
 }
 
 public class LevelSystem : LevelSystemBase // Subclass for static binding
@@ -128,7 +131,7 @@ public class LevelSystem : LevelSystemBase // Subclass for static binding
 
     private void ApplyStatIncreases()
     {
-        PlayerScript player = FindFirstObjectByType<PlayerScript>();
+        PlayerScript player = FindFirstObjectByType<PlayerScript>(); //give small increase on levelup
         if (player != null)
         {
             player.moveSpeed += 0.2f;

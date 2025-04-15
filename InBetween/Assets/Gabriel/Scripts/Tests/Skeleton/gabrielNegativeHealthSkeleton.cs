@@ -48,9 +48,9 @@ public class SkeletonNegativeHealthTest
         skeletonScript = Skeleton.GetComponent<SkeletonScript>();
         skeletonScript.Awake();
         Assert.IsNotNull(skeletonScript, "SkeletonScript component not found on Skeleton.");
-        skeletonScript.TakeDamage(90f);
+        skeletonScript.TakeDamage(-90f);
 
-        if (skeletonScript.skeletonScript.getHealth() == 10f)
+        if (skeletonScript.skeletonScript.getHealth() == 190f)
         {
             Assert.Pass("Health is 10");
         } else

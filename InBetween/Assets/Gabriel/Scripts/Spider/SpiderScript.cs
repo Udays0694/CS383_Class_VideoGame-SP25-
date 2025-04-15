@@ -47,10 +47,13 @@ public class SpiderScript : EnemyClass
 
     public override void Navigation()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, playerScript.rb.position);
-        if (distanceToPlayer < 1.5 && attackReady)
+        if (playerScript != null)
         {
-            Attack();
+            float distanceToPlayer = Vector2.Distance(transform.position, playerScript.rb.position);
+            if (distanceToPlayer < 1.5 && attackReady)
+            {
+                Attack();
+            }
         }
     }
 

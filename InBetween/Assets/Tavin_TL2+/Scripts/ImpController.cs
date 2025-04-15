@@ -1,20 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ImpController : MonoBehaviour
+public class ImpController : BossController
 {
 	// Options
-	public float speed = 1.5f;
-	public float health = 40f;
 	private const float attackCooldown = 1f;
 
 	// Characteristics
 //	private Slider healthBar;
-	private Animator animator;
-	private SpriteRenderer sprite;
 	private Rigidbody2D rigidbody;
-	private bool facingRight = true;
-	private bool activated = false;
 
 	// Attack
 	private float updateMoveTimer = 0.5f;
@@ -25,11 +18,7 @@ public class ImpController : MonoBehaviour
 	private float attackTimer = 0;
 	[SerializeField] private GameObject fireball;
 
-	// Player
-	private GameObject Player;
-	private Vector3 playerDir;
-
-    // Start is called once before the first execution of Update after the
+       // Start is called once before the first execution of Update after the
 	// MonoBehaviour is created
     void Start()
     {
@@ -38,13 +27,17 @@ public class ImpController : MonoBehaviour
     	healthBar.maxValue = health;
 		healthBar.value = health;
 */		
+
+		activated = false;
+		facingLeft = true;
+
 		rigidbody = GetComponent<Rigidbody2D>();
 		rigidbody.gravityScale = 0;
 		rigidbody.freezeRotation = true;
 
 		// Get animator
 		animator = GetComponent<Animator>(); 
-		sprite = GetComponent<SpriteRenderer>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 
 		// Get reference to player
 		Player = GameObject.FindGameObjectWithTag("Player");
@@ -60,11 +53,11 @@ public class ImpController : MonoBehaviour
 			playerDir = Player.transform.position - transform.position;
 			
 			// Flip player if necessary
-			if((playerDir.x < 0 && facingRight)
-			|| (playerDir.x > 0 && !facingRight))
+			if((playerDir.x < 0 && !facingLeft)
+			|| (playerDir.x > 0 && facingLeft))
 			{
 				transform.Rotate(0, 180, 0);
-				facingRight = !facingRight;
+				facingLeft = !facingLeft;
 			}
 
 			// Attack player
@@ -73,7 +66,7 @@ public class ImpController : MonoBehaviour
 			attackTimer += Time.deltaTime;
 		}
 	}
-
+	
 	// Called at the end of the enemy spawn animation
 	private void activate()
 	{
@@ -83,7 +76,9 @@ public class ImpController : MonoBehaviour
 	// Attack
 	private void attack()
 	{
+		transform.Rotate(0, 180, 0);
 		Instantiate(fireball, transform.position, transform.rotation);
+		transform.Rotate(0, 180, 0);
 	}
 
 	// Random-ish movement
@@ -101,14 +96,14 @@ public class ImpController : MonoBehaviour
 			animator.Play("ImpAttack");
 			attackTimer = 0;
 		}
-		else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpAttack")
+/*		else if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpAttack")
 		     && !animator.GetCurrentAnimatorStateInfo(0).IsName("ImpSpawn")
 		     && !animator.GetCurrentAnimatorStateInfo(0).IsName("ImpHurt")
 		     && !animator.GetCurrentAnimatorStateInfo(0).IsName("ImpDie"))
 		{
 			animator.Play("ImpRun");
 		}
-		
+*/		
 		// Only update move direction every half second
 		updateMoveTimer += Time.deltaTime;
 		if(updateMoveTimer >= updateMoveTime)
@@ -136,16 +131,32 @@ public class ImpController : MonoBehaviour
 		Destroy(gameObject);
 	}
 
+	// Check for death, called by hurt animation
+/*	private void deathCheck()
+	{
+		if(health <= 0)
+		{
+			activated = false;
+			if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpDie"))
+			{
+				animator.Play("ImpDie");
+			}
+		}
+		else
+		{
+			animator.Play("ImpRun");
+		}
+	}*/
+
 	// Take damage
 	public void takeDamage(float amount)
 	{
 		health -= amount;
 //		healthBar.value = health;
-		animator.Play("ImpHurt");
-		if(health <= 0)
+		if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpHurt")
+		&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
 		{
-			activated = false;
-			animator.Play("ImpDie");
+			animator.Play("ImpHurt");
 		}
 	}
 }

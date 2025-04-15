@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoyVersion.unity
     guid: e8b785916aa212842b4b6075cb8ffa71
+  - enabled: 1
+    path: Assets/Scenes/ZachScene.unity
+    guid: 928ddb3c8ed5dfb428a5eb980aa9359e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
