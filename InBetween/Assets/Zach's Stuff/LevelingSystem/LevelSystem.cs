@@ -131,7 +131,7 @@ public class LevelSystem : LevelSystemBase // Subclass for static binding
 
     private void ApplyStatIncreases()
     {
-        PlayerScript player = FindFirstObjectByType<PlayerScript>();
+        PlayerScript player = FindFirstObjectByType<PlayerScript>(); //give small increase on levelup
         if (player != null)
         {
             player.moveSpeed += 0.2f;
