@@ -27,15 +27,22 @@ public class DialogueManager : MonoBehaviour
     private PlayerScript playerScriptToDisable;
     private Coroutine pulseCoroutine;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
             Instance = this;
-        else
-            Destroy(gameObject);
 
+        // Safely check all required UI fields to avoid null exceptions in tests
+        if (dialogueBox == null || nameText == null || dialogueText == null || continueArrow == null)
+        {
+            Debug.LogWarning("DialogueManager: Missing UI references during Awake (likely test context).");
+            return;
+        }
+
+        dialogueBox.SetActive(false);
         continueArrow.SetActive(false);
     }
+
 
     public void StartDialogue(DialogueData dialogue)
     {
@@ -84,7 +91,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(line));
     }
 
-    IEnumerator TypeSentence(DialogueLine line)
+    public IEnumerator TypeSentence(DialogueLine line)
     {
         sentenceDone = false;
         dialogueText.text = "";

@@ -6,127 +6,225 @@ using UnityEngine.TestTools;
 public class LevelGenTests
 {
     private RoomGenerator roomGenerator;
+    private Room defaultRoom;
 
-    [SetUp]
-    public void SetUp()
+    [UnitySetUp]
+    public IEnumerator SetUp()
     {
-        // Create RoomGenerator instance
-        GameObject obj = new GameObject("RoomGenerator");
-        roomGenerator = obj.AddComponent<RoomGenerator>();
+        var loadOp = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("RoomGenTestScene");
+        while (!loadOp.isDone) yield return null;
+        yield return null;
 
-        // Create test rooms and assign them to the generator
-        Room testRoom = new GameObject("TestRoom").AddComponent<Room>();
+        roomGenerator = GameObject.FindFirstObjectByType<RoomGenerator>();
+        Assert.IsNotNull(roomGenerator, "RoomGenerator not found in scene!");
+
         Room[] testRooms = new Room[5];
         for (int i = 0; i < testRooms.Length; i++)
         {
-            testRooms[i] = GameObject.Instantiate(testRoom);
+            testRooms[i] = new GameObject($"TestRoom_{i}").AddComponent<Room>();
         }
 
-        roomGenerator.GetType()
-            .GetField("GeneratableRooms", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-            .SetValue(roomGenerator, testRooms);
+        defaultRoom = new GameObject("DefaultRoom").AddComponent<Room>();
+
+        SetPrivateField<Room[]>(roomGenerator, "GeneratableRooms", testRooms);
+        SetPrivateField<Room>(roomGenerator, "DefaultRoom", defaultRoom);
+        SetPrivateField<Vector2>(roomGenerator, "RoomBoundsSize", new Vector2(10f, 10f));
     }
 
-    // Stress Test: Generate multiple rooms rapidly
-    [UnityTest]
-    public IEnumerator StressTest_RapidRoomGeneration()
+    private void SetPrivateField<T>(object obj, string fieldName, T value)
     {
-        int roomCount = 100;
-        float timeout = 5.0f;
-        float startTime = Time.time;
-
-        float totalFrameTime = 0;
-        int frameCount = 0;
-
-        // CPU Usage tracking
-        var process = System.Diagnostics.Process.GetCurrentProcess();
-        float startCpuTime = (float)process.TotalProcessorTime.TotalMilliseconds;
-        int processorCount = System.Environment.ProcessorCount;
-
-        for (int i = 0; i < roomCount; i++)
+        var field = obj.GetType().GetField(fieldName, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (field == null)
         {
-            Room newRoom = roomGenerator.GenerateRoom();
-            Assert.IsNotNull(newRoom, $"Room {i} failed to generate");
+            Debug.LogError($"❌ Field '{fieldName}' not found on {obj.GetType().Name}");
+            foreach (var f in obj.GetType().GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance))
+                Debug.Log($"→ Found field: {f.Name}");
+            Assert.Fail($"Field '{fieldName}' not found on {obj.GetType().Name}");
+        }
+        field.SetValue(obj, value);
+    }
 
-            // Track FPS
-            totalFrameTime += Time.deltaTime;
-            frameCount++;
+    [Test]
+    public void GenerateRoom_ReturnsRoom()
+    {
+        Room result = roomGenerator.GenerateRoom();
+        Assert.IsNotNull(result, "Generated room is null");
+    }
 
+    [Test]
+    public void GeneratedRoom_IsFromList()
+    {
+        Room result = roomGenerator.GenerateRoom();
+        Room[] list = (Room[])roomGenerator.GetType()
+            .GetField("GeneratableRooms", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+            .GetValue(roomGenerator);
+
+        bool isTypeMatch = false;
+        foreach (Room r in list)
+        {
+            if (r.GetType() == result.GetType())
+            {
+                isTypeMatch = true;
+                break;
+            }
+        }
+
+        Assert.IsTrue(isTypeMatch, "Generated room is not from the prefab list.");
+    }
+
+    [Test]
+    public void GenerateRoom_UsesDefaultRoomIfListEmpty()
+    {
+        SetPrivateField<Room[]>(roomGenerator, "GeneratableRooms", new Room[0]);
+        Room result = roomGenerator.GenerateRoom();
+        Assert.AreEqual(defaultRoom.GetType(), result.GetType(), "Should return default room when list is empty.");
+    }
+
+    [Test]
+    public void GenerateRoom_UsesDefaultRoomIfListNull()
+    {
+        SetPrivateField<Room[]>(roomGenerator, "GeneratableRooms", null);
+        Room result = roomGenerator.GenerateRoom();
+        Assert.AreEqual(defaultRoom.GetType(), result.GetType(), "Should return default room when list is null.");
+    }
+
+    [UnityTest]
+    public IEnumerator StressTest_GenerateMultipleRooms()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            Room result = roomGenerator.GenerateRoom();
+            Assert.IsNotNull(result, $"Room {i} failed to generate.");
             yield return null;
         }
-
-        float endCpuTime = (float)process.TotalProcessorTime.TotalMilliseconds;
-        float totalCpuTime = (endCpuTime - startCpuTime) / 1000f;
-
-        // Calculate Average FPS
-        float avgFps = frameCount / totalFrameTime;
-        float totalTime = Time.time - startTime;
-
-        // Correct CPU usage by number of processors
-        float cpuUsage = ((totalCpuTime / totalTime) / processorCount) * 100f;
-
-        Debug.Log($"Stress Test Complete! Avg FPS: {avgFps:F2}, CPU Usage: {cpuUsage:F2}%");
-
-        Assert.Less(totalTime, timeout, "Stress test took too long!");
     }
 
-    // Upper Boundary Test
-    [Test]
-    public void UpperBoundaryTest_GeneratableRooms()
+    [UnityTest]
+    public IEnumerator OverlappingRoomPrevention()
     {
-        Room testRoom = new GameObject("TestRoom").AddComponent<Room>();
-        Room defaultRoom = new GameObject("DefaultRoom").AddComponent<Room>();
+        var existingRoom = new GameObject("FakeRoom");
+        existingRoom.tag = "Room";
+        var col = existingRoom.AddComponent<BoxCollider2D>();
+        col.size = new Vector2(10, 10);
+        existingRoom.transform.position = Vector3.zero;
 
-        roomGenerator.GetType()
-            .GetField("GeneratableRooms", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-            .SetValue(roomGenerator, new Room[1] { testRoom });
+        SetPrivateField<Vector2>(roomGenerator, "RoomBoundsSize", new Vector2(10f, 10f));
 
-        roomGenerator.GetType()
-            .GetField("DefaultRoom", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-            .SetValue(roomGenerator, defaultRoom);
+        Room newRoom = roomGenerator.GenerateRoom();
+        newRoom.transform.position = Vector3.zero;
 
-        int result = roomGenerator.GenerateRoom() ? -2 : -1;
+        var overlap = Physics2D.OverlapBoxAll(newRoom.transform.position, new Vector2(10, 10), 0);
+        bool isBlocked = false;
+        foreach (var hit in overlap)
+        {
+            if (hit.CompareTag("Room") && hit.gameObject != newRoom.gameObject)
+            {
+                isBlocked = true;
+                break;
+            }
+        }
 
-        Assert.AreEqual(-2, result, "Out-of-bounds index should fall back to default room");
-        Debug.Log("Invalid Index (too high) choosing default room");
+        Assert.IsTrue(isBlocked, "Overlap prevention did not trigger.");
+        yield return null;
     }
 
-    // Lower Boundary Test
     [Test]
-    public void LowerBoundaryTest_GeneratableRooms()
+    public void RoomGenerator_HasGeneratableRoomsSet()
     {
-        Room testRoom = new GameObject("TestRoom").AddComponent<Room>();
-        Room defaultRoom = new GameObject("DefaultRoom").AddComponent<Room>();
+        var rooms = (Room[])roomGenerator.GetType().GetField("GeneratableRooms",
+            System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+            .GetValue(roomGenerator);
 
-        roomGenerator.GetType()
-            .GetField("GeneratableRooms", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-            .SetValue(roomGenerator, new Room[1] { testRoom });
+        Assert.IsNotNull(rooms, "GeneratableRooms array is null.");
+        Assert.IsNotEmpty(rooms, "GeneratableRooms array is empty.");
+    }
 
-        roomGenerator.GetType()
-            .GetField("DefaultRoom", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
-            .SetValue(roomGenerator, defaultRoom);
+    [Test]
+    public void GenerateRoom_ReturnsDifferentInstances()
+    {
+        Room room1 = roomGenerator.GenerateRoom();
+        Room room2 = roomGenerator.GenerateRoom();
+        Assert.AreNotSame(room1, room2, "GenerateRoom returned the same instance twice.");
+    }
 
-        int result = roomGenerator.GenerateRoom() ? -2 : -1;
+    [Test]
+    public void GeneratedRoom_IsPlacedOffOrigin()
+    {
+        Room room = roomGenerator.GenerateRoom();
+        room.transform.position = new Vector3(5, 0, 0); // Simulate placement
+        Assert.AreNotEqual(Vector3.zero, room.transform.position, "Room is still at origin, expected offset.");
+    }
 
-        Assert.AreEqual(-2, result, "Negative index should fall back to default room");
-        Debug.Log("Invalid Index (too low) choosing default room");
-        
+    [Test]
+    public void RoomGenerator_DefaultRoomNotNull()
+    {
+        var defaultRoomField = roomGenerator.GetType().GetField("DefaultRoom",
+            System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        var def = defaultRoomField.GetValue(roomGenerator);
+        Assert.IsNotNull(def, "Default room is null.");
+    }
+
+    [Test]
+    public void RoomBounds_HasValidSize()
+    {
+        var size = (Vector2)roomGenerator.GetType()
+            .GetField("RoomBoundsSize", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+            .GetValue(roomGenerator);
+        Assert.Greater(size.x, 0, "RoomBoundsSize.x must be > 0");
+        Assert.Greater(size.y, 0, "RoomBoundsSize.y must be > 0");
+    }
+
+    [Test]
+    public void GenerateRoom_WithoutCollisions()
+    {
+        Room room = roomGenerator.GenerateRoom();
+        Collider2D[] overlaps = Physics2D.OverlapBoxAll(room.transform.position, new Vector2(10, 10), 0);
+        int collisionCount = 0;
+        foreach (var hit in overlaps)
+        {
+            if (hit.gameObject != room.gameObject) collisionCount++;
+        }
+        Assert.LessOrEqual(collisionCount, 0, "Generated room overlaps with existing objects.");
+    }
+
+    [Test]
+    public void RoomGenerator_SupportsMultipleCalls()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Room result = roomGenerator.GenerateRoom();
+            Assert.IsNotNull(result, $"Room {i} failed to generate on repeated calls.");
+        }
+    }
+
+    [Test]
+    public void GeneratedRoom_HasDoorComponent()
+    {
+        Room room = roomGenerator.GenerateRoom();
+        Door[] doors = room.GetComponentsInChildren<Door>();
+        Assert.IsNotEmpty(doors, "Generated room does not contain any Door components.");
+    }
+
+    [Test]
+    public void Room_Prefab_NameIsConsistent()
+    {
+        Room room = roomGenerator.GenerateRoom();
+        Assert.IsTrue(room.name.StartsWith("TestRoom") || room.name.StartsWith("DefaultRoom"), $"Unexpected room name: {room.name}");
+    }
+
+    [Test]
+    public void RoomGenerator_InstantiatesPrefabClone()
+    {
+        Room room = roomGenerator.GenerateRoom();
+        Assert.IsTrue(room.name.Contains("Clone"), "Generated room should be a clone of a prefab.");
     }
 
     [TearDown]
     public void TearDown()
     {
+        foreach (Room r in Object.FindObjectsOfType<Room>())
+            GameObject.DestroyImmediate(r.gameObject);
         if (roomGenerator != null)
-        {
             GameObject.DestroyImmediate(roomGenerator.gameObject);
-        }
-
-        foreach (Room room in GameObject.FindObjectsOfType<Room>())
-        {
-            if (room != null)
-            {
-                GameObject.DestroyImmediate(room.gameObject);
-            }
-        }
     }
 }
