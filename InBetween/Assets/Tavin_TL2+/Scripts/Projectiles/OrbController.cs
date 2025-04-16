@@ -25,13 +25,7 @@ public class OrbController : MonoBehaviour
     // Start is called once before the first execution of Update after the
 	// MonoBehaviour is created
     void Start()
-    {
-    	// Singleton functionality
-    	if(GameObject.FindGameObjectWithTag("Orb"))
-    	{
-    		Destroy(gameObject);
-    	}
-    	
+    {	
     	// Movement direction
  		moveDir = transform.up.normalized;
  		
@@ -54,9 +48,9 @@ public class OrbController : MonoBehaviour
     {   	
 		move();
     	
-    	// Destroy if alive for too long
+    	// Destroy if alive for too long or boss dies
     	deathTimer += Time.deltaTime;
-    	if(deathTimer >= deathTime)
+    	if(deathTimer >= deathTime || !Boss)
     	{
 			destroy();
     	}

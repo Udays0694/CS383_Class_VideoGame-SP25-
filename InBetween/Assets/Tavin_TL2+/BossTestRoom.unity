@@ -925,6 +925,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4063045415574519943, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6763856213880315173, guid: b5d83932a925b19648f95dd3773556f0, type: 3}
       propertyPath: m_Name
       value: Boss

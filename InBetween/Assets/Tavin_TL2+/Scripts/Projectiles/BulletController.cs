@@ -12,6 +12,9 @@ public class BulletController : MonoBehaviour
 	private GameObject Player;
 	private Vector2 playerDir;
 	private Vector3 playerCenterOffset;
+	
+	// Boss
+	private GameObject Boss;
 
 	// Called at instantiation
 	void Start()
@@ -21,6 +24,9 @@ public class BulletController : MonoBehaviour
 		
 		// Get reference to player
 		Player = GameObject.FindGameObjectWithTag("Player");
+		
+		// Get reference to boss
+		Boss = GameObject.FindGameObjectWithTag("Boss");
 		
 		// Movement direction
  		moveDir = transform.up;
@@ -51,13 +57,13 @@ public class BulletController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   	
+    {  	
     	// Move
     	move();
     	
-    	// Destroy if alive for too long
+    	// Destroy if alive for too long or the boss dies
     	deathTimer += Time.deltaTime;
-    	if(deathTimer >= 5)
+    	if(deathTimer >= 5 || !Boss)
     	{
     		disappear();
     	}

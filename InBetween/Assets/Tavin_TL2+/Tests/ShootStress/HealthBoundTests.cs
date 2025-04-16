@@ -54,7 +54,7 @@ public class BoundTestUpper
     [UnityTest]
     public IEnumerator HealthBoundUpper()
     {
-    	yield return null;		
+    	yield return null;
 
         script = GameObject.FindAnyObjectByType<BossController>();
         Assert.NotNull(script, "Failed to get script");
