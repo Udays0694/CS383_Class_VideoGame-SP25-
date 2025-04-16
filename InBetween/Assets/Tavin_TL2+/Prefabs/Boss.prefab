@@ -305,7 +305,7 @@ Transform:
   m_GameObject: {fileID: 6763856213880315173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.69, y: 0.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -379,10 +379,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa3e9d255b7dc65db905fc5246e2b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  health: 10
+  maxHealth: 100
+  health: 300
   Bullet1: {fileID: 319877769471581982, guid: b127c6af3ba99a84181e33c4e2ef6315, type: 3}
-  Orb: {fileID: 0}
+  Orb: {fileID: 5132701784108115832, guid: a93ddacc3d8cf4f8a8d2f3cf5c6d7e29, type: 3}
+  Minion: {fileID: 7481020306176387295, guid: a63f32aaa97d1e16380c92ac11a6de0a, type: 3}
   facingLeft: 1
 --- !u!50 &3395841593366759454
 Rigidbody2D:

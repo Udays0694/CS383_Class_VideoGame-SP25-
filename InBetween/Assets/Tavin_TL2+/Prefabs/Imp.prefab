@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7481020306176387295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.43, y: -0.02, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -107,6 +107,7 @@ MonoBehaviour:
   health: 50
   Bullet1: {fileID: 0}
   Orb: {fileID: 0}
+  Minion: {fileID: 0}
   facingLeft: 0
   fireball: {fileID: 659696715698131801, guid: a955b99b9389799b386582cf69a7958e, type: 3}
 --- !u!50 &359451323245046255

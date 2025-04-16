@@ -7,7 +7,7 @@ public class ImpController : BossController
 
 	// Characteristics
 //	private Slider healthBar;
-	private Rigidbody2D rigidbody;
+	new private Rigidbody2D rigidbody;
 
 	// Attack
 	private float updateMoveTimer = 0.5f;
@@ -28,6 +28,9 @@ public class ImpController : BossController
 		healthBar.value = health;
 */		
 
+		maxHealth = 40f;
+		health = maxHealth;
+		speed = 2f;
 		activated = false;
 		facingLeft = true;
 
@@ -82,7 +85,7 @@ public class ImpController : BossController
 	}
 
 	// Random-ish movement
-	private void move()
+	new private void move()
 	{
 		// Move to the side of the player
 		if(Mathf.Abs(playerDir.x) <= shootDist)
@@ -149,9 +152,13 @@ public class ImpController : BossController
 	}*/
 
 	// Take damage
-	public void takeDamage(float amount)
+	new public void takeDamage(float amount)
 	{
 		health -= amount;
+		if(health > maxHealth)
+		{
+			health = maxHealth;
+		}
 //		healthBar.value = health;
 		if(!animator.GetCurrentAnimatorStateInfo(0).IsName("ImpHurt")
 		&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Die"))

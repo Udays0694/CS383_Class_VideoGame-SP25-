@@ -15,6 +15,7 @@ TagManager:
   - RoomFloor
   - Imp
   - Pool
+  - Orb
   layers:
   - Default
   - TransparentFX

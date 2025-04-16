@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/RoomGenTest.unity
     guid: 7e4ab55c19f6076478a3f5a6c88ef430
   - enabled: 1
-    path: Assets/Scenes/BossFight.unity
+    path: Assets/Tavin_TL2+/BossTestRoom.unity
     guid: b9f1dd9959e66c63bb399b0d14a3a0de
   - enabled: 1
     path: Assets/Scenes/RoyVersion.unity

@@ -29,11 +29,15 @@ public class ImpFireball : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collideObj)
     {
-        if(collideObj.tag == "Player" && activated)
+        if(activated && (collideObj.tag == "Player" || collideObj.tag == "Room"))
         {
         	// Deal damage to the player
-            collideObj.GetComponent<PlayerScript>().TakeDamage(4f);
-			activated = false;
+        	PlayerScript playerScript = collideObj.GetComponent<PlayerScript>();
+
+            if(playerScript)
+            {
+            	playerScript.TakeDamage(4f);
+            }
         	
         	// Stop fireball from moving
         	speed = 0;

@@ -21,11 +21,25 @@ public class BulletController : MonoBehaviour
 		
 		// Get reference to player
 		Player = GameObject.FindGameObjectWithTag("Player");
+		
+		// Movement direction
+ 		moveDir = transform.up;
+ 		
+ 		animator.Play("FireballBurn");
+ 		
+ 		deathTimer = 0;
+ 		speed = 3;
 	}
 	
 	// Called at the start and when it is activated
     void OnEnable()
     {
+    	if(!animator)
+    	{
+    		// Initiate animator
+			animator = GetComponent<Animator>();
+    	}
+    	
     	// Movement direction
  		moveDir = transform.up;
  		
@@ -83,10 +97,15 @@ public class BulletController : MonoBehaviour
 	// Handle player collisions
     void OnTriggerEnter2D(Collider2D collideObj)
     {
-        if(collideObj.tag == "Player")
+        if(collideObj.tag == "Player" || collideObj.tag == "Room") 
         {
         	// Deal damage to the player
-            collideObj.GetComponent<PlayerScript>().TakeDamage(5f);
+        	PlayerScript playerScript = collideObj.GetComponent<PlayerScript>();
+
+            if(playerScript)
+            {
+            	playerScript.TakeDamage(5f);
+            }
 			
 			// Stop the fireball from moving while it's playing the animation
 			speed = 0f;

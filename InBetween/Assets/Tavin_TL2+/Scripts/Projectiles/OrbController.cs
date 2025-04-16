@@ -3,7 +3,7 @@ using UnityEngine;
 public class OrbController : MonoBehaviour
 {
 	// Characteristics
-	[SerializeField] private float speed = 10f;
+	private float speed = 10f;
 	
 	private float deathTimer = 0;
 	private float deathTime = 10f;
@@ -16,7 +16,6 @@ public class OrbController : MonoBehaviour
     // Player
 	private GameObject Player;
 	private Vector2 playerDir;
-	private Vector3 playerCenterOffset;
 	
 	// Boss
 	private GameObject Boss;
@@ -27,6 +26,12 @@ public class OrbController : MonoBehaviour
 	// MonoBehaviour is created
     void Start()
     {
+    	// Singleton functionality
+    	if(GameObject.FindGameObjectWithTag("Orb"))
+    	{
+    		Destroy(gameObject);
+    	}
+    	
     	// Movement direction
  		moveDir = transform.up.normalized;
  		
@@ -83,29 +88,26 @@ public class OrbController : MonoBehaviour
     	transform.localRotation = Quaternion.LookRotation(Vector3.forward, Player.transform.position - transform.position); ;
     	moveDir = transform.up;
     	isGenerating = false;
-    	
-    	// Tell the boss to spawn another orb
-    	BossScript.attack2();
     }
 
 	// Allows Destroy to be called on a keyframe in an animation
 	private void destroy()
 	{
-		// Ensure that the next orb is spawned if this one hasn't finished generating
-		if(isGenerating)
-		{
-			BossScript.attack2();
-		}
 		Destroy(gameObject);
 	}
 
 	// Handle player collisions
     void OnTriggerEnter2D(Collider2D collideObj)
     {
-        if(collideObj.tag == "Player")
+        if(collideObj.tag == "Player" || collideObj.tag == "Room")
         {
         	// Deal damage to the player
-            collideObj.GetComponent<PlayerScript>().TakeDamage(10f);
+        	PlayerScript playerScript = collideObj.GetComponent<PlayerScript>();
+
+            if(playerScript)
+            {
+            	playerScript.TakeDamage(10f);
+            }
 			
 			speed /= 2f;
 

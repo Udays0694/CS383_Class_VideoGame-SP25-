@@ -5,6 +5,7 @@ public class BossController : MonoBehaviour
 {
 	// Options
 	public float speed = 0.5f;
+	public float maxHealth = 100f;
 	public float health = 100f;
 	private float attack1Cooldown = 2f;
 
@@ -22,12 +23,17 @@ public class BossController : MonoBehaviour
 	
 	// Orb
 	[SerializeField] private GameObject Orb;
-	private float orbRespawnTimer = 0;
 	private float orbRespawnTime = 1;
-	private bool respawnOrb = false;
+	private float orbRespawnTimer = 1;
+	private bool orbEnable = false;
 	
 	// Minions
-	private bool spawnMinions = true;
+	[SerializeField] private GameObject Minion;
+	private float minionRespawnTime = 12;
+	private float minionRespawnTimer = 12;
+	private bool spawnMinions = false;
+	private Vector3[] minionSpawnLocations = { new Vector3(-6f, 1.5f, 0), new Vector3(6f, 1.5f, 0),
+											   new Vector3(6f, -4.5f, 0), new Vector3(-6f, -4.5f, 0) };
 	
 	// Public so orb can see it
 	public bool facingLeft = true;
@@ -41,6 +47,10 @@ public class BossController : MonoBehaviour
 	// MonoBehaviour is created
     void Start()
     {
+    	// DYNAMIC BINDING TEST
+    	DynamicDemo demo = new DynamicDemo();
+    	demo.start();
+    
 		// Initiate health bar
 		healthBar = GetComponentInChildren<Slider>();
     	healthBar.maxValue = health;
@@ -57,9 +67,6 @@ public class BossController : MonoBehaviour
 		
 		// Get fireball pool
 		pool = GameObject.FindGameObjectWithTag("Pool").GetComponent<FireballPool>();
-		
-		// Test orb attack
-		attack2();
 	}
 
     // Update is called once per frame
@@ -117,20 +124,12 @@ public class BossController : MonoBehaviour
 			attack1Timer = 0;
 		}
 		
-		// Spawn another orb after delay
-    	if(respawnOrb)
-    	{
-			orbRespawnTimer += Time.deltaTime;
-			
-			if(orbRespawnTimer >= orbRespawnTime)
-			{
-				orbRespawnTimer = 0;
-				respawnOrb = false; // Prevents the orb from spawning multiple orbs
-				Instantiate(Orb);
-			}
-		}
+		// Check if it's time for another orb to spawn
+		attack2();
 
 		attack1Timer += Time.deltaTime;
+		
+		spawnMinion();
 	}
 
 	// Fireball attack
@@ -146,24 +145,51 @@ public class BossController : MonoBehaviour
 	
 		// Get fireball from pool
 		GameObject fireball = pool.getInstance();
-		
-		// Apply transform and rotation
-		fireball.transform.position = mouthPos;
-		fireball.transform.rotation = shootDir;
-		fireball.SetActive(true);
-			
-		// Spawn bullet
-//		Instantiate(Bullet1, mouthPos, shootDir);
+		if(!fireball)
+		{
+			Debug.Log("Failed to get fireball from object pool");
+		}
+		else
+		{
+			// Apply transform and rotation
+			fireball.transform.position = mouthPos;
+			fireball.transform.rotation = shootDir;
+			fireball.SetActive(true);
+		}
 	}
 	
 	// Orb attack
-	public void attack2()
+	private void attack2()
 	{
-		respawnOrb = true;
+		// Spawn another orb after delay
+    	if(orbEnable && !GameObject.FindGameObjectWithTag("Orb"))
+    	{
+			orbRespawnTimer += Time.deltaTime;
+			
+			if(orbRespawnTimer >= orbRespawnTime)
+			{
+				orbRespawnTimer = 0;
+				Instantiate(Orb);
+			}
+		}
+	}
+	
+	// Spawn minion imps
+	private void spawnMinion()
+	{
+		minionRespawnTimer += Time.deltaTime;
+		if(spawnMinions && minionRespawnTimer >= minionRespawnTime)
+		{
+			for(int i = 0; i < minionSpawnLocations.Length; i++)
+			{
+				minionRespawnTimer = 0;
+				Instantiate(Minion, minionSpawnLocations[i], Quaternion.identity);
+			}
+		}
 	}
 
 	// Move towards player
-	private void move()
+	protected void move()
 	{
 		// Move away from player if its too close
 		Vector3 moveDir = playerDir;
@@ -208,19 +234,16 @@ public class BossController : MonoBehaviour
 	{
 		// Decrease health
 		health -= amount;
+		if(health > maxHealth)
+		{
+			health = maxHealth;
+		}
+		
 		healthBar.value = health;
 		
 		Debug.Log("Boss Health: " + health);
-		// Die
-/*		if(health <= 0)
-		{
-			destroy();
-		}
-		if(health <= 0 && !animator.GetCurrentAnimatorStateInfo(0).IsName("BossDie"))
-		{
-			animator.Play("BossDie");
-		}
-*/		// Play damage animation
+
+		// Play damage animation
 		if(!animator.GetCurrentAnimatorStateInfo(0).IsName("BossHurt")
 		&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
 		{
@@ -228,14 +251,13 @@ public class BossController : MonoBehaviour
 		}
 		
 		// Enable orb attack and minion spawning
-		if(health <= healthBar.maxValue * 0.333f)
+		if(health <= healthBar.maxValue * 0.5f)
 		{
 			spawnMinions = true;
 		}
-		// Enable minion spawning
-		else if(health <= healthBar.maxValue * 0.667f)
+		if(health <= healthBar.maxValue * 0.75f)
 		{
-			respawnOrb = true;
+			orbEnable = true;
 		}
 	}
 }
