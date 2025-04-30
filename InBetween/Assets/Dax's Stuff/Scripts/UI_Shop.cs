@@ -10,6 +10,8 @@ public class UI_Shop : MonoBehaviour
 
     private IShopCustomer shopCustomer;
 
+    public DaxPlayerAddOn playerAddOn; //Access to player script for health potions
+
     private List<Item.ItemType> GetAllItemTypes()
     {
         return new List<Item.ItemType>((Item.ItemType[])System.Enum.GetValues(typeof(Item.ItemType))); //Builds the item list
@@ -60,6 +62,11 @@ public class UI_Shop : MonoBehaviour
         if(shopCustomer.TrySpendCoins(Item.GetCost(itemType))) //Checks if the player has enough coins for the item
         {
             shopCustomer.BoughtItem(itemType);
+
+            if(itemType == Item.ItemType.PotionOne)
+            {
+                playerAddOn.AddPotion(1);
+            }
         }
         else
         {

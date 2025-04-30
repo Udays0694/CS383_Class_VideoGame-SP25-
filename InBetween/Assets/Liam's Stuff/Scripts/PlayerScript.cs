@@ -121,12 +121,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    public void HealME(float healbase)
+    public void HealME(float healbase) //Hello Liam, I fix ur code :) <3 Dax
     {
-        playerScript.setHealth(healbase);
-        if (playerScript.getHealth() >= health)
+        playerScript.setHealth(-healbase); //Fixes issue of subtracting 
+
+        if (playerScript.getHealth() > 100f)//Stop from healing past 100 
         {
-            playerScript.setHealth(health);
+            float overheal = playerScript.getHealth() - 100f;
+            playerScript.setHealth(overheal); //Apply damage to move health back to 100
         }
     }
 

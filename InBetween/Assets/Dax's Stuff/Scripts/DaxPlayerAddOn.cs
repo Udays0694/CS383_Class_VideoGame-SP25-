@@ -7,14 +7,19 @@ public class DaxPlayerAddOn : MonoBehaviour, IShopCustomer
 {
 
     public TextMeshProUGUI coinsText;
-
+    public TextMeshProUGUI potionText;
     [SerializeField] private GameObject floatingTextPrefab;
-
     public int coinsCount = 0; // Player start with 0 coins 
+    public int potionsCount = 1; //Player Starts with 1 healing potion
+
+    private PlayerScript playerScript;
 
     private void Start()
     {
         UpdateCoinText();
+        UpdatePotionText();
+
+        playerScript = GetComponent<PlayerScript>();
     }
 
     private void Update()
@@ -32,6 +37,20 @@ public class DaxPlayerAddOn : MonoBehaviour, IShopCustomer
         if (Input.GetKeyDown(KeyCode.B))
         {
             SubtractCoins(10); // Adds 1 coin when C is pressed 
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            AddPotion(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (potionsCount > 0)
+            {
+                SubtractPotion(1);
+                GetComponent<PlayerScript>().HealME(25f);
+            }
         }
     }
     public void AddCoins(int amount)
@@ -56,11 +75,40 @@ public class DaxPlayerAddOn : MonoBehaviour, IShopCustomer
         }
     }
 
+    public void AddPotion(int amount)
+    {
+        potionsCount += amount;
+        UpdatePotionText();
+    }
+
+    public void SubtractPotion(int amount)
+    {
+        if (potionsCount > 0)
+        {
+            potionsCount -= amount;
+
+            if (potionsCount < 0)
+            {
+                potionsCount = 0;
+            }
+
+            UpdatePotionText();
+        }
+    }
+
     void UpdateCoinText()
     {
         if (coinsText != null)
         {
             coinsText.text = " " + coinsCount;
+        }
+    }
+
+    void UpdatePotionText()
+    {
+        if (potionText != null)
+        {
+            potionText.text = " " + potionsCount;
         }
     }
     IEnumerator showCoins(string text)
