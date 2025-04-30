@@ -1,23 +1,29 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class CreditsManager : MonoBehaviour
 {
     [Header("UI References")]
-    public RectTransform creditsPanel;
+    public GameObject creditsPanel;
     public float scrollSpeed = 20f;
+    public float fastScrollMultiplier = 3f;
     public float startDelay = 2f;
     public float endDelay = 3f;
     public string titleSceneName = "MainMenu";
 
     private bool isScrolling = false;
+    private float scrollOffset = 100f;
+
+    private RectTransform creditsRect;
 
     void Start()
     {
         if (creditsPanel != null)
+        {
+            creditsRect = creditsPanel.GetComponent<RectTransform>();
             StartCoroutine(BeginCredits());
+        }
     }
 
     IEnumerator BeginCredits()
@@ -26,13 +32,23 @@ public class CreditsManager : MonoBehaviour
 
         isScrolling = true;
 
-        float panelHeight = creditsPanel.rect.height;
-        float startY = creditsPanel.anchoredPosition.y;
-        float targetY = startY + panelHeight + Screen.height;
+        float panelHeight = creditsRect.rect.height;
+        float screenHeight = ((RectTransform)creditsRect.parent).rect.height;
+        float totalScrollDistance = panelHeight + scrollOffset + screenHeight;
 
-        while (creditsPanel.anchoredPosition.y < targetY)
+        float scrolled = 0f;
+
+        while (scrolled < totalScrollDistance)
         {
-            creditsPanel.anchoredPosition += new Vector2(0, scrollSpeed * Time.deltaTime);
+            float currentSpeed = scrollSpeed;
+
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                currentSpeed *= fastScrollMultiplier;
+
+            float deltaY = currentSpeed * Time.deltaTime;
+            scrolled += deltaY;
+
+            creditsRect.anchoredPosition += new Vector2(0, deltaY);
             yield return null;
         }
 
