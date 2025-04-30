@@ -175,4 +175,8 @@ public class DialogueManager : MonoBehaviour
         if (playerScriptToDisable != null)
             playerScriptToDisable.enabled = true;
     }
+
+    public bool IsDialogueActive() => isDialogueActive;
+    public int GetCurrentLineIndex() => currentLineIndex;
+
 }

@@ -3677,6 +3677,10 @@ PrefabInstance:
       propertyPath: shopKeeper
       value: 
       objectReference: {fileID: 6407443449338581365}
+    - target: {fileID: 7412759067515359395, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8197920057198327034, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3692,10 +3696,70 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8313581281276038182, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8473113142524292255}
+    - targetCorrespondingSourceObject: {fileID: 2108870203260309349, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7043660229726313159}
   m_SourcePrefab: {fileID: 100100000, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
 --- !u!4 &3392080901463783148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 449239141281125219, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
+  m_PrefabInstance: {fileID: 2967611595789821327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3777153683127364330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2108870203260309349, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
+  m_PrefabInstance: {fileID: 2967611595789821327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7043660229726313159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3777153683127364330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c251ce5504e7f40b15e1c7f29add0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 11400000, guid: de17d15ccf3972f438ca14c24c0aa9be, type: 2}
+  triggerOnStart: 0
+  requireButtonPress: 1
+  interactOnce: 1
+  onDialogueStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5760238188491633964}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6488589534633891463}
+        m_TargetAssemblyTypeName: UI_Shop, DaxAssemblyDef
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  perLineEvents: []
+--- !u!1 &5760238188491633964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7412759067515359395, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
   m_PrefabInstance: {fileID: 2967611595789821327}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6407443449338581365 stripped
@@ -3703,6 +3767,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8197920057198327034, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
   m_PrefabInstance: {fileID: 2967611595789821327}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6488589534633891463 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8296486793583948552, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
+  m_PrefabInstance: {fileID: 2967611595789821327}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5760238188491633964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c5fa99b3f4d954db3f7faf71b876b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6516943016763746729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8313581281276038182, guid: 68b88d69f5d5ca7478bece147895069e, type: 3}
