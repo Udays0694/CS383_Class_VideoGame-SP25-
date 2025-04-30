@@ -10,7 +10,7 @@ public class UI_Shop : MonoBehaviour
 
     private IShopCustomer shopCustomer;
 
-    public DaxPlayerAddOn playerAddOn; //Access to player script for health potions
+    private DaxPlayerAddOn daxPlayerAddOn; //Access to player script for health potions
 
     private List<Item.ItemType> GetAllItemTypes()
     {
@@ -32,6 +32,8 @@ public class UI_Shop : MonoBehaviour
         CreateItemButton(Item.ItemType.PotionOne, Item.GetSprite(Item.ItemType.PotionOne), "Potion", Item.GetCost(Item.ItemType.PotionOne), 4, Item.GetEffectValue(Item.ItemType.PotionOne), Item.GetDescription(Item.ItemType.PotionOne));
 
         Hide();
+
+        daxPlayerAddOn = GameObject.FindWithTag("Player").GetComponent<DaxPlayerAddOn>();
     }
 
     //Works to reference ShopItemButton prefab and duplicates it for each item needed 
@@ -65,7 +67,8 @@ public class UI_Shop : MonoBehaviour
 
             if(itemType == Item.ItemType.PotionOne)
             {
-                playerAddOn.AddPotion(1);
+
+                daxPlayerAddOn.AddPotion(1);
             }
         }
         else

@@ -3689,7 +3689,7 @@ PrefabInstance:
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: 'GeneratableRooms.Array.data[1]'
       value: 
-      objectReference: {fileID: 2891519415189232969, guid: e48df7d2cfbce254c90f52c332ae2de0, type: 3}
+      objectReference: {fileID: 9005697760588561603, guid: 77e39331b65fbe2438e95611d74b9fe0, type: 3}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: 'GeneratableRooms.Array.data[2]'
       value: 

@@ -5,6 +5,11 @@ public class ShopKeeperSpawn : MonoBehaviour
     public GameObject shopKeeper;
 
     private bool isSpawned = false;
+
+    private void Start()
+    {
+        shopKeeper.SetActive(true);
+    }
     private void OnTriggerEnter2D(Collider2D other) //Temp way to spawn shopKeeper
     {
         if (other.CompareTag("Player") && !isSpawned)
