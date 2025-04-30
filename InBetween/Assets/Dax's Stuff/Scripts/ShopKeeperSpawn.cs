@@ -4,21 +4,24 @@ public class ShopKeeperSpawn : MonoBehaviour
 {
     public GameObject shopKeeper;
 
-    private bool isSpawned = false; 
-    private void Update() //Temp way to spawn shopKeeper
+    private bool isSpawned = false;
+    private void OnTriggerEnter2D(Collider2D other) //Temp way to spawn shopKeeper
     {
-        if(Input.GetKeyDown(KeyCode.L) && !isSpawned)
+        if (other.CompareTag("Player") && !isSpawned)
         {
             SpawnShopKeeper();
         }
-
-        if(Input.GetKeyDown(KeyCode.O) && isSpawned)
-        {
-            despawnShopKeeper();
-        }    
     }
 
-    void despawnShopKeeper()
+    private void OnTriggerExit2D(Collider2D other) //Temp way to spawn shopKeeper
+    {
+        if (other.CompareTag("Player") && isSpawned)
+        {
+            DespawnShopKeeper();
+        }
+    }
+
+    void DespawnShopKeeper()
     {
         isSpawned = false;
 

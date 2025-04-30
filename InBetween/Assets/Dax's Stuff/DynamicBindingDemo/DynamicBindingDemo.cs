@@ -7,7 +7,7 @@ using UnityEngine;
 //PotionItem's method never being called. 
 public class ItemBase //Superclass 
 {
-    public void Use()
+    public virtual void Use()
     {
         Debug.Log("Used Item");
     }
@@ -15,7 +15,7 @@ public class ItemBase //Superclass
 
 public class PotionItem : ItemBase //Subclass
 {
-    public void Use()
+    public override void Use()
     {
         Debug.Log("Healed Player");
     }
