@@ -3,6 +3,9 @@ using UnityEngine;
 public class XP : MonoBehaviour
 {
     // 
+
+    [SerializeField] AudioSource gainXpSound;
+
     private class XPData
     {
         public int xp = 0;
@@ -43,6 +46,7 @@ public class XP : MonoBehaviour
     public void AddXP(int amount)
     {
         _xpData.xp += amount;
+        gainXpSound.Play();
     }
 
     // Step 7: GetLevel function to access level
