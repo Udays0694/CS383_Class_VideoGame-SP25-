@@ -9,15 +9,12 @@ public class EnemySpawner : MonoBehaviour
 
     // Skeleton
     public GameObject SkeletonPrefab;
-    public GameObject Skeleton;
 
     // Spider
     public GameObject SpiderPrefab;
-    public GameObject Spider;
 
     // Zombie
     public GameObject ZombiePrefab;
-    public GameObject Zombie;
 
     void Start()
     {
@@ -47,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Vector3.Distance(player.transform.position, oldPlayerPosition) >= 3f)
         {
-            Skeleton = Instantiate(SkeletonPrefab, oldPlayerPosition, Quaternion.identity);
+            Instantiate(SkeletonPrefab, oldPlayerPosition, Quaternion.identity);
         }
         QueueSkeletonSpawn();
     }
@@ -63,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Vector3.Distance(player.transform.position, oldPlayerPosition) >= 3f)
         {
-            Spider = Instantiate(SpiderPrefab, oldPlayerPosition, Quaternion.identity);
+            Instantiate(SpiderPrefab, oldPlayerPosition, Quaternion.identity);
         }
         QueueSpiderSpawn();
     }
@@ -79,7 +76,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Vector3.Distance(player.transform.position, oldPlayerPosition) >= 3f)
         {
-            Zombie = Instantiate(ZombiePrefab, oldPlayerPosition, Quaternion.identity);
+            Instantiate(ZombiePrefab, oldPlayerPosition, Quaternion.identity);
         }
         QueueZombieSpawn();
     }
