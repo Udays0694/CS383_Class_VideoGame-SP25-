@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3011102399983535236}
   - component: {fileID: 809392302341543279}
   - component: {fileID: -3367862275269099080}
+  - component: {fileID: -8335248538655744523}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -207,6 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0473854930c5cf4a8294d9e66398e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gainXpSound: {fileID: 0}
 --- !u!114 &3478273211448092952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +394,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8335248538655744523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311969311668287195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110466983fd9c6146b74694b8c5f3a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  PlayerIsMoving: 0
+  AFKTimer: 0
+  sceneAsset: {fileID: 102900000, guid: fe74ce63519c4d541b1ad3588c4f1226, type: 3}
+  sceneName: VideoLoop
 --- !u!1 &6665709114265061487
 GameObject:
   m_ObjectHideFlags: 0
