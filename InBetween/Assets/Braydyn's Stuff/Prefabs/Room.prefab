@@ -745,7 +745,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 481284661754582836}
   m_Father: {fileID: 2277314981954092200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880893557556503809
@@ -1312,7 +1313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnOptions:
   - prefab: {fileID: 6939067416028542098, guid: eba35d67fea7aa94a9a30e82d0db401a, type: 3}
-    chancePercent: 100
+    chancePercent: 5.4
   spawnPoint: {fileID: 345822595571369304}
 --- !u!1 &2523492708806478092
 GameObject:
@@ -2080,6 +2081,58 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.608454, y: 0.11414509}
   m_EdgeRadius: 0
+--- !u!1 &4630814318524123564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 481284661754582836}
+  - component: {fileID: 5516182836180314628}
+  m_Layer: 0
+  m_Name: Statue (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &481284661754582836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630814318524123564}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.54, y: 1.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3292284347536309361}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5516182836180314628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630814318524123564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562706855966db5479a0e09384199a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOptions:
+  - prefab: {fileID: 2529410704935851373, guid: 5cbe07ccf63378f409c6e24290063a55, type: 3}
+    chancePercent: 58.6
+  - prefab: {fileID: 2529410704935851373, guid: 4ad4d86e5b793544ab84dde895493d80, type: 3}
+    chancePercent: 29.1
+  - prefab: {fileID: 2529410704935851373, guid: 91d4c8ae1a356e74d8d9f1c3a63eb91f, type: 3}
+    chancePercent: 10.4
+  spawnPoint: {fileID: 481284661754582836}
 --- !u!1 &4903842868279814202
 GameObject:
   m_ObjectHideFlags: 0

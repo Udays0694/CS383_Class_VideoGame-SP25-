@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -220,6 +221,7 @@ public class BossController : MonoBehaviour
 			activated = false;
 			if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
 			{
+				SceneManager.LoadScene("Credits");
 				animator.Play("Die");
 			}
 		}

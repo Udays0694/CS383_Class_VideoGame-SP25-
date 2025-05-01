@@ -18,6 +18,7 @@ TagManager:
   - SettingsPanel
   - Pool
   - Orb
+  - BossRoom
   layers:
   - Default
   - TransparentFX

@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -3438905571476058607, guid: 4f3cdfcddb6415347b118dd0c273e494, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -188,4 +188,5 @@ MonoBehaviour:
   attackCooldownTimer: 0
   attackReady: 1
   xpAward: 5
-  health: 40
+  health: 15
+  coinAward: 15
