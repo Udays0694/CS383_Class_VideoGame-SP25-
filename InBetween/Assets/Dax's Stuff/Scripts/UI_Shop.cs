@@ -5,12 +5,23 @@ using System.Collections.Generic;
 
 public class UI_Shop : MonoBehaviour
 {
+    //Stuff For Shop UI
     private Transform container;
     private Transform shopItemTemplate;
 
+    //Purchase objects & Open Shop 
     private IShopCustomer shopCustomer;
 
-    private DaxPlayerAddOn daxPlayerAddOn; //Access to player script for health potions
+    //Access to health potions and ability to heal 
+    private DaxPlayerAddOn daxPlayerAddOn;
+
+    //Inventory System Changes
+    public Image weaponSlot;
+    public Image armorSlot;
+    public Image shieldSlot;
+
+    //Access to Inventory Script 
+    public InventorySystem inventorySystem;
 
     private List<Item.ItemType> GetAllItemTypes()
     {
@@ -21,6 +32,11 @@ public class UI_Shop : MonoBehaviour
         container = transform.Find("container");
         shopItemTemplate = container.Find("shopItemTemplate");
         shopItemTemplate.gameObject.SetActive(true);
+
+        if(inventorySystem == null)
+        {
+            inventorySystem = FindObjectOfType<InventorySystem>();
+        }
     }
 
     private void Start()
@@ -69,6 +85,13 @@ public class UI_Shop : MonoBehaviour
             {
 
                 daxPlayerAddOn.AddPotion(1);
+            }
+            else
+            {
+                Item.ItemCategory category = Item.GetCategory(itemType);
+                Sprite sprite = Item.GetSprite(itemType);
+
+                inventorySystem.UpdateInventorySlot(category, sprite);
             }
         }
         else

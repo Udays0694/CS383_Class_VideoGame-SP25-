@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ShopKeeperSpawn : MonoBehaviour
 {
@@ -6,16 +7,21 @@ public class ShopKeeperSpawn : MonoBehaviour
 
     private bool isSpawned = false;
 
-    private void Start()
-    {
-        shopKeeper.SetActive(true);
-    }
     private void OnTriggerEnter2D(Collider2D other) //Temp way to spawn shopKeeper
     {
         if (other.CompareTag("Player") && !isSpawned)
         {
-            SpawnShopKeeper();
+            StartCoroutine(SpawnWithDelay());
         }
+    }
+
+    private IEnumerator SpawnWithDelay()
+    {
+        isSpawned = true;
+
+        yield return new WaitForSeconds(.75f);
+        SpawnShopKeeper();
+
     }
 
     private void OnTriggerExit2D(Collider2D other) //Temp way to spawn shopKeeper
@@ -39,8 +45,7 @@ public class ShopKeeperSpawn : MonoBehaviour
     }
 
     void SpawnShopKeeper()
-    {
-        isSpawned = true; 
+    { 
 
         shopKeeper.SetActive(true); //Enable spawnkeeper 
 
