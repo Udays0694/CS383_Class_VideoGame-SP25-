@@ -33,9 +33,9 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogWarning("No player found. The enemy will not be able to interact with the player.");
         }
 
-        Invoke("QueueSkeletonSpawn", 10f);
-        Invoke("QueueSpiderSpawn", 5f);
-        Invoke("QueueZombieSpawn", 5f);
+        Invoke("QueueSkeletonSpawn", 30f);
+        Invoke("QueueSpiderSpawn", 20f);
+        Invoke("QueueZombieSpawn", 30f);
     }
 
     public void QueueSkeletonSpawn()

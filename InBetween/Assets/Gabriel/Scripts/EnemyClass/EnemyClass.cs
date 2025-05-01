@@ -17,6 +17,9 @@ public class EnemyClass : MonoBehaviour
     public GameObject XPBar = null;
     public XP xp;
 
+    // player
+    public GameObject player;
+
     protected virtual void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -24,7 +27,7 @@ public class EnemyClass : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         XPBar = GameObject.FindGameObjectWithTag("XPBar");
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             playerScript = player.GetComponent<PlayerScript>();
@@ -64,7 +67,9 @@ public class EnemyClass : MonoBehaviour
 
     public void XPAward(int xp_amount)
     {
-        XPBar.GetComponent<XP>().AddXP(xp_amount);
+        if (player != null){
+            XPBar.GetComponent<XP>().AddXP(xp_amount);
+        }
         Death();
     }
 
