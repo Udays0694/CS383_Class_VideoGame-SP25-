@@ -44,9 +44,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb6ab4251f0860498663524c2823ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s_SwordOne: {fileID: -3548928026839867271, guid: 896be884da5dcc449acadcfdc9075f0b, type: 3}
-  s_SwordTwo: {fileID: 1563905169154104396, guid: 2eaf63e0dad480e40a6a9dcaccbe283a, type: 3}
-  s_AxeOne: {fileID: -2949372453480390737, guid: 65ee052fbd08ff448bbeab57b26f294c, type: 3}
-  s_AxeTwo: {fileID: 212143399115013302, guid: a2e519a17fd8ae5488d21a08236fbb8b, type: 3}
-  s_DaggerOne: {fileID: 6764707825347140516, guid: 1acb2997f9d56704ba29b3de6b4a6de8, type: 3}
+  s_Sword: {fileID: 6879745816752960465, guid: b48df5190d86a1e40b35a81cd047133b, type: 3}
+  s_CoolSword: {fileID: 5673738057585978594, guid: ef76e5897547ec54a8c34f8b49201ec2, type: 3}
+  s_Axe: {fileID: -8169026817774470458, guid: f11789b8c8465ee4eb63a297c400dbf9, type: 3}
+  s_CoolAxe: {fileID: 2017635676748820597, guid: 24fb8b68c8126a345bd3e0cce4e322ee, type: 3}
+  s_Dagger: {fileID: 6764707825347140516, guid: 1acb2997f9d56704ba29b3de6b4a6de8, type: 3}
   s_PotionOne: {fileID: 8695753628343013184, guid: 011ecd76db23bba499467f3bae928433, type: 3}
+  s_BronzeArmor: {fileID: 4028616861140907279, guid: 176cba79c350db448921a818e883d0e5, type: 3}
+  s_SilverArmor: {fileID: -8730472152821607931, guid: 7f04fd826ab3ec1459d08347e9b4ae94, type: 3}
+  s_GoldArmor: {fileID: -2832051825637908144, guid: f6f3a84f94818f54c818448d0651a626, type: 3}
+  s_DiamondArmor: {fileID: -7637466495657028020, guid: aa6d7de9d710f1d448061c89168c56d4, type: 3}
+  s_BronzeShield: {fileID: -4864444354210836110, guid: 176cba79c350db448921a818e883d0e5, type: 3}
+  s_SilverShield: {fileID: -2213542027642296279, guid: 7f04fd826ab3ec1459d08347e9b4ae94, type: 3}
+  s_GoldShield: {fileID: 1224589032, guid: f6f3a84f94818f54c818448d0651a626, type: 3}
+  s_DiamondShield: {fileID: -3358690968635607413, guid: aa6d7de9d710f1d448061c89168c56d4, type: 3}
+  s_Spear: {fileID: 6108012597462862368, guid: 4384fb45034b9d94b8b0826117fccb54, type: 3}
+  s_Sickle: {fileID: -1700892053915081011, guid: 80e0d608ebd3a3e40b56afc187937e80, type: 3}
+  s_BattleAxe: {fileID: 212143399115013302, guid: a2e519a17fd8ae5488d21a08236fbb8b, type: 3}
+  s_BigAxe: {fileID: 573721376528914530, guid: ffa48aea3058fb24eb7a999bef3995bf, type: 3}
+  s_Pickaxe: {fileID: 5807921338739458136, guid: 976555068fcc9ef44b2f4de1250039f1, type: 3}
+  s_BestSword: {fileID: 1563905169154104396, guid: 2eaf63e0dad480e40a6a9dcaccbe283a, type: 3}
+  s_LongSword: {fileID: 3924691500919266753, guid: 68ab2b2e8715f9545a1e6818892fde77, type: 3}
+  s_Katana: {fileID: -6801479414841852852, guid: 032fda778da9f8e40b41e93b09499cbd, type: 3}

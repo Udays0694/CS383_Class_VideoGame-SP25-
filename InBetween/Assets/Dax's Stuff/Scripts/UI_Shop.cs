@@ -41,10 +41,10 @@ public class UI_Shop : MonoBehaviour
 
     private void Start()
     {
-        CreateItemButton(Item.ItemType.SwordOne, Item.GetSprite(Item.ItemType.SwordTwo), "Iron Sword", Item.GetCost(Item.ItemType.SwordOne), 0, Item.GetEffectValue(Item.ItemType.SwordOne), Item.GetDescription(Item.ItemType.SwordOne));
-        CreateItemButton(Item.ItemType.SwordTwo, Item.GetSprite(Item.ItemType.SwordTwo), "Gold Sword", Item.GetCost(Item.ItemType.SwordTwo), 1, Item.GetEffectValue(Item.ItemType.SwordTwo), Item.GetDescription(Item.ItemType.SwordTwo));
-        CreateItemButton(Item.ItemType.AxeOne, Item.GetSprite(Item.ItemType.AxeOne), "Axe", Item.GetCost(Item.ItemType.AxeOne), 2, Item.GetEffectValue(Item.ItemType.AxeOne), Item.GetDescription(Item.ItemType.AxeOne));
-        CreateItemButton(Item.ItemType.DaggerOne, Item.GetSprite(Item.ItemType.DaggerOne), "Dagger", Item.GetCost(Item.ItemType.DaggerOne), 3, Item.GetEffectValue(Item.ItemType.DaggerOne), Item.GetDescription(Item.ItemType.DaggerOne));
+        CreateItemButton(Item.ItemType.Sword, Item.GetSprite(Item.ItemType.Sword), "Iron Sword", Item.GetCost(Item.ItemType.Sword), 0, Item.GetEffectValue(Item.ItemType.Sword), Item.GetDescription(Item.ItemType.Sword));
+        CreateItemButton(Item.ItemType.Sword, Item.GetSprite(Item.ItemType.Sword), "Gold Sword", Item.GetCost(Item.ItemType.Sword), 1, Item.GetEffectValue(Item.ItemType.Sword), Item.GetDescription(Item.ItemType.Sword));
+        CreateItemButton(Item.ItemType.Axe, Item.GetSprite(Item.ItemType.Axe), "Axe", Item.GetCost(Item.ItemType.Axe), 2, Item.GetEffectValue(Item.ItemType.Axe), Item.GetDescription(Item.ItemType.Axe));
+        CreateItemButton(Item.ItemType.Dagger, Item.GetSprite(Item.ItemType.Dagger), "Dagger", Item.GetCost(Item.ItemType.Dagger), 3, Item.GetEffectValue(Item.ItemType.Dagger), Item.GetDescription(Item.ItemType.Dagger));
         CreateItemButton(Item.ItemType.PotionOne, Item.GetSprite(Item.ItemType.PotionOne), "Potion", Item.GetCost(Item.ItemType.PotionOne), 4, Item.GetEffectValue(Item.ItemType.PotionOne), Item.GetDescription(Item.ItemType.PotionOne));
 
         Hide();

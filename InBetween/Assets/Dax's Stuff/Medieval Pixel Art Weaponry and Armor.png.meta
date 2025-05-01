@@ -1,0 +1,592 @@
+fileFormatVersion: 2
+guid: 0ba18ef61389d834d8e8bb55a217f8bf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7128157543895323918
+    second: Medieval Pixel Art Weaponry and Armor_0
+  - first:
+      213: 4678896970477774150
+    second: Medieval Pixel Art Weaponry and Armor_1
+  - first:
+      213: -3534622128716736129
+    second: Medieval Pixel Art Weaponry and Armor_2
+  - first:
+      213: -2579730318962281579
+    second: Medieval Pixel Art Weaponry and Armor_3
+  - first:
+      213: 5505782606066626074
+    second: Medieval Pixel Art Weaponry and Armor_4
+  - first:
+      213: -3454412303564202487
+    second: Medieval Pixel Art Weaponry and Armor_5
+  - first:
+      213: -3172205712877300179
+    second: Medieval Pixel Art Weaponry and Armor_6
+  - first:
+      213: 8242978488627610703
+    second: Medieval Pixel Art Weaponry and Armor_7
+  - first:
+      213: 2417374243553584345
+    second: Medieval Pixel Art Weaponry and Armor_8
+  - first:
+      213: -182674170168832413
+    second: Medieval Pixel Art Weaponry and Armor_9
+  - first:
+      213: 6644041704785489626
+    second: Medieval Pixel Art Weaponry and Armor_10
+  - first:
+      213: 4020297220843834351
+    second: Medieval Pixel Art Weaponry and Armor_11
+  - first:
+      213: -5868256458678942537
+    second: Medieval Pixel Art Weaponry and Armor_12
+  - first:
+      213: 4437030797993469115
+    second: Medieval Pixel Art Weaponry and Armor_13
+  - first:
+      213: 17571584400936224
+    second: Medieval Pixel Art Weaponry and Armor_14
+  - first:
+      213: 183607997617617751
+    second: Medieval Pixel Art Weaponry and Armor_15
+  - first:
+      213: -4065875951799795606
+    second: Medieval Pixel Art Weaponry and Armor_16
+  - first:
+      213: 7064486794683717277
+    second: Medieval Pixel Art Weaponry and Armor_17
+  - first:
+      213: -5962937672595683542
+    second: Medieval Pixel Art Weaponry and Armor_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 775
+        width: 132
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e05d6e2058d4ce260800000000000000
+      internalID: 7128157543895323918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_1
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 783
+        width: 130
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645aaf93108cee040800000000000000
+      internalID: 4678896970477774150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_2
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 783
+        width: 122
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f799a92b6ef72fec0800000000000000
+      internalID: -3534622128716736129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_3
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 932
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593b2f161f4f23cd0800000000000000
+      internalID: -2579730318962281579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_4
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 783
+        width: 151
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e202dfb18786c40800000000000000
+      internalID: 5505782606066626074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_5
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 783
+        width: 102
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e115aef467f00d0800000000000000
+      internalID: -3454412303564202487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 527
+        width: 170
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26db7116bf0af3d0800000000000000
+      internalID: -3172205712877300179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_7
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 533
+        width: 190
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f44c5d12341f46270800000000000000
+      internalID: 8242978488627610703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_8
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 535
+        width: 210
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4a034111d3c8120800000000000000
+      internalID: 2417374243553584345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_9
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 528
+        width: 204
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e82716fc2077df0800000000000000
+      internalID: -182674170168832413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_10
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 319
+        width: 133
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adeae969ab0643c50800000000000000
+      internalID: 6644041704785489626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_11
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 303
+        width: 201
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb03eb9507fac730800000000000000
+      internalID: 4020297220843834351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_12
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 295
+        width: 197
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4cc8997d3cf8ea0800000000000000
+      internalID: -5868256458678942537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_13
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 287
+        width: 212
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb46edb9000839d30800000000000000
+      internalID: 4437030797993469115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_14
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 79
+        width: 130
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02dcb5e434d6e3000800000000000000
+      internalID: 17571584400936224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_15
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 23
+        width: 174
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b3be3408e4c8200800000000000000
+      internalID: 183607997617617751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_16
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 23
+        width: 145
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a608b202d5b1397c0800000000000000
+      internalID: -4065875951799795606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_17
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 23
+        width: 181
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d969f8d7f491a0260800000000000000
+      internalID: 7064486794683717277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medieval Pixel Art Weaponry and Armor_18
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 23
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27c32f97c36f3da0800000000000000
+      internalID: -5962937672595683542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

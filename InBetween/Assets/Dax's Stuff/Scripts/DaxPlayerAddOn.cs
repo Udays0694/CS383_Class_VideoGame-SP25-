@@ -125,10 +125,10 @@ public class DaxPlayerAddOn : MonoBehaviour, IShopCustomer
 
         switch(itemType)
         {
-            case Item.ItemType.SwordOne: break;
-            case Item.ItemType.SwordTwo: break;
-            case Item.ItemType.AxeOne: break;
-            case Item.ItemType.DaggerOne: break;
+            case Item.ItemType.Sword: break;
+            case Item.ItemType.CoolSword: break;
+            case Item.ItemType.Axe: break;
+            case Item.ItemType.Dagger: break;
             case Item.ItemType.PotionOne: break; 
         }
     }

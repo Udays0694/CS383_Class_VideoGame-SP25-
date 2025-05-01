@@ -4,12 +4,30 @@ public class Item
 {
     public enum ItemType
     {
-       SwordOne,
-       SwordTwo,
-       AxeOne,
-       AxeTwo,
-       DaggerOne,
-       PotionOne
+       Sword,
+       CoolSword,
+       Axe,
+       CoolAxe,
+       Dagger,
+       Spear,
+       Hammer,
+       Sickle,
+       PickAxe,
+       BattleAxe,
+       BigAxe,
+       BestSword,
+       LongSword,
+       Katana,
+       PotionOne,
+       BronzeArmor,
+       SilverArmor,
+       GoldArmor,
+       DiamondArmor,
+       BronzeShield,
+       SilverShield,
+       GoldShield,
+       DiamondShield
+
     }
 
     public enum ItemCategory
@@ -25,17 +43,33 @@ public class Item
         switch(itemType)
         {
             //Weapons
-            case ItemType.SwordOne:
-            case ItemType.AxeOne:
-            case ItemType.DaggerOne:
+            case ItemType.Sword:
+            case ItemType.Axe:
+            case ItemType.Dagger:
+            case ItemType.CoolAxe:
+            case ItemType.CoolSword:
+            case ItemType.Spear:
+            case ItemType.Sickle:
+            case ItemType.PickAxe:
+            case ItemType.BattleAxe:
+            case ItemType.BigAxe:
+            case ItemType.BestSword:
+            case ItemType.LongSword:
+            case ItemType.Katana:
                 return ItemCategory.Weapon;
 
             //Armor
-            case ItemType.AxeTwo:
+            case ItemType.BronzeArmor:
+            case ItemType.SilverArmor:
+            case ItemType.GoldArmor:
+            case ItemType.DiamondArmor:
                 return ItemCategory.Armor;
 
             //Shields
-            case ItemType.SwordTwo:
+            case ItemType.BronzeShield:
+            case ItemType.SilverShield:
+            case ItemType.GoldShield:
+            case ItemType.DiamondShield:
                 return ItemCategory.Shield;
 
             //Potions 
@@ -53,12 +87,29 @@ public class Item
         switch(itemType)
         {
             default: return 0;
-            case ItemType.SwordOne: return 5; //used to add attack damage for the player
-            case ItemType.SwordTwo: return 10;
-            case ItemType.AxeOne: return 15;
-            case ItemType.AxeTwo: return 20;
-            case ItemType.DaggerOne: return 5;
-            case ItemType.PotionOne: return 50; //How much health the potion heals for 
+            case ItemType.Sword: return 5; //used to add attack damage for the player
+            case ItemType.CoolSword: return 10;
+            case ItemType.Axe: return 15;
+            case ItemType.CoolAxe: return 20;
+            case ItemType.Dagger: return 5;
+            case ItemType.PotionOne: return 25; //How much health the potion heals for
+            case ItemType.BronzeArmor: return 25; //Additional Health
+            case ItemType.SilverArmor: return 50;
+            case ItemType.GoldArmor: return 75;
+            case ItemType.DiamondArmor: return 100;
+            case ItemType.BronzeShield: return 10;
+            case ItemType.SilverShield: return 20;
+            case ItemType.GoldShield: return 30;
+            case ItemType.DiamondShield: return 50;
+            case ItemType.Spear: return 10;
+            case ItemType.Sickle: return 15;
+            case ItemType.PickAxe: return 15;
+            case ItemType.BattleAxe: return 30;
+            case ItemType.BigAxe: return 25;
+            case ItemType.BestSword: return 50;
+            case ItemType.LongSword: return 25;
+            case ItemType.Katana: return 40;
+
         }
     }
 
@@ -67,12 +118,28 @@ public class Item
         switch(itemType)
         {
             default: return "Item not found";
-            case ItemType.SwordOne: return "Attack Damage: +5";
-            case ItemType.SwordTwo: return "Attack Damage: +10";
-            case ItemType.AxeOne: return "Attack Damage: +15";
-            case ItemType.AxeTwo: return "Attack Damage: +20";
-            case ItemType.DaggerOne: return "Attack Damage: +5";
+            case ItemType.Sword: return "Attack Damage: +5";
+            case ItemType.CoolSword: return "Attack Damage: +10";
+            case ItemType.Axe: return "Attack Damage: +15";
+            case ItemType.CoolAxe: return "Attack Damage: +20";
+            case ItemType.Dagger: return "Attack Damage: +5";
             case ItemType.PotionOne: return "Heals For +50 Health";
+            case ItemType.BronzeArmor: return "+25 Max Health";
+            case ItemType.SilverArmor: return "+50 Max Health";
+            case ItemType.GoldArmor: return "+75 Max Health";
+            case ItemType.DiamondArmor: return "+100 Max Health";
+            case ItemType.BronzeShield: return "+10 Max Health";
+            case ItemType.SilverShield: return "+20 Max Health";
+            case ItemType.GoldShield: return "+30 Max Health";
+            case ItemType.DiamondShield: return "+50 Max Health";
+            case ItemType.Spear: return "Attack Damage: +10";
+            case ItemType.Sickle: return "Attack Damage: +15";
+            case ItemType.PickAxe: return "Attack Damage: +15";
+            case ItemType.BattleAxe: return "Attack Damage: +30";
+            case ItemType.BigAxe: return "Attack Damage: +25";
+            case ItemType.BestSword: return "Attack Damage: +50";
+            case ItemType.LongSword: return "Attack Damage: +25";
+            case ItemType.Katana: return "Attack Damage: +40";
 
         }
     }
@@ -82,12 +149,28 @@ public class Item
         switch(itemType)
         {
             default:
-            case ItemType.SwordOne: return 100; //Number is cost in coins
-            case ItemType.SwordTwo: return 50;
-            case ItemType.AxeOne: return 75;
-            case ItemType.AxeTwo: return 85;
-            case ItemType.DaggerOne: return 125;
+            case ItemType.Sword: return 20; //Number is cost in coins
+            case ItemType.CoolSword: return 35;
+            case ItemType.Axe: return 50;
+            case ItemType.CoolAxe: return 80;
+            case ItemType.Dagger: return 15;
             case ItemType.PotionOne: return 10;
+            case ItemType.BronzeArmor: return 50;
+            case ItemType.SilverArmor: return 100;
+            case ItemType.GoldArmor: return 150;
+            case ItemType.DiamondArmor: return 250;
+            case ItemType.BronzeShield: return 25;
+            case ItemType.SilverShield: return 50;
+            case ItemType.GoldShield: return 100;
+            case ItemType.DiamondShield: return 150;
+            case ItemType.Spear: return 30;
+            case ItemType.Sickle: return 25;
+            case ItemType.PickAxe: return 50;
+            case ItemType.BattleAxe: return 100;
+            case ItemType.BigAxe: return 85;
+            case ItemType.BestSword: return 200;
+            case ItemType.LongSword: return 125;
+            case ItemType.Katana: return 150;
 
 
         }
@@ -98,12 +181,28 @@ public class Item
         switch(itemType)
         {
             default:
-            case ItemType.SwordOne: return GameAssets.i.s_SwordOne; //Sprite for each itme in the shop 
-            case ItemType.SwordTwo: return GameAssets.i.s_SwordTwo;
-            case ItemType.AxeOne: return GameAssets.i.s_AxeOne;
-            case ItemType.AxeTwo: return GameAssets.i.s_AxeTwo;
-            case ItemType.DaggerOne: return GameAssets.i.s_DaggerOne;
+            case ItemType.Sword: return GameAssets.i.s_Sword; //Sprite for each itme in the shop 
+            case ItemType.CoolSword: return GameAssets.i.s_CoolSword;
+            case ItemType.Axe: return GameAssets.i.s_Axe;
+            case ItemType.CoolAxe: return GameAssets.i.s_CoolAxe;
+            case ItemType.Dagger: return GameAssets.i.s_Dagger;
             case ItemType.PotionOne: return GameAssets.i.s_PotionOne;
+            case ItemType.BronzeArmor: return GameAssets.i.s_BronzeArmor;
+            case ItemType.SilverArmor: return GameAssets.i.s_SilverArmor;
+            case ItemType.GoldArmor: return GameAssets.i.s_GoldArmor;
+            case ItemType.DiamondArmor: return GameAssets.i.s_DiamondArmor;
+            case ItemType.BronzeShield: return GameAssets.i.s_BronzeShield;
+            case ItemType.SilverShield: return GameAssets.i.s_SilverShield;
+            case ItemType.GoldShield: return GameAssets.i.s_GoldShield;
+            case ItemType.DiamondShield: return GameAssets.i.s_DiamondShield;
+            case ItemType.Spear: return GameAssets.i.s_Spear;
+            case ItemType.Sickle: return GameAssets.i.s_Sickle;
+            case ItemType.PickAxe: return GameAssets.i.s_Pickaxe;
+            case ItemType.BattleAxe: return GameAssets.i.s_BattleAxe;
+            case ItemType.BigAxe: return GameAssets.i.s_BigAxe;
+            case ItemType.BestSword: return GameAssets.i.s_BestSword;
+            case ItemType.LongSword: return GameAssets.i.s_LongSword;
+            case ItemType.Katana: return GameAssets.i.s_Katana;
 
         }
     }
