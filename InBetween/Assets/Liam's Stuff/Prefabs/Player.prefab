@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 8967317711725211469}
   attackOrigin: {fileID: 3235474097206113746}
-  attackRange: 1.5
+  attackRange: 2
   attackBoxSize: {x: 1.32, y: 1.99}
   cooldownTime: 0.5
   attackDamage: 25

@@ -65,12 +65,21 @@ public class EnemyClass : MonoBehaviour
         // Class specific
     }
 
-    public void XPAward(int xp_amount)
+    public void XPAward(int xp_amount, int coin_amount)
     {
         if (player != null){
             XPBar.GetComponent<XP>().AddXP(xp_amount);
+            CoinAward(coin_amount);
         }
         Death();
+    }
+
+    public void CoinAward(int coin_amount)
+    {
+        if (player != null)
+        {
+            player.GetComponent<DaxPlayerAddOn>().AddCoins(coin_amount);
+        }
     }
 
     void Death()

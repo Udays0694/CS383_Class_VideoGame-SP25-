@@ -24,25 +24,6 @@ public class DaxPlayerAddOn : MonoBehaviour, IShopCustomer
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            AddCoins(1); // Adds 1 coin when C is pressed 
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            AddCoins(10); // Adds 1 coin when C is pressed 
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SubtractCoins(10); // Adds 1 coin when C is pressed 
-        }
-
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            AddPotion(1);
-        }
 
         if (Input.GetKeyDown(KeyCode.H))
         {

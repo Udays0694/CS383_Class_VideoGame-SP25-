@@ -72,7 +72,9 @@ public class SkeletonScript : EnemyClass
     // sound effect
     public AudioSource skeletonHit;
     public AudioSource skeletonDeath;
-    
+
+    public int coinAward = 20;
+
     protected override void Start()
     {
         base.Start();
@@ -252,7 +254,7 @@ public class SkeletonScript : EnemyClass
         skeletonHit.Play();
         if (skeletonScript.getHealth() <= 0)
         {
-            base.XPAward(xpAward);
+            base.XPAward(xpAward, coinAward);
         }
     }
 }

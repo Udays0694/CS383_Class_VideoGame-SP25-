@@ -13,6 +13,7 @@ public class SpiderScript : EnemyClass
 
     private Vector2 moveDirection;
 
+    public int coinAward = 15;
     protected override void Start()
     {
         base.Start();
@@ -68,7 +69,7 @@ public class SpiderScript : EnemyClass
         health -= damage;
         if (health <= 0)
         {
-            base.XPAward(xpAward);
+            base.XPAward(xpAward, coinAward);
         }
     }
 

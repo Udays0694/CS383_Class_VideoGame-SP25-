@@ -44,7 +44,6 @@ public class PlayerMelee : MonoBehaviour
 
     private void Attack()
     {
-        _animator.SetTrigger("Attack");
 
         Vector2 origin = attackOrigin.position;
 
@@ -72,6 +71,8 @@ public class PlayerMelee : MonoBehaviour
                 hit.GetComponent<BossController>().takeDamage(attackDamage);
         	}
         }
+
+        _animator.SetTrigger("Attack");
     }
 
     private Vector2 SnapToCardinal(Vector2 dir)
