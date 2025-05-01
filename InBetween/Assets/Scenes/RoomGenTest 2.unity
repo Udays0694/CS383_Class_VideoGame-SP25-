@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: 561355786}
   - component: {fileID: 561355784}
   - component: {fileID: 561355783}
+  - component: {fileID: 561355790}
   m_Layer: 5
   m_Name: XPBarSlider
   m_TagString: XPBar
@@ -803,7 +804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0473854930c5cf4a8294d9e66398e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gainXpSound: {fileID: 0}
+  gainXpSound: {fileID: 561355790}
 --- !u!114 &561355788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,6 +871,103 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &561355790
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561355781}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a2b212cd69d736643b832a9f080743d5, type: 3}
+  m_Resource: {fileID: 8300000, guid: a2b212cd69d736643b832a9f080743d5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &722833373
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,19 +3612,19 @@ PrefabInstance:
       objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: RoomChances.Array.data[0].chancePercent
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: RoomChances.Array.data[1].chancePercent
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: RoomChances.Array.data[2].chancePercent
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: RoomChances.Array.data[3].chancePercent
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3905,6 +4003,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884088702}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
+=======
+--- !u!1 &1947986229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1947986231}
+  - component: {fileID: 1947986230}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1947986230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947986229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be01e21a036a36040a2aa1c6d1c2a3c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  player: {fileID: 0}
+  oldPlayerPosition: {x: 0, y: 0, z: 0}
+  SkeletonPrefab: {fileID: 2529410704935851373, guid: 91d4c8ae1a356e74d8d9f1c3a63eb91f, type: 3}
+  SpiderPrefab: {fileID: 2529410704935851373, guid: 5cbe07ccf63378f409c6e24290063a55, type: 3}
+  ZombiePrefab: {fileID: 2529410704935851373, guid: 4ad4d86e5b793544ab84dde895493d80, type: 3}
+--- !u!4 &1947986231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947986229}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> 453d057bafb943ffc2b210a3a9989e53afb32bef
 --- !u!1 &2017529940
 GameObject:
   m_ObjectHideFlags: 0
