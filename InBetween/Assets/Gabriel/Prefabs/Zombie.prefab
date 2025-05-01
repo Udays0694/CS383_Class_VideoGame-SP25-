@@ -188,7 +188,7 @@ MonoBehaviour:
   attackCooldownTimer: 0
   attackReady: 1
   xpAward: 10
-  health: 20
+  health: 10
   spriteFlipCooldownTimer: 0
   spriteFlipCooldown: 0.5
   spriteFlipReady: 1
