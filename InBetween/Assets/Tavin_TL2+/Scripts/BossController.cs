@@ -6,7 +6,7 @@ public class BossController : MonoBehaviour
 	// Options
 	public float speed = 0.5f;
 	public float maxHealth = 100f;
-	public float health = 100f;
+	public float health;
 	private float attack1Cooldown = 2f;
 
 	// Characteristics
@@ -52,6 +52,7 @@ public class BossController : MonoBehaviour
     	demo.start();
     
 		// Initiate health bar
+		health = maxHealth;
 		healthBar = GetComponentInChildren<Slider>();
     	healthBar.maxValue = health;
 		healthBar.value = health;
