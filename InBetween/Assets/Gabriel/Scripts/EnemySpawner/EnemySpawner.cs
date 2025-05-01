@@ -1,4 +1,3 @@
-using log4net.Util;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -10,17 +9,13 @@ public class EnemySpawner : MonoBehaviour
 
     // Skeleton
     public GameObject SkeletonPrefab;
-    public GameObject Skeleton;
 
     // Spider
     public GameObject SpiderPrefab;
-    public GameObject Spider;
 
     // Zombie
     public GameObject ZombiePrefab;
-    public GameObject Zombie;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,9 +28,9 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogWarning("No player found. The enemy will not be able to interact with the player.");
         }
 
-        Invoke("QueueSkeletonSpawn", 10f);
-        Invoke("QueueSpiderSpawn", 5f);
-        Invoke("QueueZombieSpawn", 5f);
+        Invoke("QueueSkeletonSpawn", 30f);
+        Invoke("QueueSpiderSpawn", 20f);
+        Invoke("QueueZombieSpawn", 30f);
     }
 
     public void QueueSkeletonSpawn()
@@ -47,7 +42,10 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnSkeleton()
     {
-        Skeleton = Instantiate(SkeletonPrefab, oldPlayerPosition, Quaternion.identity);
+        if (Vector3.Distance(player.transform.position, oldPlayerPosition) >= 3f)
+        {
+            Instantiate(SkeletonPrefab, oldPlayerPosition, Quaternion.identity);
+        }
         QueueSkeletonSpawn();
     }
 
@@ -60,7 +58,10 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnSpider()
     {
-        Spider = Instantiate(SpiderPrefab, oldPlayerPosition, Quaternion.identity);
+        if (Vector3.Distance(player.transform.position, oldPlayerPosition) >= 3f)
+        {
+            Instantiate(SpiderPrefab, oldPlayerPosition, Quaternion.identity);
+        }
         QueueSpiderSpawn();
     }
 
@@ -73,7 +74,10 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnZombie()
     {
-        Spider = Instantiate(ZombiePrefab, oldPlayerPosition, Quaternion.identity);
+        if (Vector3.Distance(player.transform.position, oldPlayerPosition) >= 3f)
+        {
+            Instantiate(ZombiePrefab, oldPlayerPosition, Quaternion.identity);
+        }
         QueueZombieSpawn();
     }
 }

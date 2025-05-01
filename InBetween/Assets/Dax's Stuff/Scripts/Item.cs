@@ -12,6 +12,42 @@ public class Item
        PotionOne
     }
 
+    public enum ItemCategory
+    {
+        Weapon,
+        Armor,
+        Shield,
+        Potion
+    }
+
+    public static ItemCategory GetCategory(ItemType itemType)
+    {
+        switch(itemType)
+        {
+            //Weapons
+            case ItemType.SwordOne:
+            case ItemType.AxeOne:
+            case ItemType.DaggerOne:
+                return ItemCategory.Weapon;
+
+            //Armor
+            case ItemType.AxeTwo:
+                return ItemCategory.Armor;
+
+            //Shields
+            case ItemType.SwordTwo:
+                return ItemCategory.Shield;
+
+            //Potions 
+            case ItemType.PotionOne:
+                return ItemCategory.Potion;
+
+            default:
+                return ItemCategory.Weapon;
+
+        }
+    }
+
     public static int GetEffectValue(ItemType itemType) //Holds the attack damage / health changes of each item that can be bought 
     {
         switch(itemType)

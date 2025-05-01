@@ -58,6 +58,10 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKey(KeyCode.Numlock)){
+            health = 999999999;
+        }
         // Get input from player
         movement.x = 0;
         movement.y = 0;
@@ -121,12 +125,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    public void HealME(float healbase)
+    public void HealME(float healbase) //Hello Liam, I fix ur code :) <3 Dax
     {
-        playerScript.setHealth(healbase);
-        if (playerScript.getHealth() >= health)
+        playerScript.setHealth(-healbase); //Fixes issue of subtracting 
+
+        if (playerScript.getHealth() > 100f)//Stop from healing past 100 
         {
-            playerScript.setHealth(health);
+            float overheal = playerScript.getHealth() - 100f;
+            playerScript.setHealth(overheal); //Apply damage to move health back to 100
         }
     }
 

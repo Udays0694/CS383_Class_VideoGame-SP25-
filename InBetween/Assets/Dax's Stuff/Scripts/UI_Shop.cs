@@ -5,10 +5,23 @@ using System.Collections.Generic;
 
 public class UI_Shop : MonoBehaviour
 {
+    //Stuff For Shop UI
     private Transform container;
     private Transform shopItemTemplate;
 
+    //Purchase objects & Open Shop 
     private IShopCustomer shopCustomer;
+
+    //Access to health potions and ability to heal 
+    private DaxPlayerAddOn daxPlayerAddOn;
+
+    //Inventory System Changes
+    public Image weaponSlot;
+    public Image armorSlot;
+    public Image shieldSlot;
+
+    //Access to Inventory Script 
+    public InventorySystem inventorySystem;
 
     private List<Item.ItemType> GetAllItemTypes()
     {
@@ -19,6 +32,11 @@ public class UI_Shop : MonoBehaviour
         container = transform.Find("container");
         shopItemTemplate = container.Find("shopItemTemplate");
         shopItemTemplate.gameObject.SetActive(true);
+
+        if(inventorySystem == null)
+        {
+            inventorySystem = FindObjectOfType<InventorySystem>();
+        }
     }
 
     private void Start()
@@ -30,6 +48,8 @@ public class UI_Shop : MonoBehaviour
         CreateItemButton(Item.ItemType.PotionOne, Item.GetSprite(Item.ItemType.PotionOne), "Potion", Item.GetCost(Item.ItemType.PotionOne), 4, Item.GetEffectValue(Item.ItemType.PotionOne), Item.GetDescription(Item.ItemType.PotionOne));
 
         Hide();
+
+        daxPlayerAddOn = GameObject.FindWithTag("Player").GetComponent<DaxPlayerAddOn>();
     }
 
     //Works to reference ShopItemButton prefab and duplicates it for each item needed 
@@ -60,6 +80,19 @@ public class UI_Shop : MonoBehaviour
         if(shopCustomer.TrySpendCoins(Item.GetCost(itemType))) //Checks if the player has enough coins for the item
         {
             shopCustomer.BoughtItem(itemType);
+
+            if(itemType == Item.ItemType.PotionOne)
+            {
+
+                daxPlayerAddOn.AddPotion(1);
+            }
+            else
+            {
+                Item.ItemCategory category = Item.GetCategory(itemType);
+                Sprite sprite = Item.GetSprite(itemType);
+
+                inventorySystem.UpdateInventorySlot(category, sprite);
+            }
         }
         else
         {

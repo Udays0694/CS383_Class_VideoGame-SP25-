@@ -383,3 +383,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeNameText: {fileID: 5718777354848467752}
+  upgradeDescriptionText: {fileID: 0}
+  upgradeIcon: {fileID: 0}
