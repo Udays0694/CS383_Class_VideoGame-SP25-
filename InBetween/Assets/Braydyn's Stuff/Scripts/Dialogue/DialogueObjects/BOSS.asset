@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710a549593978ce4887a7998dbee6af7, type: 3}
+  m_Name: BOSS
+  m_EditorClassIdentifier: 
+  lines:
+  - sentence: "Beneath the veil you followed through\t\t\t"
+    speakerName: ???
+    portrait: {fileID: 8323182390668805600, guid: 2df258783aa4f434d82929dd2cae712e, type: 3}
+    nextLineIndex: 1
+    minPitch: 1
+    maxPitch: 1.3
+    typingSpeed: 0.015
+  - sentence: Now you must fight the end.
+    speakerName: ???
+    portrait: {fileID: 8323182390668805600, guid: 2df258783aa4f434d82929dd2cae712e, type: 3}
+    nextLineIndex: 2
+    minPitch: 1
+    maxPitch: 1.3
+    typingSpeed: 0.015
+  - sentence: "Step forward, Young Knight \u2014 beat your destiny."
+    speakerName: ???
+    portrait: {fileID: 8323182390668805600, guid: 2df258783aa4f434d82929dd2cae712e, type: 3}
+    nextLineIndex: 3
+    minPitch: 1
+    maxPitch: 1.3
+    typingSpeed: 0.015
+  - sentence: ....
+    speakerName: Me
+    portrait: {fileID: 7081202377173559392, guid: b0e3721bb9e51504b84947d25399ec77, type: 3}
+    nextLineIndex: -1
+    minPitch: 0.5
+    maxPitch: 0.5
+    typingSpeed: 0.015

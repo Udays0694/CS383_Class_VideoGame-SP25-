@@ -33,7 +33,9 @@ public class ZombieScript : EnemyClass
     // sound effect
     //public AudioSource zombieHit;
     //public AudioSource zombieDeath;
-    
+
+    public int coinAward = 20;
+
     protected override void Start()
     {
         base.Start();
@@ -207,7 +209,7 @@ public class ZombieScript : EnemyClass
         // zombieHit.Play();
         if (health <= 0)
         {
-            base.XPAward(xpAward);
+            base.XPAward(xpAward, coinAward);
         }
         //Debug.Log($"Zombie taking Damage - Current Health: {health}");
     }

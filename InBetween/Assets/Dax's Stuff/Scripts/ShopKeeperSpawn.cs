@@ -1,24 +1,38 @@
 using UnityEngine;
+using System.Collections;
 
 public class ShopKeeperSpawn : MonoBehaviour
 {
     public GameObject shopKeeper;
 
-    private bool isSpawned = false; 
-    private void Update() //Temp way to spawn shopKeeper
-    {
-        if(Input.GetKeyDown(KeyCode.L) && !isSpawned)
-        {
-            SpawnShopKeeper();
-        }
+    private bool isSpawned = false;
 
-        if(Input.GetKeyDown(KeyCode.O) && isSpawned)
+    private void OnTriggerEnter2D(Collider2D other) //Temp way to spawn shopKeeper
+    {
+        if (other.CompareTag("Player") && !isSpawned)
         {
-            despawnShopKeeper();
-        }    
+            StartCoroutine(SpawnWithDelay());
+        }
     }
 
-    void despawnShopKeeper()
+    private IEnumerator SpawnWithDelay()
+    {
+        isSpawned = true;
+
+        yield return new WaitForSeconds(.75f);
+        SpawnShopKeeper();
+
+    }
+
+    private void OnTriggerExit2D(Collider2D other) //Temp way to spawn shopKeeper
+    {
+        if (other.CompareTag("Player") && isSpawned)
+        {
+            DespawnShopKeeper();
+        }
+    }
+
+    void DespawnShopKeeper()
     {
         isSpawned = false;
 
@@ -31,8 +45,7 @@ public class ShopKeeperSpawn : MonoBehaviour
     }
 
     void SpawnShopKeeper()
-    {
-        isSpawned = true; 
+    { 
 
         shopKeeper.SetActive(true); //Enable spawnkeeper 
 

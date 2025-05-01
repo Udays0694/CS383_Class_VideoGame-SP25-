@@ -7,9 +7,6 @@ public class CoinManager : MonoBehaviour
 {
     public TextMeshProUGUI coinsText;
 
-    public Button addCoinButton;
-    public Button subtractCoinButton;
-
     [SerializeField] private GameObject floatingTextPrefab;
 
     public int coinsCount = 0; // Player start with 0 coins 
@@ -25,20 +22,7 @@ public class CoinManager : MonoBehaviour
 
     private void Update()
     {
-        if( Input.GetKeyDown(KeyCode.C))
-        {
-            AddCoins(1); // Adds 1 coin when C is pressed 
-        }
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            AddCoins(10); // Adds 1 coin when C is pressed 
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SubtractCoins(10); // Adds 1 coin when C is pressed 
-        }
     }
     public void AddCoins(int amount)
     {

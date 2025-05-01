@@ -6,13 +6,16 @@ public class PlayerMelee : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     public Transform attackOrigin;
-    public float attackRange = 1.5f;
-    public Vector2 attackBoxSize = new Vector2(1.5f, 1f);
+    public float attackRange = 2f;
+    public Vector2 attackBoxSize = new Vector2(3f, 4f);
     public float cooldownTime = 0.3f;
     private float cooldownTimer = 0f;
 
     public float attackDamage = 50f;
     private Vector2 attackDirection = Vector2.right;
+
+    // swing sound
+    [SerializeField] AudioSource attackSound;
 
     // Dict that sets the offset for tha attacks 
     private Dictionary<Vector2, Vector2> directionOffsets = new Dictionary<Vector2, Vector2>()
@@ -44,6 +47,7 @@ public class PlayerMelee : MonoBehaviour
 
     private void Attack()
     {
+
         _animator.SetTrigger("Attack");
 
         Vector2 origin = attackOrigin.position;
@@ -72,6 +76,7 @@ public class PlayerMelee : MonoBehaviour
                 hit.GetComponent<BossController>().takeDamage(attackDamage);
         	}
         }
+        attackSound.Play();
     }
 
     private Vector2 SnapToCardinal(Vector2 dir)

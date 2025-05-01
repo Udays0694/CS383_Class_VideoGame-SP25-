@@ -102,7 +102,6 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text += letter;
 
-            // Play every 2 characters
             if (charIndex % 4 == 0 && !char.IsWhiteSpace(letter) && voiceClip != null && voiceSource != null)
             {
                 voiceSource.pitch = Random.Range(line.minPitch, line.maxPitch);
@@ -110,27 +109,33 @@ public class DialogueManager : MonoBehaviour
             }
 
             charIndex++;
-            yield return new WaitForSeconds(0.015f);
+            yield return new WaitForSeconds(line.typingSpeed);
         }
 
 
         sentenceDone = true;
         continueArrow.SetActive(true);
+
+        if (pulseCoroutine != null)
+            StopCoroutine(pulseCoroutine);
+
+        continueArrow.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         pulseCoroutine = StartCoroutine(PulseArrow());
+
     }
 
     IEnumerator PulseArrow()
     {
         float pulseDuration = 1f;
-        Vector3 originalScale = continueArrow.transform.localScale;
-        Vector3 targetScale = originalScale * 1.1f;
+        Vector3 baseScale = new Vector3(0.2f, 0.2f, 0.2f);
+        Vector3 targetScale = baseScale * 1.1f;
 
         while (true)
         {
             float timer = 0f;
             while (timer < pulseDuration / 2)
             {
-                continueArrow.transform.localScale = Vector3.Lerp(originalScale, targetScale, timer / (pulseDuration / 2));
+                continueArrow.transform.localScale = Vector3.Lerp(baseScale, targetScale, timer / (pulseDuration / 2));
                 timer += Time.deltaTime;
                 yield return null;
             }
@@ -138,12 +143,13 @@ public class DialogueManager : MonoBehaviour
             timer = 0f;
             while (timer < pulseDuration / 2)
             {
-                continueArrow.transform.localScale = Vector3.Lerp(targetScale, originalScale, timer / (pulseDuration / 2));
+                continueArrow.transform.localScale = Vector3.Lerp(targetScale, baseScale, timer / (pulseDuration / 2));
                 timer += Time.deltaTime;
                 yield return null;
             }
         }
     }
+
 
     void EndDialogue()
     {
@@ -154,7 +160,7 @@ public class DialogueManager : MonoBehaviour
         if (pulseCoroutine != null)
             StopCoroutine(pulseCoroutine);
 
-        continueArrow.transform.localScale = Vector3.one;
+        continueArrow.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
 
         EnablePlayerScript();
     }
@@ -175,4 +181,8 @@ public class DialogueManager : MonoBehaviour
         if (playerScriptToDisable != null)
             playerScriptToDisable.enabled = true;
     }
+
+    public bool IsDialogueActive() => isDialogueActive;
+    public int GetCurrentLineIndex() => currentLineIndex;
+
 }
