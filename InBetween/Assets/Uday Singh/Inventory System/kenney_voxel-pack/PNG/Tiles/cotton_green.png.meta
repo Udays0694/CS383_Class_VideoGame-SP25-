@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cotton_green_0: 4394104778702062822
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

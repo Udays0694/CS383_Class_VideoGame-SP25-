@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      redstone_emerald_alt_0: 4491892116240711923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

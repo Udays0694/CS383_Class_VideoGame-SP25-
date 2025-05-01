@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      skybox_side_0: 7227586863046588236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

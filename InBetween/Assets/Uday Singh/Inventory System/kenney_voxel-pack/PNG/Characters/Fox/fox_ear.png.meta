@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fox_ear_0: 1927931075380745254
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

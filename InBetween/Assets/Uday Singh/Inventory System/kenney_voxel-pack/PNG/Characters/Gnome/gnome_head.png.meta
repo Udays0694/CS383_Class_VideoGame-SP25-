@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gnome_head_0: 8330539682816742319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

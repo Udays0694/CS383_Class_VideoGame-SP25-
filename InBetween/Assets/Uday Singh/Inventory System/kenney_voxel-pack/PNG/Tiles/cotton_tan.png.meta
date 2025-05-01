@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cotton_tan_0: 8894653098779571947
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

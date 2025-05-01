@@ -90,19 +90,26 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(line));
     }
-
     public IEnumerator TypeSentence(DialogueLine line)
     {
         sentenceDone = false;
         dialogueText.text = "";
 
         int charIndex = 0;
+        string fullSentence = line.sentence;
 
-        foreach (char letter in line.sentence)
+        for (int i = 0; i < fullSentence.Length; i++)
         {
-            dialogueText.text += letter;
+            // If Shift is pressed, skip typing and show full sentence
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                dialogueText.text = fullSentence;
+                break;
+            }
 
-            if (charIndex % 4 == 0 && !char.IsWhiteSpace(letter) && voiceClip != null && voiceSource != null)
+            dialogueText.text += fullSentence[i];
+
+            if (charIndex % 4 == 0 && !char.IsWhiteSpace(fullSentence[i]) && voiceClip != null && voiceSource != null)
             {
                 voiceSource.pitch = Random.Range(line.minPitch, line.maxPitch);
                 voiceSource.PlayOneShot(voiceClip, 0.7f);
@@ -112,7 +119,6 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(line.typingSpeed);
         }
 
-
         sentenceDone = true;
         continueArrow.SetActive(true);
 
@@ -121,8 +127,8 @@ public class DialogueManager : MonoBehaviour
 
         continueArrow.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         pulseCoroutine = StartCoroutine(PulseArrow());
-
     }
+
 
     IEnumerator PulseArrow()
     {

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mushroom_tan_0: 3112672400619938412
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

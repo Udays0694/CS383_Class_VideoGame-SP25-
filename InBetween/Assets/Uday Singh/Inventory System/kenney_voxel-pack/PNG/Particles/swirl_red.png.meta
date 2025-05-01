@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      swirl_red_0: 6003327210609326577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

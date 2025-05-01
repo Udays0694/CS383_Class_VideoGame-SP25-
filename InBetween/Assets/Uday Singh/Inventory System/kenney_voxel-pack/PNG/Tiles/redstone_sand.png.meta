@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      redstone_sand_0: -5948868419635859238
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

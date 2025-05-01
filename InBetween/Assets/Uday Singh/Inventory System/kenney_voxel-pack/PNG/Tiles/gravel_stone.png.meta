@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gravel_stone_0: 2758737170363901286
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
