@@ -502,13 +502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1587e38033cb347be98ed19a1cb4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  quantityText: {fileID: 0}
-  slotIndex: 0
-  inventoryManager: {fileID: 0}
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
-  parentCanvas: {fileID: 0}
 --- !u!225 &261658460
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1333,7 +1326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0.39215687, a: 0.392}
+  m_Color: {r: 0.14509805, g: 0.15509975, b: 0.5803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2130,13 +2123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1587e38033cb347be98ed19a1cb4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  quantityText: {fileID: 0}
-  slotIndex: 0
-  inventoryManager: {fileID: 0}
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
-  parentCanvas: {fileID: 0}
 --- !u!225 &1403542680
 CanvasGroup:
   m_ObjectHideFlags: 0
