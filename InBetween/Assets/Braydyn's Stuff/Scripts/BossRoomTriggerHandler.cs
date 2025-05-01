@@ -21,7 +21,7 @@ public class BossRoomTriggerHandler : MonoBehaviour
             foreach (GameObject obj in objectsToDisable)
             {
                 if (obj != null)
-                    Destroy(obj);
+                    obj.SetActive(false); ;
             }
 
             hasTriggered = true;

@@ -522,20 +522,19 @@ MonoBehaviour:
     A SuperNova Nerds Production\r\n\r\n     \"The soul fought through purgatory
     not to escape death...\r\n             but to understand why it lived.\"\r\n\r\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\r\n\r\n                 
     STAFF CREDITS\r\n\r\n  \u2591\u2592\u2593 SYSTEMS & INFRASTRUCTURE \u2593\u2592\u2591 
-    \r\n  Uday  \r\n  - Core system design  \r\n  - Save/load & menu development 
-    \r\n  - HUD and inventory interface  \r\n  - Deployment, testing, documentation 
-    \r\n\r\n  \u2591\u2592\u2593 PROCEDURAL DESIGN & LOGIC \u2593\u2592\u2591  \r\n 
-    Braydyn  \r\n  - Dungeon layout & stitching  \r\n  - Spawn logic and pathing
-    systems  \r\n  - Optimization & error handling  \r\n\r\n  \u2591\u2592\u2593
-    FINAL BOSS DESIGN \u2593\u2592\u2591  \r\n  Tavin  \r\n  - Boss mechanics, AI
-    & animation  \r\n  - Environment and VFX programming  \r\n  - Combat tuning and
-    polish  \r\n\r\n  \u2591\u2592\u2593 ECONOMY & SHOP SYSTEMS \u2593\u2592\u2591 
-    \r\n  Dax  \r\n  - Coin manager & inventory  \r\n  - Shopkeeper animation and
-    behavior  \r\n  - Item planning and stat design  \r\n\r\n  \u2591\u2592\u2593
-    LEVELING & REWARD SYSTEMS \u2593\u2592\u2591  \r\n  Zach  \r\n  - XP system architecture 
-    \r\n  - Upgrade UI and integration  \r\n  - Cross-feature testing and fixes 
-    \r\n\r\n  \u2591\u2592\u2593 ENEMY DESIGN & BALANCE \u2593\u2592\u2591  \r\n 
-    Gabe  \r\n  - Enemy behavior systems  \r\n  - Class archetypes and balancing 
+    \r\n  Uday  \r\n  - Core system design  \r\n  - Main Menu UI\r\r\n  - UI UX Testing\r\n\r\n 
+    \u2591\u2592\u2593 PROCEDURAL DESIGN & LOGIC \u2593\u2592\u2591  \r\n  Braydyn 
+    \r\n  - Dungeon layout & stitching  \r\n  - Spawn logic and pathing systems 
+    \r\n  - Optimization & error handling  \r\n\r\n  \u2591\u2592\u2593 FINAL BOSS
+    DESIGN \u2593\u2592\u2591  \r\n  Tavin  \r\n  - Boss mechanics, AI & animation 
+    \r\n  - Environment and VFX programming  \r\n  - Combat tuning and polish  \r\n\r\n 
+    \u2591\u2592\u2593 ECONOMY & SHOP SYSTEMS \u2593\u2592\u2591  \r\n  Dax  \r\n 
+    - Coin manager & inventory  \r\n  - Shopkeeper animation and behavior  \r\n 
+    - Item planning and stat design\n  - HUD and inventory interface    \r\n\r\n 
+    \u2591\u2592\u2593 LEVELING & REWARD SYSTEMS \u2593\u2592\u2591  \r\n  Zach 
+    \r\n  - XP system architecture  \r\n  - Upgrade UI and integration  \r\n  - Cross-feature
+    testing and fixes  \r\n\r\n  \u2591\u2592\u2593 ENEMY DESIGN & BALANCE \u2593\u2592\u2591 
+    \r\n  Gabe  \r\n  - Enemy behavior systems  \r\n  - Class archetypes and balancing 
     \r\n  - Animation, stress testing, QA  \r\n\r\n  \u2591\u2592\u2593 PLAYER EXPERIENCE
     & THEMING \u2593\u2592\u2591  \r\n  Liam  \r\n  - Player movement and input design 
     \r\n  - Mobile support and haptics  \r\n  - Visual identity and team coordination 
