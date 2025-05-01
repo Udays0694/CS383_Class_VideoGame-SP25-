@@ -22,4 +22,8 @@ public class DialogueLine
     [Header("Voice Pitch Range")]
     [Range(0.01f, 2.0f)] public float minPitch = 0.95f;
     [Range(0.01f, 2.0f)] public float maxPitch = 1.05f;
+
+    [Header("Typing Speed")]
+    [Range(0.005f, 0.1f)] public float typingSpeed = 0.015f;
 }
+

@@ -182,10 +182,11 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 5579728072880662307}
   XPBar: {fileID: 0}
   xp: {fileID: 0}
+  player: {fileID: 0}
   nameType: Skeleton
   movementSpeed: 3
   attackDamage: 30
-  attackCooldown: 0.5
+  attackCooldown: 1
   attackCooldownTimer: 0
   attackReady: 1
   xpAward: 10
@@ -196,8 +197,8 @@ MonoBehaviour:
   SkeletonCharge: {fileID: -3005895968986233309, guid: 83e6f047e7b033b43b4b962333f2918d, type: 3}
   SkeletonLunge: {fileID: -3281707252372194088, guid: 8759b530024b76a439d2d51b8771c33d, type: 3}
   oldPosition: {x: 0, y: 0}
-  DoWander: 0
-  Wandering: 0
+  doWander: 0
+  wandering: 0
   movedOnce: 0
   targetX: 0
   targetY: 0

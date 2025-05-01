@@ -15,6 +15,10 @@ public class DialogueTrigger : MonoBehaviour
     public UnityEvent onDialogueStart;
     public UnityEvent onDialogueEnd;
 
+    [Header("Interaction Cooldown")]
+    public float cooldownAfterDialogue = 1.0f;
+
+
     [System.Serializable]
     public class DialogueLineEvent
     {
@@ -94,16 +98,15 @@ public class DialogueTrigger : MonoBehaviour
     IEnumerator WaitForDialogueEnd()
     {
         while (DialogueManager.Instance.IsDialogueActive())
-        {
             yield return null;
-        }
 
         onDialogueEnd?.Invoke();
 
         canInteract = false;
-        yield return new WaitForSeconds(1f); // adjust delay as needed
+        yield return new WaitForSeconds(cooldownAfterDialogue);
         canInteract = true;
     }
+
 
 
     IEnumerator ReenableInteraction()

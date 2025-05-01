@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: Rias
   m_EditorClassIdentifier: 
   lines:
-  - sentence: Mhmm, you got lots to offer i see
-    speakerName: Rias Gremmory
-    portrait: {fileID: -1518028542933335451, guid: 036921696aae46f4699ab1a8663c5d80, type: 3}
+  - sentence: You found me!
+    speakerName: Eve
+    portrait: {fileID: 8323182390668805600, guid: 2df258783aa4f434d82929dd2cae712e, type: 3}
     nextLineIndex: 1
-    minPitch: 1.22
-    maxPitch: 1.3
-  - sentence: "You deserve a little bit of health... Good boy. \U0001F60F"
-    speakerName: Rias Gremmory
-    portrait: {fileID: -1518028542933335451, guid: 036921696aae46f4699ab1a8663c5d80, type: 3}
+    minPitch: 0.246
+    maxPitch: 0.067
+    typingSpeed: 0.015
+  - sentence: I Grant you a bit of health!
+    speakerName: Eve
+    portrait: {fileID: 8323182390668805600, guid: 2df258783aa4f434d82929dd2cae712e, type: 3}
     nextLineIndex: 2
     minPitch: 1.22
     maxPitch: 1.341
+    typingSpeed: 0.015

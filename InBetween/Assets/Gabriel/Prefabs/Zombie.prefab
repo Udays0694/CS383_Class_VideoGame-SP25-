@@ -180,10 +180,11 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 5579728072880662307}
   XPBar: {fileID: 0}
   xp: {fileID: 0}
+  player: {fileID: 0}
   nameType: Zombie
   movementSpeed: 2
   attackDamage: 20
-  attackCooldown: 0.4
+  attackCooldown: 1
   attackCooldownTimer: 0
   attackReady: 1
   xpAward: 10
