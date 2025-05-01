@@ -2195,7 +2195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToDisable:
   - {fileID: 1798708876}
-  - {fileID: 0}
   bossRoomTag: BossRoom
   disableOnlyOnce: 1
 --- !u!1 &1358953580
@@ -2729,6 +2728,11 @@ RectTransform:
   m_AnchoredPosition: {x: 787.9, y: 392}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1527696382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 649887716663425238, guid: 4bac232c421127a498b263d79771e504, type: 3}
+  m_PrefabInstance: {fileID: 1563781901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1533401813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,19 +3518,19 @@ PrefabInstance:
       objectReference: {fileID: 2840558116880768895, guid: 9e5e053c8f88c334486ca9e8bbe2c8b8, type: 3}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: RoomChances.Array.data[0].chancePercent
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: RoomChances.Array.data[1].chancePercent
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: RoomChances.Array.data[2].chancePercent
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5287933906943540059, guid: e0699ceca8755a948ad6840e0e062907, type: 3}
       propertyPath: RoomChances.Array.data[3].chancePercent
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3544,6 +3548,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663714fea543089428a5cbdb3cd5fccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1734500677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4036694565675304450, guid: 56d2f882dc34b32469af5d699be17304, type: 3}
+  m_PrefabInstance: {fileID: 1166824930}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1798708876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,6 +3928,7 @@ GameObject:
   - component: {fileID: 2017529943}
   - component: {fileID: 2017529942}
   - component: {fileID: 2017529941}
+  - component: {fileID: 2017529947}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -4050,6 +4060,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2017529947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017529940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090a2c554e78634478776c8a0a94a464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuPanel: {fileID: 1527696382}
+  settingsPanel: {fileID: 1734500677}
 --- !u!1 &2042808505
 GameObject:
   m_ObjectHideFlags: 0

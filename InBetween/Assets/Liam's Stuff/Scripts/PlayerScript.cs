@@ -58,6 +58,10 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKey(KeyCode.Numlock)){
+            health = 999999999;
+        }
         // Get input from player
         movement.x = 0;
         movement.y = 0;
