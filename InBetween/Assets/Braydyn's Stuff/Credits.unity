@@ -522,15 +522,15 @@ MonoBehaviour:
     A SuperNova Nerds Production\r\n\r\n     \"The soul fought through purgatory
     not to escape death...\r\n             but to understand why it lived.\"\r\n\r\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\r\n\r\n                 
     STAFF CREDITS\r\n\r\n  \u2591\u2592\u2593 SYSTEMS & INFRASTRUCTURE \u2593\u2592\u2591 
-    \r\n  Uday  \r\n  - Core system design  \r\n  - Main Menu UI\r\r\n  - UI UX Testing\r\n\r\n 
-    \u2591\u2592\u2593 PROCEDURAL DESIGN & LOGIC \u2593\u2592\u2591  \r\n  Braydyn 
-    \r\n  - Dungeon layout & stitching  \r\n  - Spawn logic and pathing systems 
-    \r\n  - Optimization & error handling  \r\n\r\n  \u2591\u2592\u2593 FINAL BOSS
-    DESIGN \u2593\u2592\u2591  \r\n  Tavin  \r\n  - Boss mechanics, AI & animation 
-    \r\n  - Environment and VFX programming  \r\n  - Combat tuning and polish  \r\n\r\n 
-    \u2591\u2592\u2593 ECONOMY & SHOP SYSTEMS \u2593\u2592\u2591  \r\n  Dax  \r\n 
-    - Coin manager & inventory  \r\n  - Shopkeeper animation and behavior  \r\n 
-    - Item planning and stat design\n  - HUD and inventory interface    \r\n\r\n 
+    \r\n  Uday  \r\n  - Core system design  \r\n  - Main Menu UI\r\r\n  - UI UX Testing\n 
+    - HUD and inventory interface    \r\n\r\n  \u2591\u2592\u2593 PROCEDURAL DESIGN
+    & LOGIC \u2593\u2592\u2591  \r\n  Braydyn  \r\n  - Dungeon layout & stitching 
+    \r\n  - Spawn logic and pathing systems  \r\n  - Optimization & error handling 
+    \r\n\r\n  \u2591\u2592\u2593 FINAL BOSS DESIGN \u2593\u2592\u2591  \r\n  Tavin 
+    \r\n  - Boss mechanics, AI & animation  \r\n  - Environment and VFX programming 
+    \r\n  - Combat tuning and polish  \r\n\r\n  \u2591\u2592\u2593 ECONOMY & SHOP
+    SYSTEMS \u2593\u2592\u2591  \r\n  Dax  \r\n  - Coin manager & inventory  \r\n 
+    - Shopkeeper animation and behavior  \r\n  - Item planning and stat design\r\n\r\n 
     \u2591\u2592\u2593 LEVELING & REWARD SYSTEMS \u2593\u2592\u2591  \r\n  Zach 
     \r\n  - XP system architecture  \r\n  - Upgrade UI and integration  \r\n  - Cross-feature
     testing and fixes  \r\n\r\n  \u2591\u2592\u2593 ENEMY DESIGN & BALANCE \u2593\u2592\u2591 
@@ -540,9 +540,9 @@ MonoBehaviour:
     \r\n  - Mobile support and haptics  \r\n  - Visual identity and team coordination 
     \r\n\r\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\r\n\r\n           
     SPECIAL THANKS TO:\r\n\r\n         - Our professors and mentors  \r\n        
-    - Unity for powering the dream  \r\n         - Everyone who tested at 2AM  \r\n        
-    - Cierah, Rias Gremmory (dax's gf)  for keeping us sane  \r\n         - And you,
-    for playing to the end\r\n\r\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\r\n\r\n        
+    - Unity for powering the dream  (kinda)\r\n         - Everyone who tested at
+    2AM  \r\n         - Cierah, Rias Gremmory (dax's gf)  for keeping us sane  \r\n        
+    - And you, for playing to the end\r\n\r\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\r\n\r\n        
     \"The end was never the escape.\r\n        It was the discovery of meaning.\"\r\n\r\n     
     \u2591\u2592\u2593\u2592\u2591     Press [E] to Continue     \u2591\u2592\u2593\u2592\u2591\r\n"
   m_isRightToLeft: 0
